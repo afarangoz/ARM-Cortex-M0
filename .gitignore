@@ -1,0 +1,5 @@
+micro/bin/*
+micro/obj/*
+micro/*.depend
+micro/*.layout
+micro/*.cbp
