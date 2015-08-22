@@ -1,1 +1,1 @@
-void mostrar_registros(long registro[13]);
+void mostrar_registros(unsigned long registro[13]);

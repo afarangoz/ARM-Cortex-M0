@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "datos.h"
+#include "registros.h"
 
-void mostrar_registros(long registro[13])
+void mostrar_registros(unsigned long registro[13])
 {
-    int i;
+    unsigned int i;
     for(i=0;i<=12;i++)
     {
         printf("R[%d]=%d \n",i,registro[i]);

@@ -5,15 +5,15 @@
 
 int main()
 {
-    long int Reg[13];
+    unsigned long int Reg[13];
 
 
-    Reg[1]=25;
-    Reg[2]=3;
-    ADD(Reg[1],Reg[2]);
+    Reg[1]=2;
+    Reg[2]=4;
+    Reg[3]=MVN(Reg[1]);
     mostrar_registros(Reg);
 
-    printf("Resultado=%d", Reg);
+
 
     return 0;
 }
