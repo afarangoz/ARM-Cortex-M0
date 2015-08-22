@@ -11,7 +11,7 @@ float ADD(unsigned long int R1, unsigned long int R2);
 * \param R2 Registro2
 * \return El resultado del a resta entre los dos Registros de entrada
 */
-float SUM(unsigned long int R1, unsigned long int R2);
+float SUB(unsigned long int R1, unsigned long int R2);
 /**
 * \brief funcion AND
 * \param R1 Registro1

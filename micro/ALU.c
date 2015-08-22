@@ -5,7 +5,7 @@ float ADD(unsigned long int R1, unsigned long int R2)
 {
     return (R1+R2);
 }
-float SUM(unsigned long int R1, unsigned long int R2)
+float SUC(unsigned long int R1, unsigned long int R2)
 {
     return(R1-R2);
 }
