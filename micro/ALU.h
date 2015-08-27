@@ -1,36 +1,61 @@
 /**
 * \brief funcion que suma
-* \param R1 Registro1
-* \param R2 Registro2
-* \return El resultado de la suma entre los dos Registros de entrada
+* \param Rn Registro de entrada
+* \param Rm registro de entrada
+* \param *Rd lugar donde se almacenara el resultado
+* \return no hay retorno
 */
-float ADD(unsigned long int R1, unsigned long int R2);
+void ADD(unsigned long int *Rd, unsigned long int Rm,unsigned long int Rn,unsigned int *banderas);
+
+
 /**
 * \brief funcion que resta
-* \param R1 Registro1
-* \param R2 Registro2
-* \return El resultado del a resta entre los dos Registros de entrada
+* \param Rn Registro de entrada
+* \param Rm registro de entrada
+* \param *Rd lugar donde se almacenara el resultado
+* \return no hay retorno
 */
-float SUB(unsigned long int R1, unsigned long int R2);
-/**
-* \brief funcion AND
-* \param R1 Registro1
-* \param R2 Registro2
-* \return El resultado es la eperacion AND a nivel de bits
-*/
+void SUB(unsigned long int *Rd, unsigned long int Rm,unsigned long int Rn);
 
-float BIC(unsigned long int R1, unsigned long int R2);
+
+/**
+* \brief funcion que producto logico a nivel de bit
+* \param Rn Registro de entrada
+* \param Rm registro de entrada
+* \param *Rd lugar donde se almacenara el resultado
+* \return no hay retorno
+*/
+void BIC(unsigned long int *Rd, unsigned long int Rm,unsigned long int Rn);
+
+
 /**
 * \brief funcion OR
-* \param R1 Registro1
-* \param R2 Registro2
-* \return El resultado es la eperacion OR a nivel de bits
+* \param Rn Registro de entrada
+* \param Rm Registro de entrada
+* \param *Rd lugar donde se almacenara el resultado
+* \return no hay retorno
 */
-float EOR(unsigned long int R1, unsigned long int R2);
+void OR(unsigned long int *Rd, unsigned long int Rm,unsigned long int Rn);
+
+
 /**
-* \brief funcion NOT
-* \param R1 Registro1
-* \return El resultado es la eperacion NOT bit a bit
+* \brief funcion que mueve datos de un registro a otro
+* \param Rn Registro de entrada
+* \param *Rm lugar donde se almacenara el resultado.
+* \return no hay retorno
 */
-float MVN(unsigned long int R1);
+void MOV(unsigned long int *Rm, unsigned long int Rn);
+
+
+/**
+* \brief funcion para actualizar las banderas del microprocesador
+* \param tipo_opercion a cada funcion se le asigna un entero en el .c de la libreria y esto indica que tipo de operacion aritmetico logica se efectua
+* \param Rn Registro de entrada de la operacion aritmetico logica
+* \param Rm Registro de entrada de la operacion aritmetico logica
+* \param bandera es el valor de la posicion cero en el arreglo banderas
+* \return no hay retorno
+*/
+void actualizar(unsigned int tipo_operacion,unsigned long int Rn,unsigned long int Rm,unsigned int *banderas);
+
+
 
