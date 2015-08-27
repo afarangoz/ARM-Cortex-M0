@@ -1,0 +1,34 @@
+\select@language {spanish}
+\contentsline {chapter}{\numberline {1}\IeC {\'I}ndice de estructura de datos}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Estructura de datos}{1}{section.1.1}
+\contentsline {chapter}{\numberline {2}Indice de archivos}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Lista de archivos}{3}{section.2.1}
+\contentsline {chapter}{\numberline {3}Documentaci\IeC {\'o}n de las estructuras de datos}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Referencia de la Estructura bandera}{5}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Documentaci\IeC {\'o}n de los campos}{5}{subsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.1.1}C}{5}{subsubsection.3.1.1.1}
+\contentsline {subsubsection}{\numberline {3.1.1.2}N}{5}{subsubsection.3.1.1.2}
+\contentsline {subsubsection}{\numberline {3.1.1.3}V}{5}{subsubsection.3.1.1.3}
+\contentsline {subsubsection}{\numberline {3.1.1.4}Z}{5}{subsubsection.3.1.1.4}
+\contentsline {chapter}{\numberline {4}Documentaci\IeC {\'o}n de archivos}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}Referencia del Archivo A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}L\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}U.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}c}{7}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Documentaci\IeC {\'o}n de las funciones}{7}{subsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.1.1}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}D(unsigned long int Rn, unsigned long int Rm)}{7}{subsubsection.4.1.1.1}
+\contentsline {subsubsection}{\numberline {4.1.1.2}B\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}I\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}C(unsigned long int Rn, unsigned long int Rm)}{7}{subsubsection.4.1.1.2}
+\contentsline {subsubsection}{\numberline {4.1.1.3}E\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}O\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}R(unsigned long int Rn, unsigned long int Rm)}{8}{subsubsection.4.1.1.3}
+\contentsline {subsubsection}{\numberline {4.1.1.4}M\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}V\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}N(unsigned long int Rn)}{8}{subsubsection.4.1.1.4}
+\contentsline {subsubsection}{\numberline {4.1.1.5}S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}U\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}B(unsigned long int Rn, unsigned long int Rm)}{8}{subsubsection.4.1.1.5}
+\contentsline {section}{\numberline {4.2}Referencia del Archivo A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}L\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}U.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}h}{8}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Documentaci\IeC {\'o}n de las funciones}{9}{subsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.1.1}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}D(unsigned long int Rn, unsigned long int Rm)}{9}{subsubsection.4.2.1.1}
+\contentsline {subsubsection}{\numberline {4.2.1.2}B\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}I\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}C(unsigned long int Rn, unsigned long int Rm)}{9}{subsubsection.4.2.1.2}
+\contentsline {subsubsection}{\numberline {4.2.1.3}E\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}O\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}R(unsigned long int Rn, unsigned long int Rm)}{9}{subsubsection.4.2.1.3}
+\contentsline {subsubsection}{\numberline {4.2.1.4}M\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}V\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}N(unsigned long int Rn)}{9}{subsubsection.4.2.1.4}
+\contentsline {subsubsection}{\numberline {4.2.1.5}S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}U\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}B(unsigned long int Rn, unsigned long int Rm)}{10}{subsubsection.4.2.1.5}
+\contentsline {section}{\numberline {4.3}Referencia del Archivo main.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}c}{10}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Documentaci\IeC {\'o}n de las funciones}{10}{subsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.1.1}main()}{10}{subsubsection.4.3.1.1}
+\contentsline {section}{\numberline {4.4}Referencia del Archivo registros.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}c}{10}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Documentaci\IeC {\'o}n de las funciones}{11}{subsection.4.4.1}
+\contentsline {subsubsection}{\numberline {4.4.1.1}mostrar\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}registros(unsigned long registro[13])}{11}{subsubsection.4.4.1.1}
+\contentsline {section}{\numberline {4.5}Referencia del Archivo registros.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}h}{11}{section.4.5}
