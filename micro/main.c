@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "registros.h"
 #include "ALU.h"
+#include <math.h>
 
 int main()
 {
@@ -14,11 +15,16 @@ int main()
     unsigned long int Reg[13];
 
 
-    Reg[1]=-2;
-    Reg[2]=2;
+    Reg[1]=-4;
+    Reg[2]=0;
+    Reg[4]=Reg[2];
     ADD(&Reg[3],Reg[1],Reg[2],&banderas[0]);
     mostrar_registros(Reg);
-
+    unsigned int i;
+    for(i=0;i<=3;i++)
+    {
+        printf("banderas[%d]=%d \n",i+1,banderas[i]);
+    }
 
 
     return 0;
