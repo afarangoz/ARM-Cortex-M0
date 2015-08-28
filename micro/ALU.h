@@ -15,7 +15,7 @@ void ADD(unsigned long int *Rd, unsigned long int Rm,unsigned long int Rn,unsign
 * \param *Rd lugar donde se almacenara el resultado
 * \return no hay retorno
 */
-void SUB(unsigned long int *Rd, unsigned long int Rm,unsigned long int Rn);
+void SUB(unsigned long int *Rd, unsigned long int Rm,unsigned long int Rn,unsigned int *banderas);
 
 
 /**
@@ -52,7 +52,7 @@ void MOV(unsigned long int *Rm, unsigned long int Rn);
 * \param tipo_opercion a cada funcion se le asigna un entero en el .c de la libreria y esto indica que tipo de operacion aritmetico logica se efectua
 * \param Rn Registro de entrada de la operacion aritmetico logica
 * \param Rm Registro de entrada de la operacion aritmetico logica
-* \param bandera es el valor de la posicion cero en el arreglo banderas
+* \param *banderas es el valor de la posicion cero en el arreglo banderas
 * \return no hay retorno
 */
 void actualizar(unsigned int tipo_operacion,unsigned long int Rn,unsigned long int Rm,unsigned int *banderas);

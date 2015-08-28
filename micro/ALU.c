@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include "ALU.h"
 
 void ADD(unsigned long int *Rd, unsigned long int Rm,unsigned long int Rn,unsigned int *banderas) //tipo_opercion=1
@@ -7,8 +8,9 @@ void ADD(unsigned long int *Rd, unsigned long int Rm,unsigned long int Rn,unsign
     actualizar(1,Rm,Rn,banderas);//actualizamos las banderas
     *Rd=Rn+Rm;
 }
-void SUB(unsigned long int *Rd, unsigned long int Rm,unsigned long int Rn)  //tipo_opercion=2
+void SUB(unsigned long int *Rd, unsigned long int Rm,unsigned long int Rn,unsigned int *banderas)  //tipo_opercion=2
 {
+    actualizar(2,Rm,Rn,banderas);//actualizamos las banderas
     *Rd=(Rm-Rn);
 }
 void BIC(unsigned long int *Rd, unsigned long int Rm,unsigned long int Rn)  //tipo_opercion=3
@@ -23,11 +25,13 @@ void MOV(unsigned long int *Rm, unsigned long int Rn)   //tipo_opercion=5
 {
     *Rm=Rn;
 }
-void actualizar(unsigned int tipo_operacion,unsigned long int Rn,unsigned long int Rm,unsigned int *banderas)
+void actualizar(unsigned int tipo_operacion,unsigned long int Rm,unsigned long int Rn,unsigned int *banderas)
 {
     if((tipo_operacion==1)) //se identifica la operacion aritmeticologica
     {
-        if((Rn+Rm)<0)
+        unsigned long int R;
+        R=Rn+Rm;
+        if(R>=pow(2,31))
         {
             *banderas=1;    //*banderas es la bandera N del arreglo
         }
@@ -36,7 +40,7 @@ void actualizar(unsigned int tipo_operacion,unsigned long int Rn,unsigned long i
             *banderas=0;
 
         }
-        if((Rn+Rm)==0)
+        if(R==0)
         {
             *(banderas+1)=1;// avanzamos una posicion en memoria y le asignamos el valor
         }
@@ -44,10 +48,16 @@ void actualizar(unsigned int tipo_operacion,unsigned long int Rn,unsigned long i
         {
             *(banderas+1)=0; //*(banderas+1) es la bandera C del arreglo
         }
+        if(((Rn>=pow(2,31))&&(Rm>=pow(2,31)))||((Rm>=pow(2,31))&&(Rn<pow(2,31))&&(R<pow(2,31)))||((Rn>=pow(2,31))&&(Rm<pow(2,31))&&(R<pow(2,31))))//condicion pasa reconoser el acarreo
+        {
+            *(banderas+2)=1; //*(banderas+2) es la bandera de acarreo
+        }
+        else
+        {
+            *(banderas+2)=0;
+        }
 
-
-
-        if((((Rn<<31)==1)&&((Rm<<31)==1)&&((Rn+Rm)<<31==0))||(((Rn<<31)==0)&&((Rm<<31)==0)&&((Rn+Rm)<<31==1)))  //se esta comparando si los bits mas significativos son iguales
+        if(((Rn>=pow(2,31))&&(Rm>=pow(2,31))&&(R<pow(2,31)))||((Rn<pow(2,31))&&(Rm<pow(2,31))&&(R>=pow(2,31))))  //condicion para reconocer el sobreflujo
         {
             *(banderas+3)=1;  //*(banderas+3) es la bandera u del arreglo                                         y bit mas significativo del resultado es diferente.
         }
@@ -56,6 +66,29 @@ void actualizar(unsigned int tipo_operacion,unsigned long int Rn,unsigned long i
             *(banderas+3)=0;
         }
 
+    }
+    if((tipo_operacion==2)) //se identifica la operacion aritmeticologica
+    {
+        unsigned long int R;
+        R=Rm-Rn;
+        if(R>=pow(2,31))
+        {
+            *banderas=1;    //*banderas es la bandera N del arreglo
+        }
+        else
+        {
+            *banderas=0;
+
+        }
+        if(R==0)
+        {
+            *(banderas+1)=1; //*(banderas+1 es la bandera Z del arreglo)
+        }
+        else
+        {
+            *(banderas+1)=0;
+        }
+        // faltan mas banderas de la resta
     }
 }
 
