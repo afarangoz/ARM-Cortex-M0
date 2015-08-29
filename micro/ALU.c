@@ -1,35 +1,36 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include<stdint.h>
 #include <math.h>
 #include "ALU.h"
 
-void ADD(unsigned long int *Rd, unsigned long int Rm,unsigned long int Rn,unsigned int *banderas) //tipo_opercion=1
+void ADD(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas) //tipo_opercion=1
 {
     actualizar(1,Rm,Rn,banderas);//actualizamos las banderas
     *Rd=Rn+Rm;
 }
-void SUB(unsigned long int *Rd, unsigned long int Rm,unsigned long int Rn,unsigned int *banderas)  //tipo_opercion=2
+void SUB(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas)  //tipo_opercion=2
 {
     actualizar(2,Rm,Rn,banderas);//actualizamos las banderas
     *Rd=(Rm-Rn);
 }
-void BIC(unsigned long int *Rd, unsigned long int Rm,unsigned long int Rn)  //tipo_opercion=3
+void AND(uint32_t *Rd, uint32_t Rm,uint32_t Rn)  //tipo_opercion=3
 {
     *Rd=(Rm&Rn);
 }
-void OR(unsigned long int *Rd, unsigned long int Rm,unsigned long int Rn)   //tipo_opercion=4
+void ORR(uint32_t *Rd, uint32_t Rm,uint32_t Rn)   //tipo_opercion=4
 {
     *Rd=(Rm|Rn);
 }
-void MOV(unsigned long int *Rm, unsigned long int Rn)   //tipo_opercion=5
+void MOV(uint32_t *Rm, uint32_t Rn)   //tipo_opercion=5
 {
     *Rm=Rn;
 }
-void actualizar(unsigned int tipo_operacion,unsigned long int Rm,unsigned long int Rn,unsigned int *banderas)
+void actualizar(unsigned int tipo_operacion,uint32_t Rm,uint32_t Rn,unsigned int *banderas)
 {
     if((tipo_operacion==1)) //se identifica la operacion aritmeticologica
     {
-        unsigned long int R;
+        uint32_t R;
         R=Rn+Rm;
         if(R>=pow(2,31))
         {
@@ -69,7 +70,7 @@ void actualizar(unsigned int tipo_operacion,unsigned long int Rm,unsigned long i
     }
     if((tipo_operacion==2)) //se identifica la operacion aritmeticologica
     {
-        unsigned long int R;
+        uint32_t R;
         R=Rm-Rn;
         if(R>=pow(2,31))
         {
