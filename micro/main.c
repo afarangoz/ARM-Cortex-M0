@@ -19,7 +19,6 @@ int main()
     Reg[1]=pow(2,31);
     Reg[2]=0;
     Reg[4]=Reg[2];
-    ASR(&Reg[3],Reg[1],3);
     mostrar_registros(Reg);
     unsigned int i;
     for(i=0;i<=3;i++)
