@@ -2,3 +2,4 @@
 
 Andres Felipe Arango Zamora
 Julian David Chilatra
+Cristian David Arredondo
