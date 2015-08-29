@@ -48,6 +48,43 @@ void MOV(uint32_t *Rm, uint32_t Rn);
 
 
 /**
+* \brief funcion para ejecutar una AND entre un registro y el negado del otro
+* \param Rn Registro de entrada
+* \param Rm Registro de entrada
+* \param *Rd lugar donde se almacenara el resultado.
+* \return no hay retorno
+*/
+void BIC(uint32_t *Rd,uint32_t Rm,uint32_t Rn);
+
+
+/**
+* \brief funcion para ejecutar una exclusive OR de Rm y Rn
+* \param Rn Registro de entrada
+* \param Rm Registro de entrada
+* \param *Rd lugar donde se almacenara el resultado.
+* \return no hay retorno
+*/
+void EOR(uint32_t *Rd,uint32_t Rm,uint32_t Rn);
+
+
+/**
+* \brief funcion para ejecutar la operacion logica NOT a Rm
+* \param Rm Registro de entrada
+* \param *Rd lugar donde se almacenara el resultado.
+* \return no hay retorno
+*/
+void MVN(uint32_t *Rd,uint32_t Rm);
+
+
+/**
+* \brief funcion para no hacer nada
+* \param no tiene parametros de entrada
+* \return no hay retorno
+*/
+void NOP();
+
+
+/**
 * \brief funcion para actualizar las banderas del microprocesador
 * \param tipo_opercion a cada funcion se le asigna un entero en el .c de la libreria y esto indica que tipo de operacion aritmetico logica se efectua
 * \param Rn Registro de entrada de la operacion aritmetico logica

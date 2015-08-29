@@ -26,6 +26,22 @@ void MOV(uint32_t *Rm, uint32_t Rn)   //tipo_opercion=5
 {
     *Rm=Rn;
 }
+void BIC(uint32_t *Rd,uint32_t Rm,uint32_t Rn)
+{
+    *Rd=Rm&(~Rn);
+}
+void EOR(uint32_t *Rd,uint32_t Rm,uint32_t Rn)
+{
+    *Rd=Rm^Rn;
+}
+void MVN(uint32_t *Rd,uint32_t Rm)
+{
+    *Rd=~Rm;
+}
+void NOP()
+{
+
+}
 void actualizar(unsigned int tipo_operacion,uint32_t Rm,uint32_t Rn,unsigned int *banderas)
 {
     if((tipo_operacion==1)) //se identifica la operacion aritmeticologica
