@@ -6,5 +6,5 @@
 */
 
 //=======
-void mostrar_registros(unsigned long registro[13]);
+void mostrar_registros(uint32_t registro[13]);
 //>>>>>>> bd69f40820c1faee386bd8dc906150df923ae255

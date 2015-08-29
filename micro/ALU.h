@@ -5,7 +5,7 @@
 * \param *Rd lugar donde se almacenara el resultado
 * \return no hay retorno
 */
-void ADD(unsigned long int *Rd, unsigned long int Rm,unsigned long int Rn,unsigned int *banderas);
+void ADD(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas);
 
 
 /**
@@ -15,7 +15,7 @@ void ADD(unsigned long int *Rd, unsigned long int Rm,unsigned long int Rn,unsign
 * \param *Rd lugar donde se almacenara el resultado
 * \return no hay retorno
 */
-void SUB(unsigned long int *Rd, unsigned long int Rm,unsigned long int Rn,unsigned int *banderas);
+void SUB(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas);
 
 
 /**
@@ -25,7 +25,7 @@ void SUB(unsigned long int *Rd, unsigned long int Rm,unsigned long int Rn,unsign
 * \param *Rd lugar donde se almacenara el resultado
 * \return no hay retorno
 */
-void BIC(unsigned long int *Rd, unsigned long int Rm,unsigned long int Rn);
+void AND(uint32_t *Rd, uint32_t Rm,uint32_t Rn);
 
 
 /**
@@ -35,7 +35,7 @@ void BIC(unsigned long int *Rd, unsigned long int Rm,unsigned long int Rn);
 * \param *Rd lugar donde se almacenara el resultado
 * \return no hay retorno
 */
-void OR(unsigned long int *Rd, unsigned long int Rm,unsigned long int Rn);
+void ORR(uint32_t *Rd, uint32_t Rm,uint32_t Rn);
 
 
 /**
@@ -44,7 +44,7 @@ void OR(unsigned long int *Rd, unsigned long int Rm,unsigned long int Rn);
 * \param *Rm lugar donde se almacenara el resultado.
 * \return no hay retorno
 */
-void MOV(unsigned long int *Rm, unsigned long int Rn);
+void MOV(uint32_t *Rm, uint32_t Rn);
 
 
 /**
@@ -55,7 +55,7 @@ void MOV(unsigned long int *Rm, unsigned long int Rn);
 * \param *banderas es el valor de la posicion cero en el arreglo banderas
 * \return no hay retorno
 */
-void actualizar(unsigned int tipo_operacion,unsigned long int Rn,unsigned long int Rm,unsigned int *banderas);
+void actualizar(uint32_t tipo_operacion,uint32_t Rn,uint32_t Rm,uint32_t *banderas);
 
 
 
