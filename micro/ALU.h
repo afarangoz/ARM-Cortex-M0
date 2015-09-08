@@ -89,10 +89,11 @@ void NOP();
 * \param tipo_opercion a cada funcion se le asigna un entero en el .c de la libreria y esto indica que tipo de operacion aritmetico logica se efectua
 * \param Rn Registro de entrada de la operacion aritmetico logica
 * \param Rm Registro de entrada de la operacion aritmetico logica
+* \param *Rd es la direccion donde se guarda el resultado de la operacion que se hizo
 * \param *banderas es el valor de la posicion cero en el arreglo banderas
 * \return no hay retorno
 */
-void actualizar(uint32_t tipo_operacion,uint32_t Rn,uint32_t Rm,uint32_t *banderas);
+void actualizar(uint32_t tipo_operacion,uint32_t Rn,uint32_t Rm,uint32_t Rd,uint32_t *banderas);
 
 
 
