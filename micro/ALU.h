@@ -3,6 +3,7 @@
 * \param Rn Registro de entrada
 * \param Rm registro de entrada
 * \param *Rd lugar donde se almacenara el resultado
+* \param *banderas direccion de memoria de la bandera cero "N"
 * \return no hay retorno
 */
 void ADD(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas);
@@ -13,6 +14,7 @@ void ADD(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas);
 * \param Rn Registro de entrada
 * \param Rm registro de entrada
 * \param *Rd lugar donde se almacenara el resultado
+* \param *banderas direccion de memoria de la bandera cero "N"
 * \return no hay retorno
 */
 void SUB(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas);
@@ -23,9 +25,10 @@ void SUB(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas);
 * \param Rn Registro de entrada
 * \param Rm registro de entrada
 * \param *Rd lugar donde se almacenara el resultado
+* \param *banderas direccion de memoria de la bandera cero "N"
 * \return no hay retorno
 */
-void AND(uint32_t *Rd, uint32_t Rm,uint32_t Rn);
+void AND(uint32_t *Rd, uint32_t Rm,uint32_t Rn, uint32_t *banderas);
 
 
 /**
@@ -33,6 +36,7 @@ void AND(uint32_t *Rd, uint32_t Rm,uint32_t Rn);
 * \param Rn Registro de entrada
 * \param Rm Registro de entrada
 * \param *Rd lugar donde se almacenara el resultado
+* \param *banderas direccion de memoria de la bandera cero "N"
 * \return no hay retorno
 */
 void ORR(uint32_t *Rd, uint32_t Rm,uint32_t Rn);
@@ -42,6 +46,7 @@ void ORR(uint32_t *Rd, uint32_t Rm,uint32_t Rn);
 * \brief funcion que mueve datos de un registro a otro
 * \param Rn Registro de entrada
 * \param *Rm lugar donde se almacenara el resultado.
+* \param *banderas direccion de memoria de la bandera cero "N"
 * \return no hay retorno
 */
 void MOV(uint32_t *Rm, uint32_t Rn);
@@ -52,6 +57,7 @@ void MOV(uint32_t *Rm, uint32_t Rn);
 * \param Rn Registro de entrada
 * \param Rm Registro de entrada
 * \param *Rd lugar donde se almacenara el resultado.
+* \param *banderas direccion de memoria de la bandera cero "N"
 * \return no hay retorno
 */
 void BIC(uint32_t *Rd,uint32_t Rm,uint32_t Rn);
@@ -62,6 +68,7 @@ void BIC(uint32_t *Rd,uint32_t Rm,uint32_t Rn);
 * \param Rn Registro de entrada
 * \param Rm Registro de entrada
 * \param *Rd lugar donde se almacenara el resultado.
+* \param *banderas direccion de memoria de la bandera cero "N"
 * \return no hay retorno
 */
 void EOR(uint32_t *Rd,uint32_t Rm,uint32_t Rn);
@@ -85,6 +92,36 @@ void NOP();
 
 
 /**
+* \brief funcion sumar pero no guarda el valor pero no actualiza banderas
+* \param Rn Registro de entrada
+* \param Rm registro de entrada
+* \param *banderas direccion de memoria de la bandera cero "N"
+* \return no hay retorno
+*/
+void CMN(uint32_t Rm,uint32_t Rn,uint32_t *banderas);
+
+
+/**
+* \brief funcion restar pero no guarda el valor solo actualiza banderas
+* \param Rn Registro de entrada
+* \param Rm registro de entrada
+* \param *banderas direccion de memoria de la bandera cero "N"
+* \return no hay retorno
+*/
+void CMP(uint32_t Rm,uint32_t Rn,uint32_t *banderas);
+
+
+/**
+* \brief funcion realiza la operacion AND pero no guarda el valor solo actualiza banderas
+* \param Rn Registro de entrada
+* \param Rm registro de entrada
+* \param *banderas direccion de memoria de la bandera cero "N"
+* \return no hay retorno
+*/
+void TST(uint32_t Rm,uint32_t Rn,uint32_t *banderas);
+
+
+/**
 * \brief funcion para actualizar las banderas del microprocesador
 * \param tipo_opercion a cada funcion se le asigna un entero en el .c de la libreria y esto indica que tipo de operacion aritmetico logica se efectua
 * \param Rn Registro de entrada de la operacion aritmetico logica
@@ -93,7 +130,9 @@ void NOP();
 * \param *banderas es el valor de la posicion cero en el arreglo banderas
 * \return no hay retorno
 */
-void actualizar(uint32_t tipo_operacion,uint32_t Rn,uint32_t Rm,uint32_t Rd,uint32_t *banderas);
+void actualizar(uint32_t tipo_operacion,uint32_t Rm,uint32_t Rn,uint32_t Rd,uint32_t *banderas);
+
+
 
 
 

@@ -13,10 +13,10 @@ void ADD(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas) //tipo_operci
 void SUB(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas)  //tipo_opercion=2
 {
     *Rd=(Rm-Rn);
-    actualizar(2,Rm,Rn,Rd,banderas);//actualizamos las banderas
+    actualizar(2,Rm,Rn,*Rd,banderas);//actualizamos las banderas
 
 }
-void AND(uint32_t *Rd, uint32_t Rm,uint32_t Rn)  //tipo_opercion=3
+void AND(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas)  //tipo_opercion=3
 {
     *Rd=(Rm&Rn);
 }
@@ -44,7 +44,19 @@ void NOP()
 {
 
 }
-void actualizar(unsigned int tipo_operacion,uint32_t Rm,uint32_t Rn, unsigned int Rd, unsigned int *banderas)
+void CMN(uint32_t Rm,uint32_t Rn,uint32_t *banderas)
+{
+    actualizar(1,Rm,Rn,Rm+Rn,banderas);  //el primer parametro es uno ya que es una suma
+}
+void CMP(uint32_t Rm,uint32_t Rn,uint32_t *banderas)
+{
+    actualizar(2,Rm,Rn,Rm-Rn,banderas);
+}
+void TST(uint32_t Rm,uint32_t Rn,uint32_t *banderas)
+{
+    uint32_t R=Rm*Rn;
+}
+void actualizar(uint32_t tipo_operacion,uint32_t Rm,uint32_t Rn, uint32_t Rd, uint32_t *banderas)
 {
     if(Rd==0)
         {
@@ -91,8 +103,7 @@ void actualizar(unsigned int tipo_operacion,uint32_t Rm,uint32_t Rn, unsigned in
     }
     if((tipo_operacion==2)) //se identifica la operacion aritmeticologica
     {
-        uint32_t R;
-        R=Rm-Rn;
+
 
         // faltan mas banderas de la resta
     }
