@@ -23,3 +23,26 @@ void ASR(uint32_t *Rd,uint32_t Rm,uint32_t num)
     Rm=Rm>>num;             //se ejecuta el desplazamiento normal
     *Rd=*Rd+Rm;             //se suman los resultados anterirores para recuperar el signo
 }
+void REV(uint32_t *Rd,uint32_t Rm)
+{
+    uint32_t AUX;
+    *Rd=Rm<<24;
+    AUX=Rm>>24;
+    *Rd=*Rd|AUX;
+    AUX=Rm<<8;
+    AUX=AUX>>24;
+    AUX=AUX<<8;
+    *Rd=*Rd|AUX;
+    AUX=Rm<<16;
+    AUX=AUX>>24;
+    AUX=AUX<<16;
+    *Rd=*Rd|AUX;
+}
+void REV16(uint32_t *Rd,uint32_t Rm)
+{
+    uint32_t AUX;
+    *Rd=Rm<<16;
+    AUX=Rm>>16;
+    *Rd=*Rd|AUX;
+}
+

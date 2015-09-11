@@ -17,11 +17,13 @@ int main()
                                         //[3] es V es 1 si hubo sobreflujo es la operacion
     mostrar_registros(Reg);
     mostrar_banderas(banderas);
-    getch();	/* Espera entrada del usuario */
+    getch();	// Espera entrada del usuario
 	clear();
 
 	Reg[0]=15;
     Reg[1]=-15;
+    REV(&Reg[1],Reg[2]);
+    REV16(&Reg[1],Reg[2]);
     ADD(&Reg[2], Reg[0],Reg[1],&banderas[0]);
     mostrar_registros(Reg);
     mostrar_banderas(banderas);
@@ -41,3 +43,4 @@ int main()
 
     return 0;
 }
+
