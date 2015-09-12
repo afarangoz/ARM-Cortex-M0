@@ -3,23 +3,21 @@
 #include <stdlib.h>
 #include<stdint.h>
 #include "registros.h"
+#include "desplazamiento.h"
 #include "ALU.h"
-#include <math.h>
 #include <curses.h>
 #include <string.h>
 
 int main()
 {
     char op[5];
-    uint32_t Reg[13]={0,0,0,0,0,0,0,0,0,0,0};
+    uint32_t Reg[13]={128,0,0,0,0,0,0,0,0,0,0};
     uint32_t banderas[4]={0,0,0,0}; //estas son las banderas del microprocesador las posiciones indican la bandera
                                         //[0] es N es 1 si el resultado es negatico
                                         //[1] es Z es 1 si el resultado es cero
                                         //[2] es C es 1 si hay acarreo en la operacion aritmetica
                                         //[3] es V es 1 si hubo sobreflujo es la operacion
 
-    REV(&Reg[1],Reg[2]);
-    REV16(&Reg[1],Reg[2]);
 
     mostrar_registros(Reg);
     mostrar_banderas(banderas);
@@ -34,7 +32,7 @@ int main()
 	clear();
 
 	Reg[0]=15;
-    Reg[1]=-15;
+    Reg[1]=15;
 
     SUB(&Reg[2], Reg[0],Reg[1],&banderas[0],&op[0]);
     mostrar_registros(Reg);
@@ -43,6 +41,8 @@ int main()
 	getch();
 	clear();
 
+    Reg[0]=-1;
+    Reg[1]=3;
     AND(&Reg[2], Reg[0],Reg[1],&banderas[0],&op[0]);
     mostrar_registros(Reg);
     mostrar_banderas(banderas);
