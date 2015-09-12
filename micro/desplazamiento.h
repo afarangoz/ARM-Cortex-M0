@@ -57,7 +57,7 @@ void REV16(uint32_t *Rd,uint32_t Rm);
 
 
 /**
-* \brief funcion para desplazar paquetes de 16 bits
+* \brief funcion para intercambiar los dos byts menos significativos.
 * \param *Rd variable donde se almacena el desplazamiento
 * \param Rm registro que se desplazara
 * \return no hay retorno

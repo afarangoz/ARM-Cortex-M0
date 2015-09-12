@@ -45,4 +45,23 @@ void REV16(uint32_t *Rd,uint32_t Rm)
     AUX=Rm>>16;
     *Rd=*Rd|AUX;
 }
+void REVSH(uint32_t *Rd,uint32_t Rm)
+{
+    uint32_t AUX;
+
+    *Rd=(Rm<<24);
+    *Rd=*Rd>>16;
+    AUX=Rm<<16;
+    AUX=AUX>>24;
+    *Rd=*Rd|AUX;
+    AUX=*Rd&(1<<15);
+    if((AUX<<15))   //rellena los 16 bits mas significativos
+    {
+        AUX=0;
+        AUX=~AUX;
+        AUX=AUX<<16;
+        *Rd=*Rd|AUX;
+
+    }
+}
 
