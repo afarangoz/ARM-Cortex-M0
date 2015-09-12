@@ -6,7 +6,7 @@
 * \param *banderas direccion de memoria de la bandera cero "N"
 * \return no hay retorno
 */
-void ADD(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas);
+void ADD(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op);
 
 
 /**
@@ -17,7 +17,7 @@ void ADD(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas);
 * \param *banderas direccion de memoria de la bandera cero "N"
 * \return no hay retorno
 */
-void SUB(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas);
+void SUB(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op);
 
 
 /**
@@ -28,7 +28,7 @@ void SUB(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas);
 * \param *banderas direccion de memoria de la bandera cero "N"
 * \return no hay retorno
 */
-void AND(uint32_t *Rd, uint32_t Rm,uint32_t Rn, uint32_t *banderas);
+void AND(uint32_t *Rd, uint32_t Rm,uint32_t Rn, uint32_t *banderas,char *op);
 
 
 /**
@@ -39,7 +39,7 @@ void AND(uint32_t *Rd, uint32_t Rm,uint32_t Rn, uint32_t *banderas);
 * \param *banderas direccion de memoria de la bandera cero "N"
 * \return no hay retorno
 */
-void ORR(uint32_t *Rd, uint32_t Rm,uint32_t Rn);
+void ORR(uint32_t *Rd, uint32_t Rm,uint32_t Rn, uint32_t *banderas,char *op);
 
 
 /**
@@ -49,7 +49,7 @@ void ORR(uint32_t *Rd, uint32_t Rm,uint32_t Rn);
 * \param *banderas direccion de memoria de la bandera cero "N"
 * \return no hay retorno
 */
-void MOV(uint32_t *Rm, uint32_t Rn);
+void MOV(uint32_t *Rm, uint32_t Rn, uint32_t *banderas,char *op);
 
 
 /**
@@ -60,7 +60,7 @@ void MOV(uint32_t *Rm, uint32_t Rn);
 * \param *banderas direccion de memoria de la bandera cero "N"
 * \return no hay retorno
 */
-void BIC(uint32_t *Rd,uint32_t Rm,uint32_t Rn);
+void BIC(uint32_t *Rd,uint32_t Rm,uint32_t Rn, uint32_t *banderas,char *op);
 
 
 /**
@@ -71,7 +71,7 @@ void BIC(uint32_t *Rd,uint32_t Rm,uint32_t Rn);
 * \param *banderas direccion de memoria de la bandera cero "N"
 * \return no hay retorno
 */
-void EOR(uint32_t *Rd,uint32_t Rm,uint32_t Rn);
+void EOR(uint32_t *Rd,uint32_t Rm,uint32_t Rn, uint32_t *banderas,char *op);
 
 
 /**
@@ -80,7 +80,7 @@ void EOR(uint32_t *Rd,uint32_t Rm,uint32_t Rn);
 * \param *Rd lugar donde se almacenara el resultado.
 * \return no hay retorno
 */
-void MVN(uint32_t *Rd,uint32_t Rm);
+void MVN(uint32_t *Rd,uint32_t Rm, uint32_t *banderas,char *op);
 
 
 /**
@@ -88,7 +88,7 @@ void MVN(uint32_t *Rd,uint32_t Rm);
 * \param no tiene parametros de entrada
 * \return no hay retorno
 */
-void NOP();
+void NOP(uint32_t *banderas,char *op);
 
 
 /**
@@ -98,7 +98,7 @@ void NOP();
 * \param *banderas direccion de memoria de la bandera cero "N"
 * \return no hay retorno
 */
-void CMN(uint32_t Rm,uint32_t Rn,uint32_t *banderas);
+void CMN(uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op);
 
 
 /**
@@ -108,7 +108,7 @@ void CMN(uint32_t Rm,uint32_t Rn,uint32_t *banderas);
 * \param *banderas direccion de memoria de la bandera cero "N"
 * \return no hay retorno
 */
-void CMP(uint32_t Rm,uint32_t Rn,uint32_t *banderas);
+void CMP(uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op);
 
 
 /**
@@ -118,7 +118,7 @@ void CMP(uint32_t Rm,uint32_t Rn,uint32_t *banderas);
 * \param *banderas direccion de memoria de la bandera cero "N"
 * \return no hay retorno
 */
-void TST(uint32_t Rm,uint32_t Rn,uint32_t *banderas);
+void TST(uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op);
 
 
 /**

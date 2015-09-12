@@ -3,59 +3,80 @@
 #include<stdint.h>
 #include <math.h>
 #include "ALU.h"
+#include <string.h>
 
-void ADD(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas) //tipo_opercion=1
+void ADD(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op) //tipo_opercion=1
 {
     *Rd=Rn+Rm;
     actualizar(1,Rm,Rn,*Rd,banderas);//actualizamos las banderas
+    strcpy(op, "ADD");
+
 
 }
-void SUB(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas)  //tipo_opercion=2
+void SUB(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op)  //tipo_opercion=2
 {
     *Rd=(Rm-Rn);
     actualizar(2,Rm,Rn,*Rd,banderas);//actualizamos las banderas
+    strcpy(op, "SUB");
 
 }
-void AND(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas)  //tipo_opercion=3
+
+void AND(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op)  //tipo_opercion=3
 {
     *Rd=(Rm&Rn);
+    strcpy(op, "AND");
 }
-void ORR(uint32_t *Rd, uint32_t Rm,uint32_t Rn)   //tipo_opercion=4
+
+void ORR(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op)   //tipo_opercion=4
 {
     *Rd=(Rm|Rn);
+    strcpy(op, "ORR");
 }
-void MOV(uint32_t *Rm, uint32_t Rn)   //tipo_opercion=5
+
+void MOV(uint32_t *Rm, uint32_t Rn,uint32_t *banderas,char *op)   //tipo_opercion=5
 {
     *Rm=Rn;
+    strcpy(op, "MOV");
 }
-void BIC(uint32_t *Rd,uint32_t Rm,uint32_t Rn)
+
+void BIC(uint32_t *Rd,uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op)
 {
     *Rd=Rm&(~Rn);
+    strcpy(op, "BIC");
 }
-void EOR(uint32_t *Rd,uint32_t Rm,uint32_t Rn)
+
+void EOR(uint32_t *Rd,uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op)
 {
     *Rd=Rm^Rn;
+    strcpy(op, "EOR");
 }
-void MVN(uint32_t *Rd,uint32_t Rm)
+
+void MVN(uint32_t *Rd,uint32_t Rm,uint32_t *banderas,char *op)
 {
     *Rd=~Rm;
+    strcpy(op, "MVN");
 }
-void NOP()
-{
 
+void NOP(uint32_t *banderas,char *op)
+{
+    strcpy(op, "NOP");
 }
-void CMN(uint32_t Rm,uint32_t Rn,uint32_t *banderas)
+
+void CMN(uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op)
 {
     actualizar(1,Rm,Rn,Rm+Rn,banderas);  //el primer parametro es uno ya que es una suma
 }
-void CMP(uint32_t Rm,uint32_t Rn,uint32_t *banderas)
+
+void CMP(uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op)
 {
     actualizar(2,Rm,Rn,Rm-Rn,banderas);
 }
-void TST(uint32_t Rm,uint32_t Rn,uint32_t *banderas)
+
+void TST(uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op)
 {
     uint32_t R=Rm*Rn;
 }
+
 void actualizar(uint32_t tipo_operacion,uint32_t Rm,uint32_t Rn, uint32_t Rd, uint32_t *banderas)
 {
     if(Rd==0)

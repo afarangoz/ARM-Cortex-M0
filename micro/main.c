@@ -1,4 +1,4 @@
-#include <stdio.h>
+/*#include <stdio.h>
 #include <stdlib.h>
 
 #include <stdio.h>
@@ -44,5 +44,5 @@ int main()
 	endwin();	// Finaliza el modo curses
 
     return 0;
-}
+}*/
 
