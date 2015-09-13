@@ -41,8 +41,7 @@ int main()
 	getch();
 	clear();
 
-    Reg[0]=-1;
-    Reg[1]=3;
+
     AND(&Reg[2], Reg[0],Reg[1],&banderas[0],&op[0]);
     mostrar_registros(Reg);
     mostrar_banderas(banderas);

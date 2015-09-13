@@ -28,8 +28,8 @@ void AND(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op)  //t
 {
     *Rd=(Rm&Rn);
     ACTNZ(Rd,banderas,op);  //se actualizan las banderas N y Z
-    //AND no actualiza acarreo
-    //falta actualizar sobreflujo
+                            //AND no actualiza acarreo
+                            //falta actualizar sobreflujo
     strcpy(op, "AND");
 }
 
@@ -44,7 +44,7 @@ void MOV(uint32_t *Rm, uint32_t Rn,uint32_t *banderas,char *op)   //tipo_opercio
 {
     *Rm=Rn;
     ACTNZ(Rm,banderas,op);  //se actualizan las banderas N y Z
-    //no se actualizan las demas vanderas
+                            //no se actualizan las demas vanderas
     strcpy(op, "MOV");
 }
 
@@ -78,18 +78,21 @@ void CMN(uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op)
 {
     uint32_t Rd;
     ADD(&Rd,Rm,Rn,banderas,op);
+    strcpy(op, "CMN");
 }
 
 void CMP(uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op)
 {
     uint32_t Rd;
     ADD(&Rd,Rm,Rn,banderas,op);
+    strcpy(op, "CMP");
 }
 
 void TST(uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op)
 {
     uint32_t Rd;
     AND(&Rd,Rm,Rn,banderas,op);
+    strcpy(op, "TST");
 }
 void ACTNZ(uint32_t *Rd,uint32_t *banderas,char *op)
 {
