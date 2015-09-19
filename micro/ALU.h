@@ -14,7 +14,7 @@ void ADCS(uint32_t *Rd,uint32_t Rm,uint32_t Rn,uint32_t *banderas);
 * \param Rn Registro de entrada
 * \param Rm registro de entrada
 * \param *Rd lugar donde se almacenara el resultado
-* \param *banderas
+* \param *banderas  direccion de memoria de la bandera cero "N"
 * \return no hay retorno
 */
 void ADDS(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas);
@@ -45,7 +45,6 @@ void ANDS(uint32_t *Rd, uint32_t Rm,uint32_t Rn, uint32_t *banderas);
 * \param Rm Registro de entrada
 * \param *Rd lugar donde se almacenara el resultado.
 * \param *banderas direccion de memoria de la bandera cero "N"
-* \param *op se identifica la operacion
 * \return no hay retorno
 */
 void BICS(uint32_t *Rd,uint32_t Rm,uint32_t Rn, uint32_t *banderas);
@@ -109,8 +108,7 @@ void MULS(uint32_t *Rd,uint32_t Rm,uint32_t Rn,uint32_t *banderas);
 /**
 * \brief funcion para ejecutar la operacion logica NOT a Rm
 * \param Rm Registro de entrada
-* \param *Rd lugar donde se almacenara el resultado.
-* \param *op se identifica la operacion
+* \param *Rd lugar donde se almacenara el resultado
 * \return no hay retorno
 */
 void MVNS(uint32_t *Rd,uint32_t Rm, uint32_t *banderas);
@@ -184,7 +182,6 @@ void TST(uint32_t Rm,uint32_t Rn,uint32_t *banderas);
 * \brief funcion que actualiza las banderas N y Z
 * \param *Rd resultado
 * \param *banderas direccion de memoria de la bandera cero "N"
-* \param *op se identifica la operacion
 * \return no hay retorno
 */
 void ACTNZ(uint32_t *Rd,uint32_t *banderas);
