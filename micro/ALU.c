@@ -4,10 +4,11 @@
 #include "ALU.h"
 #include <string.h>
 
-void ADD(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op) //tipo_opercion=1
+void ADDS(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas) //tipo_opercion=1
 {
     *Rd=Rn+Rm;
-    ACTNZ(Rd,banderas,op);  //se actualizan las banderas N y Z
+
+    ACTNZ(Rd,banderas);  //se actualizan las banderas N y Z
     if(((Rn>=(1<<31))&&(Rm>=(1<<31)))||((Rm>=(1<<31))&&(Rn<(1<<31))&&(*Rd<(1<<31)))||((Rn>=(1<<31))&&(Rm<(1<<31))&&(*Rd<(1<<31))))//condicion pasa reconoser el acarreo
         {*(banderas+2)=1;} //*(banderas+2) es la bandera de acarreo
     else
@@ -16,85 +17,90 @@ void ADD(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op) //ti
         {*(banderas+3)=1;}  //*(banderas+3) es la bandera u "sobreflujo" del arreglo                                         y bit mas significativo del resultado es diferente.
     else
         {*(banderas+3)=0;}
-    strcpy(op, "ADD");
-}
-void SUB(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op)  //tipo_opercion=2
-{
-    ADD(Rd,Rm,-Rn,banderas,op);  // se expresa la resta como una suma
-    strcpy(op, "SUB");
 }
 
-void AND(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op)  //tipo_opercion=3
+void ADD(uint32_t *Rd, uint32_t Rm,uint32_t Rn)
+{
+    *Rd=Rn+Rm;
+}
+
+void SUBS(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas)  //tipo_opercion=2
+{
+    ADDS(Rd,Rm,-Rn,banderas);  // se expresa la resta como una suma
+}
+
+void SUB(uint32_t *Rd, uint32_t Rm,uint32_t Rn)  //tipo_opercion=2
+{
+    *Rd=Rm-Rn;
+}
+
+void ANDS(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas)  //tipo_opercion=3
 {
     *Rd=(Rm&Rn);
-    ACTNZ(Rd,banderas,op);  //se actualizan las banderas N y Z
-                            //AND no actualiza acarreo
-                            //falta actualizar sobreflujo
-    strcpy(op, "AND");
+    ACTNZ(Rd,banderas);  //se actualizan las banderas N y Z
+
 }
 
-void ORR(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op)   //tipo_opercion=4
+void ORRS(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas)   //tipo_opercion=4
 {
     *Rd=(Rm|Rn);
-    ACTNZ(Rd,banderas,op);  //se actualizan las banderas N y Z
-    strcpy(op, "ORR");
+    ACTNZ(Rd,banderas);  //se actualizan las banderas N y Z
 }
 
-void MOV(uint32_t *Rm, uint32_t Rn,uint32_t *banderas,char *op)   //tipo_opercion=5
+void MOVS(uint32_t *Rm, uint32_t Rn,uint32_t *banderas)   //tipo_opercion=5
 {
     *Rm=Rn;
-    ACTNZ(Rm,banderas,op);  //se actualizan las banderas N y Z
-                            //no se actualizan las demas vanderas
-    strcpy(op, "MOV");
+    ACTNZ(Rm,banderas);
 }
 
-void BIC(uint32_t *Rd,uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op)
+void MOV(uint32_t *Rm, uint32_t Rn)   //tipo_opercion=5
+{
+    *Rm=Rn;
+}
+
+void BICS(uint32_t *Rd,uint32_t Rm,uint32_t Rn,uint32_t *banderas)
 {
     *Rd=Rm&(~Rn);
-    ACTNZ(Rd,banderas,op);  //se actualizan las banderas N y Z
-    strcpy(op, "BIC");
+    ACTNZ(Rd,banderas);  //se actualizan las banderas N y Z
 }
 
-void EOR(uint32_t *Rd,uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op)
+void EORS(uint32_t *Rd,uint32_t Rm,uint32_t Rn,uint32_t *banderas)
 {
     *Rd=Rm^Rn;
-    ACTNZ(Rd,banderas,op);  //se actualizan las banderas N y Z
-    strcpy(op, "EOR");
-}
+    ACTNZ(Rd,banderas);  //se actualizan las banderas  N y Z
+}                        // las otras banderas no se actualizan
 
-void MVN(uint32_t *Rd,uint32_t Rm,uint32_t *banderas,char *op)
+void MVNS(uint32_t *Rd,uint32_t Rm,uint32_t *banderas)
 {
     *Rd=~Rm;
-    ACTNZ(Rd,banderas,op);  //se actualizan las banderas N y Z
-    strcpy(op, "MVN");
+    ACTNZ(Rd,banderas);  //se actualizan las banderas N y Z
 }
 
-void NOP(uint32_t *banderas,char *op)
+void NOP()
 {
-    strcpy(op, "NOP");
+
 }
 
-void CMN(uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op)
-{
-    uint32_t Rd;
-    ADD(&Rd,Rm,Rn,banderas,op);
-    strcpy(op, "CMN");
-}
-
-void CMP(uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op)
+void CMN(uint32_t Rm,uint32_t Rn,uint32_t *banderas)
 {
     uint32_t Rd;
-    ADD(&Rd,Rm,Rn,banderas,op);
-    strcpy(op, "CMP");
+    ADDS(&Rd,Rm,Rn,banderas);
+    ADDS(&Rd,Rm,Rn,banderas);
 }
 
-void TST(uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op)
+void CMP(uint32_t Rm,uint32_t Rn,uint32_t *banderas)
 {
     uint32_t Rd;
-    AND(&Rd,Rm,Rn,banderas,op);
-    strcpy(op, "TST");
+    SUBS(&Rd,Rm,Rn,banderas);
 }
-void ACTNZ(uint32_t *Rd,uint32_t *banderas,char *op)
+
+void TST(uint32_t Rm,uint32_t Rn,uint32_t *banderas)
+{
+    uint32_t Rd;
+    ANDS(&Rd,Rm,Rn,banderas);
+}
+
+void ACTNZ(uint32_t *Rd,uint32_t *banderas)
 {
     if(*Rd&(1<<31))
         {*banderas=1;}    //*banderas es la bandera N del arreglo
@@ -104,26 +110,26 @@ void ACTNZ(uint32_t *Rd,uint32_t *banderas,char *op)
         {*(banderas+1)=1;}// avanzamos una posicion en memoria y le asignamos el valor
     else
         {*(banderas+1)=0;} //*(banderas+1) es la bandera C del arreglo
-    strcpy(op, "ACTNZ");
 }
-void ADC(uint32_t *Rd,uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op)
+void ADCS(uint32_t *Rd,uint32_t Rm,uint32_t Rn,uint32_t *banderas)
 {
-    ADD(Rd,Rm,Rn,banderas,op);              //tener encuenta que Rd es una direccion de memoria
-    ADD(Rd,*Rd,*(banderas+2),banderas,op);  //se efecta la suma con carry y se actualizan banderas
-    strcpy(op, "ADC");
+    ADDS(Rd,Rm,Rn,banderas);              //tener encuenta que Rd es una direccion de memoria
+    ADDS(Rd,*Rd,*(banderas+2),banderas);  //se efecta la suma con carry y se actualizan banderas
 }
-void SBC(uint32_t *Rd,uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op)
+
+void SBCS(uint32_t *Rd,uint32_t Rm,uint32_t Rn,uint32_t *banderas)
 {
-    SUB(Rd,Rm,Rn,banderas,op);              //tener encuenta que Rd es una direccion de memoria
-    SUB(Rd,*Rd,*(banderas+2),banderas,op);
-    strcpy(op, "SBC");
+    SUBS(Rd,Rm,Rn,banderas);              //tener encuenta que Rd es una direccion de memoria
+    SUBS(Rd,*Rd,*(banderas+2),banderas);  //actualiza banderas implicitamente
 }
-void RSB(uint32_t *Rd,uint32_t Rm,uint32_t *banderas,char *op)
+void RSBS(uint32_t *Rd,uint32_t Rm,uint32_t *banderas)   //complemento ados
 {
-    *Rd=(~Rm)+1;    //complemento a dos de un dato
+    ADDS(Rd,~Rm,1,banderas);
+    ACTNZ(Rd,banderas);
+
 }
-void MUL(uint32_t *Rd,uint32_t Rm,uint32_t Rn,uint32_t *banderas,char *op)
+void MULS(uint32_t *Rd,uint32_t Rm,uint32_t Rn,uint32_t *banderas)
 {
     *Rd=Rm*Rn;
-    ACTNZ(Rd,banderas,op);  //se actualizan las banderas N y Z
+    ACTNZ(Rd,banderas);  //se actualizan las banderas N y Z
 }

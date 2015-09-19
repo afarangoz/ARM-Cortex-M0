@@ -1,0 +1,197 @@
+\hypertarget{desplazamiento_8c}{}\section{desplazamiento.\+c File Reference}
+\label{desplazamiento_8c}\index{desplazamiento.\+c@{desplazamiento.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}desplazamiento.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+L\+U.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{desplazamiento_8c_a23e8e012c356cd8159821e2e68942d46}{L\+S\+L\+S} (uint32\+\_\+t $\ast$Rd, uint32\+\_\+t Rm, uint32\+\_\+t num, uint32\+\_\+t $\ast$banderas)
+\begin{DoxyCompactList}\small\item\em funcion para desplazar el dato Rm cierta cantidad de veces hacia la izquierda \end{DoxyCompactList}\item 
+void \hyperlink{desplazamiento_8c_a52b1ba9c93ceb275f082e05fbee47ab5}{L\+S\+R\+S} (uint32\+\_\+t $\ast$Rd, uint32\+\_\+t Rm, uint32\+\_\+t num, uint32\+\_\+t $\ast$banderas)
+\begin{DoxyCompactList}\small\item\em funcion para desplazar el dato Rm cierta cantidad de veces hacia la derecha \end{DoxyCompactList}\item 
+void \hyperlink{desplazamiento_8c_a0c0fe3ac4840656ea68a98dadff4fb21}{R\+O\+R\+S} (uint32\+\_\+t $\ast$Rd, uint32\+\_\+t Rm, uint32\+\_\+t num, uint32\+\_\+t $\ast$banderas)
+\begin{DoxyCompactList}\small\item\em funcion para rotar hacia la derecha un dato \end{DoxyCompactList}\item 
+void \hyperlink{desplazamiento_8c_a5b19824ae5d6585b715b917c400875cf}{A\+S\+R\+S} (uint32\+\_\+t $\ast$Rd, uint32\+\_\+t Rm, uint32\+\_\+t num, uint32\+\_\+t $\ast$banderas)
+\begin{DoxyCompactList}\small\item\em funcion para hacer un desplazamiento aritmetico a la derecha \end{DoxyCompactList}\item 
+void \hyperlink{desplazamiento_8c_a65b010a5425d5ef72c4391c38cd03b00}{R\+E\+V} (uint32\+\_\+t $\ast$Rd, uint32\+\_\+t Rm)
+\begin{DoxyCompactList}\small\item\em funcion para desplazar paquetes de 8 bits \end{DoxyCompactList}\item 
+void \hyperlink{desplazamiento_8c_ac914331c6a77680c43c0d83de8515ab9}{R\+E\+V16} (uint32\+\_\+t $\ast$Rd, uint32\+\_\+t Rm)
+\begin{DoxyCompactList}\small\item\em funcion para desplazar paquetes de 16 bits \end{DoxyCompactList}\item 
+void \hyperlink{desplazamiento_8c_a60e12fb2b25fa1c12ce1afd64548b9f3}{R\+E\+V\+S\+H} (uint32\+\_\+t $\ast$Rd, uint32\+\_\+t Rm)
+\begin{DoxyCompactList}\small\item\em funcion para intercambiar los dos byts menos significativos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{desplazamiento_8c_a5b19824ae5d6585b715b917c400875cf}{}\index{desplazamiento.\+c@{desplazamiento.\+c}!A\+S\+R\+S@{A\+S\+R\+S}}
+\index{A\+S\+R\+S@{A\+S\+R\+S}!desplazamiento.\+c@{desplazamiento.\+c}}
+\subsubsection[{A\+S\+R\+S(uint32\+\_\+t $\ast$\+Rd, uint32\+\_\+t Rm, uint32\+\_\+t num, uint32\+\_\+t $\ast$banderas)}]{\setlength{\rightskip}{0pt plus 5cm}void A\+S\+R\+S (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{Rd, }
+\item[{uint32\+\_\+t}]{Rm, }
+\item[{uint32\+\_\+t}]{num, }
+\item[{uint32\+\_\+t $\ast$}]{banderas}
+\end{DoxyParamCaption}
+)}\label{desplazamiento_8c_a5b19824ae5d6585b715b917c400875cf}
+
+
+funcion para hacer un desplazamiento aritmetico a la derecha 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$\+Rd} & variable donde se almacena el desplazamiento \\
+\hline
+{\em Rm} & registro que se desplazara \\
+\hline
+{\em num} & numero de bits que se desplazara \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+no hay retorno 
+\end{DoxyReturn}
+\hypertarget{desplazamiento_8c_a23e8e012c356cd8159821e2e68942d46}{}\index{desplazamiento.\+c@{desplazamiento.\+c}!L\+S\+L\+S@{L\+S\+L\+S}}
+\index{L\+S\+L\+S@{L\+S\+L\+S}!desplazamiento.\+c@{desplazamiento.\+c}}
+\subsubsection[{L\+S\+L\+S(uint32\+\_\+t $\ast$\+Rd, uint32\+\_\+t Rm, uint32\+\_\+t num, uint32\+\_\+t $\ast$banderas)}]{\setlength{\rightskip}{0pt plus 5cm}void L\+S\+L\+S (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{Rd, }
+\item[{uint32\+\_\+t}]{Rm, }
+\item[{uint32\+\_\+t}]{num, }
+\item[{uint32\+\_\+t $\ast$}]{banderas}
+\end{DoxyParamCaption}
+)}\label{desplazamiento_8c_a23e8e012c356cd8159821e2e68942d46}
+
+
+funcion para desplazar el dato Rm cierta cantidad de veces hacia la izquierda 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$\+Rd} & registro donde se guardara el dato desplazado \\
+\hline
+{\em Rm} & registro que se desplazara \\
+\hline
+{\em num} & numero de bits que se desplazara el dato Rm \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+no hay retorno 
+\end{DoxyReturn}
+\hypertarget{desplazamiento_8c_a52b1ba9c93ceb275f082e05fbee47ab5}{}\index{desplazamiento.\+c@{desplazamiento.\+c}!L\+S\+R\+S@{L\+S\+R\+S}}
+\index{L\+S\+R\+S@{L\+S\+R\+S}!desplazamiento.\+c@{desplazamiento.\+c}}
+\subsubsection[{L\+S\+R\+S(uint32\+\_\+t $\ast$\+Rd, uint32\+\_\+t Rm, uint32\+\_\+t num, uint32\+\_\+t $\ast$banderas)}]{\setlength{\rightskip}{0pt plus 5cm}void L\+S\+R\+S (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{Rd, }
+\item[{uint32\+\_\+t}]{Rm, }
+\item[{uint32\+\_\+t}]{num, }
+\item[{uint32\+\_\+t $\ast$}]{banderas}
+\end{DoxyParamCaption}
+)}\label{desplazamiento_8c_a52b1ba9c93ceb275f082e05fbee47ab5}
+
+
+funcion para desplazar el dato Rm cierta cantidad de veces hacia la derecha 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$\+Rd} & registro donde se guardara el dato desplazado \\
+\hline
+{\em Rm} & registro que se desplazara \\
+\hline
+{\em num} & numero de bits que se desplazara el dato Rm \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+no hay retorno 
+\end{DoxyReturn}
+\hypertarget{desplazamiento_8c_a65b010a5425d5ef72c4391c38cd03b00}{}\index{desplazamiento.\+c@{desplazamiento.\+c}!R\+E\+V@{R\+E\+V}}
+\index{R\+E\+V@{R\+E\+V}!desplazamiento.\+c@{desplazamiento.\+c}}
+\subsubsection[{R\+E\+V(uint32\+\_\+t $\ast$\+Rd, uint32\+\_\+t Rm)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+E\+V (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{Rd, }
+\item[{uint32\+\_\+t}]{Rm}
+\end{DoxyParamCaption}
+)}\label{desplazamiento_8c_a65b010a5425d5ef72c4391c38cd03b00}
+
+
+funcion para desplazar paquetes de 8 bits 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$\+Rd} & variable donde se almacena el desplazamiento \\
+\hline
+{\em Rm} & registro que se desplazara \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+no hay retorno 
+\end{DoxyReturn}
+\hypertarget{desplazamiento_8c_ac914331c6a77680c43c0d83de8515ab9}{}\index{desplazamiento.\+c@{desplazamiento.\+c}!R\+E\+V16@{R\+E\+V16}}
+\index{R\+E\+V16@{R\+E\+V16}!desplazamiento.\+c@{desplazamiento.\+c}}
+\subsubsection[{R\+E\+V16(uint32\+\_\+t $\ast$\+Rd, uint32\+\_\+t Rm)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+E\+V16 (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{Rd, }
+\item[{uint32\+\_\+t}]{Rm}
+\end{DoxyParamCaption}
+)}\label{desplazamiento_8c_ac914331c6a77680c43c0d83de8515ab9}
+
+
+funcion para desplazar paquetes de 16 bits 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$\+Rd} & variable donde se almacena el desplazamiento \\
+\hline
+{\em Rm} & registro que se desplazara \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+no hay retorno 
+\end{DoxyReturn}
+\hypertarget{desplazamiento_8c_a60e12fb2b25fa1c12ce1afd64548b9f3}{}\index{desplazamiento.\+c@{desplazamiento.\+c}!R\+E\+V\+S\+H@{R\+E\+V\+S\+H}}
+\index{R\+E\+V\+S\+H@{R\+E\+V\+S\+H}!desplazamiento.\+c@{desplazamiento.\+c}}
+\subsubsection[{R\+E\+V\+S\+H(uint32\+\_\+t $\ast$\+Rd, uint32\+\_\+t Rm)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+E\+V\+S\+H (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{Rd, }
+\item[{uint32\+\_\+t}]{Rm}
+\end{DoxyParamCaption}
+)}\label{desplazamiento_8c_a60e12fb2b25fa1c12ce1afd64548b9f3}
+
+
+funcion para intercambiar los dos byts menos significativos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$\+Rd} & variable donde se almacena el desplazamiento \\
+\hline
+{\em Rm} & registro que se desplazara \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+no hay retorno 
+\end{DoxyReturn}
+\hypertarget{desplazamiento_8c_a0c0fe3ac4840656ea68a98dadff4fb21}{}\index{desplazamiento.\+c@{desplazamiento.\+c}!R\+O\+R\+S@{R\+O\+R\+S}}
+\index{R\+O\+R\+S@{R\+O\+R\+S}!desplazamiento.\+c@{desplazamiento.\+c}}
+\subsubsection[{R\+O\+R\+S(uint32\+\_\+t $\ast$\+Rd, uint32\+\_\+t Rm, uint32\+\_\+t num, uint32\+\_\+t $\ast$banderas)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+O\+R\+S (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{Rd, }
+\item[{uint32\+\_\+t}]{Rm, }
+\item[{uint32\+\_\+t}]{num, }
+\item[{uint32\+\_\+t $\ast$}]{banderas}
+\end{DoxyParamCaption}
+)}\label{desplazamiento_8c_a0c0fe3ac4840656ea68a98dadff4fb21}
+
+
+funcion para rotar hacia la derecha un dato 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$\+Rd} & variable donde se almacena la rotacion \\
+\hline
+{\em Rm} & registro que se rotara \\
+\hline
+{\em num} & numero de bits que se rotara el dato Rm \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+no hay retorno 
+\end{DoxyReturn}

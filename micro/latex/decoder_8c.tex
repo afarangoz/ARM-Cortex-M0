@@ -1,0 +1,69 @@
+\hypertarget{decoder_8c}{}\section{decoder.\+c File Reference}
+\label{decoder_8c}\index{decoder.\+c@{decoder.\+c}}
+{\ttfamily \#include \char`\"{}decoder.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+L\+U.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}registros.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}desplazamiento.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}curses.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}branch.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{decoder_8c_ab53eaabeaebbb625087d50439a3d6a73}{decode\+Instruction} (\hyperlink{structinstruction__t}{instruction\+\_\+t} instruction, uint32\+\_\+t $\ast$Reg, uint32\+\_\+t $\ast$banderas)
+\item 
+\hyperlink{structinstruction__t}{instruction\+\_\+t} \hyperlink{decoder_8c_afb95cf953b777a76e479e8b465c45277}{get\+Instruction} (char $\ast$inst\+Str)
+\begin{DoxyCompactList}\small\item\em Obtiene la instrucción separada por partes. \end{DoxyCompactList}\item 
+int \hyperlink{decoder_8c_af5333eb7f1c83ddd9fdf66ba77b0539c}{read\+File} (char $\ast$filename, \hyperlink{structins__t}{ins\+\_\+t} $\ast$instructions)
+\item 
+int \hyperlink{decoder_8c_a83c46caff2fb5cab7859e0f3953581fd}{count\+Lines} (F\+I\+L\+E $\ast$fp)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{decoder_8c_a83c46caff2fb5cab7859e0f3953581fd}{}\index{decoder.\+c@{decoder.\+c}!count\+Lines@{count\+Lines}}
+\index{count\+Lines@{count\+Lines}!decoder.\+c@{decoder.\+c}}
+\subsubsection[{count\+Lines(\+F\+I\+L\+E $\ast$fp)}]{\setlength{\rightskip}{0pt plus 5cm}int count\+Lines (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{fp}
+\end{DoxyParamCaption}
+)}\label{decoder_8c_a83c46caff2fb5cab7859e0f3953581fd}
+\hypertarget{decoder_8c_ab53eaabeaebbb625087d50439a3d6a73}{}\index{decoder.\+c@{decoder.\+c}!decode\+Instruction@{decode\+Instruction}}
+\index{decode\+Instruction@{decode\+Instruction}!decoder.\+c@{decoder.\+c}}
+\subsubsection[{decode\+Instruction(instruction\+\_\+t instruction, uint32\+\_\+t $\ast$\+Reg, uint32\+\_\+t $\ast$banderas)}]{\setlength{\rightskip}{0pt plus 5cm}void decode\+Instruction (
+\begin{DoxyParamCaption}
+\item[{{\bf instruction\+\_\+t}}]{instruction, }
+\item[{uint32\+\_\+t $\ast$}]{Reg, }
+\item[{uint32\+\_\+t $\ast$}]{banderas}
+\end{DoxyParamCaption}
+)}\label{decoder_8c_ab53eaabeaebbb625087d50439a3d6a73}
+\hypertarget{decoder_8c_afb95cf953b777a76e479e8b465c45277}{}\index{decoder.\+c@{decoder.\+c}!get\+Instruction@{get\+Instruction}}
+\index{get\+Instruction@{get\+Instruction}!decoder.\+c@{decoder.\+c}}
+\subsubsection[{get\+Instruction(char $\ast$inst\+Str)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf instruction\+\_\+t} get\+Instruction (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{inst\+Str}
+\end{DoxyParamCaption}
+)}\label{decoder_8c_afb95cf953b777a76e479e8b465c45277}
+
+
+Obtiene la instrucción separada por partes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em instr\+Str} & cadena que contiene la instrucción. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{structinstruction__t}{instruction\+\_\+t} la instrucción separada por partes. 
+\end{DoxyReturn}
+\hypertarget{decoder_8c_af5333eb7f1c83ddd9fdf66ba77b0539c}{}\index{decoder.\+c@{decoder.\+c}!read\+File@{read\+File}}
+\index{read\+File@{read\+File}!decoder.\+c@{decoder.\+c}}
+\subsubsection[{read\+File(char $\ast$filename, ins\+\_\+t $\ast$instructions)}]{\setlength{\rightskip}{0pt plus 5cm}int read\+File (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{filename, }
+\item[{{\bf ins\+\_\+t} $\ast$}]{instructions}
+\end{DoxyParamCaption}
+)}\label{decoder_8c_af5333eb7f1c83ddd9fdf66ba77b0539c}

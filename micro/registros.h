@@ -5,7 +5,7 @@
 * \return No tiene retorno
 */
 
-void mostrar_registros(uint32_t registro[13]);
+void mostrar_registros(uint32_t* registro);
 
 
 
@@ -25,7 +25,7 @@ void mostrar_banderas( uint32_t banderas[4]);
 * \return No tiene retorno
 */
 
-void mostrar_operacion( char op[5]);
+void mostrar_operacion( char *op);
 
 
 

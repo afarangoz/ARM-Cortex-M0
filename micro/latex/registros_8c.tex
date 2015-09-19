@@ -1,0 +1,87 @@
+\hypertarget{registros_8c}{}\section{registros.\+c File Reference}
+\label{registros_8c}\index{registros.\+c@{registros.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}registros.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$curses.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{registros_8c_a6f35997efef9a1ccb4e0d9f9d9eeabd4}{mostrar\+\_\+registros} (uint32\+\_\+t $\ast$registro)
+\begin{DoxyCompactList}\small\item\em Funcion que toma los valores de los registros y los imprime en pantalla. \end{DoxyCompactList}\item 
+void \hyperlink{registros_8c_a4d0b0403646c7f287eeab238198c08df}{mostrar\+\_\+banderas} (uint32\+\_\+t banderas\mbox{[}4\mbox{]})
+\begin{DoxyCompactList}\small\item\em Funcion que toma los valores de las banderas y los imprime en pantalla. \end{DoxyCompactList}\item 
+void \hyperlink{registros_8c_a9adeda5b4c7bd459ae30968b5331fd2e}{mostrar\+\_\+operacion} (char $\ast$op)
+\begin{DoxyCompactList}\small\item\em Funcion que muestra la operacion que se realizo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{registros_8c_ac8936188af0c1d2f8b9d0cd25fde43b2}{i}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{registros_8c_a4d0b0403646c7f287eeab238198c08df}{}\index{registros.\+c@{registros.\+c}!mostrar\+\_\+banderas@{mostrar\+\_\+banderas}}
+\index{mostrar\+\_\+banderas@{mostrar\+\_\+banderas}!registros.\+c@{registros.\+c}}
+\subsubsection[{mostrar\+\_\+banderas(uint32\+\_\+t banderas[4])}]{\setlength{\rightskip}{0pt plus 5cm}void mostrar\+\_\+banderas (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{banderas\mbox{[}4\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{registros_8c_a4d0b0403646c7f287eeab238198c08df}
+
+
+Funcion que toma los valores de las banderas y los imprime en pantalla. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em banderas\mbox{[}4\mbox{]}} & Arreglo que contiene cada 1 de las banderas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+No tiene retorno 
+\end{DoxyReturn}
+\hypertarget{registros_8c_a9adeda5b4c7bd459ae30968b5331fd2e}{}\index{registros.\+c@{registros.\+c}!mostrar\+\_\+operacion@{mostrar\+\_\+operacion}}
+\index{mostrar\+\_\+operacion@{mostrar\+\_\+operacion}!registros.\+c@{registros.\+c}}
+\subsubsection[{mostrar\+\_\+operacion(char $\ast$op)}]{\setlength{\rightskip}{0pt plus 5cm}void mostrar\+\_\+operacion (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{op}
+\end{DoxyParamCaption}
+)}\label{registros_8c_a9adeda5b4c7bd459ae30968b5331fd2e}
+
+
+Funcion que muestra la operacion que se realizo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op\mbox{[}5\mbox{]}} & variable tipo caracter donde se gusrda el nombre de la operacion realizada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+No tiene retorno 
+\end{DoxyReturn}
+\hypertarget{registros_8c_a6f35997efef9a1ccb4e0d9f9d9eeabd4}{}\index{registros.\+c@{registros.\+c}!mostrar\+\_\+registros@{mostrar\+\_\+registros}}
+\index{mostrar\+\_\+registros@{mostrar\+\_\+registros}!registros.\+c@{registros.\+c}}
+\subsubsection[{mostrar\+\_\+registros(uint32\+\_\+t $\ast$registro)}]{\setlength{\rightskip}{0pt plus 5cm}void mostrar\+\_\+registros (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{registro}
+\end{DoxyParamCaption}
+)}\label{registros_8c_a6f35997efef9a1ccb4e0d9f9d9eeabd4}
+
+
+Funcion que toma los valores de los registros y los imprime en pantalla. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em registro\mbox{[}13\mbox{]}} & Arreglo que contiene cada 1 de los registros \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+No tiene retorno 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\hypertarget{registros_8c_ac8936188af0c1d2f8b9d0cd25fde43b2}{}\index{registros.\+c@{registros.\+c}!i@{i}}
+\index{i@{i}!registros.\+c@{registros.\+c}}
+\subsubsection[{i}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int i}\label{registros_8c_ac8936188af0c1d2f8b9d0cd25fde43b2}

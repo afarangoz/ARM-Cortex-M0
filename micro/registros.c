@@ -6,7 +6,7 @@
 
 unsigned int i;
 
-void mostrar_registros(uint32_t registro[13])
+void mostrar_registros(uint32_t* registro)
 {
 
 	initscr();		/* Inicia modo curses */
@@ -16,6 +16,7 @@ void mostrar_registros(uint32_t registro[13])
 
     init_pair(1, COLOR_MAGENTA, COLOR_BLACK);//texto MAGENTA fondo negro
     init_pair(3, COLOR_YELLOW, COLOR_BLACK);
+    init_pair(5, COLOR_WHITE, COLOR_BLACK);
 
 	attron(COLOR_PAIR(1));	 // Activa el color verde para el
                              //texto y negro para el fondo Pair 1
@@ -34,6 +35,14 @@ void mostrar_registros(uint32_t registro[13])
         refresh();
         attroff(COLOR_PAIR(3));
     }
+
+        attron(COLOR_PAIR(5));
+    	move(5, 50);
+        printw("PC=%d \n",registro[13]);
+        move(6, 50);
+        printw("LR=%d \n",registro[14]);
+        refresh();
+        attroff(COLOR_PAIR(5));
 }
 
 void mostrar_banderas( uint32_t banderas[4])
@@ -41,26 +50,27 @@ void mostrar_banderas( uint32_t banderas[4])
 
         init_pair(2, COLOR_GREEN, COLOR_BLACK);//Texto verde fondo negro
         attron(COLOR_PAIR(2));
-    	move(5, 50);
+    	move(9, 50);
         printw("bandera[N]=%d \n",banderas[0]);
-    	move(6, 50);
+    	move(10, 50);
         printw("bandera[Z]=%d \n",banderas[1]);
-        move(7, 50);
+        move(11, 50);
         printw("bandera[C]=%d \n",banderas[2]);
-        move(8, 50);
+        move(12, 50);
         printw("bandera[V]=%d \n",banderas[3]);
 
         refresh();
         attroff(COLOR_PAIR(2));
 }
 
-void mostrar_operacion( char op[5])
+void mostrar_operacion( char* op)
 {
+
 
         init_pair(4, COLOR_BLUE, COLOR_BLACK);//Texto verde fondo negro
         attron(COLOR_PAIR(4));
-    	move(15, 45);
-        printw("Se ejecuto la operacion %s ",op);
+    	move(15, 46);
+        printw("    %s ",op);
 
         refresh();
         attroff(COLOR_PAIR(4));

@@ -1,48 +1,69 @@
-/*#include <stdio.h>
-#include <stdlib.h>
-
-#include <stdio.h>
-#include <stdlib.h>
-#include<stdint.h>
-#include "registros.h"
+#include "decoder.h"
 #include "ALU.h"
-#include <math.h>
-#include <curses.h>
+#include "registros.h"
+#include "desplazamiento.h"
+#include "curses.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdint.h>
 
-int main()
+int main(void)
 {
-    uint32_t Reg[13]={0,0,0,0,0,0,0,0,0,0,0};
+    uint32_t Reg[15]={0,0,0,0,0,0,0,0,0,0,0,0,0};   //Reg[13] ---> PC
+                                                    //Reg[14] ---> LR
+
     uint32_t banderas[4]={0,0,0,0}; //estas son las banderas del microprocesador las posiciones indican la bandera
                                         //[0] es N es 1 si el resultado es negatico
                                         //[1] es Z es 1 si el resultado es cero
                                         //[2] es C es 1 si hay acarreo en la operacion aritmetica
                                         //[3] es V es 1 si hubo sobreflujo es la operacion
-    mostrar_registros(Reg);
-    mostrar_banderas(banderas);
-    getch();	// Espera entrada del usuario
-	clear();
+	//------- No modificar ------//
+		int i, num_instructions;
+		ins_t read;
+		char** instructions;
+		instruction_t instruction;
 
-	Reg[0]=15;
-    Reg[1]=-15;
-    REV(&Reg[1],Reg[2]);
-    REV16(&Reg[1],Reg[2]);
-    ADD(&Reg[2], Reg[0],Reg[1],&banderas[0]);
+		num_instructions = readFile("code.txt", &read);
+		if(num_instructions==-1)
+			return 0;
+
+		if(read.array==NULL)
+			return 0;
+
+		instructions = read.array; /* Arreglo con las instrucciones */
+	//---------------------------//
+
+
+
+	/* Ejemplo de uso
+		Llama la función que separa el mnemonico y los operandos
+		Llama la instrucción que decodifica y ejecuta la instrucción
+	*/
+	// Esto debe ser ciclico para la lectura de todas las instrucciones, de acuerdo
+	// al valor del PC (Program Counter)
+	while(1)
+    {
+
+	instruction = getInstruction(instructions[Reg[13]]); // Instrucción en la posición 0
+	decodeInstruction(instruction,Reg,banderas); // Debe ser modificada de acuerdo a cada código
     mostrar_registros(Reg);
     mostrar_banderas(banderas);
+    mostrar_operacion(instructions[Reg[13]]);
 	getch();
-	clear();
+	Reg[13]++;
+    }
+    endwin();
+	//------- No modificar ------//
+	/* Libera la memoria reservada para las instrucciones */
+	for(i=0; i<num_instructions; i++){
+		free(read.array[i]);
+	}
+	free(read.array);
+	//---------------------------//
 
-	Reg[0]=15;
-    Reg[1]=-15;
-    SUB(&Reg[2], Reg[0],Reg[1],&banderas[0]);
-    mostrar_registros(Reg);
-    mostrar_banderas(banderas);
-	getch();
-	clear();
 
 
-	endwin();	// Finaliza el modo curses
 
-    return 0;
-}*/
-
+	return 0;
+}

@@ -1,13 +1,6 @@
 
-#include <stdio.h>
-#include <stdlib.h>
-#include<stdint.h>
-#include "registros.h"
-#include "desplazamiento.h"
-#include "ALU.h"
-#include <curses.h>
-#include <string.h>
 
+/*
 int main()
 {
     char op[5];
@@ -116,5 +109,5 @@ int main()
 	endwin();	// Finaliza el modo curses
 
     return 0;
-}
+}*/
 
