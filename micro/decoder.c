@@ -222,9 +222,13 @@ void decodeInstruction(instruction_t instruction,uint32_t *Reg,uint32_t *bandera
 
 /*...............BRANCH.................*/
 
+
+
+
 	if( strcmp(instruction.mnemonic,"B") == 0){
         B(&Reg[13],instruction.op1_value);
 	}
+
 
 	if( strcmp(instruction.mnemonic,"BEQ") == 0 ){
         BEQ(&Reg[13],instruction.op1_value,banderas);
@@ -294,16 +298,9 @@ void decodeInstruction(instruction_t instruction,uint32_t *Reg,uint32_t *bandera
         BLX(&Reg[14],&Reg[13],Reg[instruction.op1_value]);
 	}
 
-
-
-
-
-
-
-
-
-
-
+	if( strcmp(instruction.mnemonic,"BX") == 0 ){
+        BX(&Reg[13],Reg[instruction.op1_value]);
+	}
 
 }
 

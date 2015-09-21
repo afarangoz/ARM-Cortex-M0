@@ -4,7 +4,6 @@
 * \param Rm registro a sumar
 * \param Rn registro a sumar
 * \param *banderas direccion de memoria de la bandera cero "N"
-* \param *op se identifica la operacion
 * \return no hay retorno
 */
 void ADCS(uint32_t *Rd,uint32_t Rm,uint32_t Rn,uint32_t *banderas);
@@ -14,7 +13,7 @@ void ADCS(uint32_t *Rd,uint32_t Rm,uint32_t Rn,uint32_t *banderas);
 * \param Rn Registro de entrada
 * \param Rm registro de entrada
 * \param *Rd lugar donde se almacenara el resultado
-* \param *banderas  direccion de memoria de la bandera cero "N"
+* \param *banderas  direccion de memoria de las banderas
 * \return no hay retorno
 */
 void ADDS(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas);
@@ -33,7 +32,7 @@ void ADD(uint32_t *Rd, uint32_t Rm,uint32_t Rn);
 * \param Rn Registro de entrada
 * \param Rm registro de entrada
 * \param *Rd lugar donde se almacenara el resultado
-* \param *banderas direccion de memoria de la bandera cero "N"
+* \param *banderas direccion de memoria de las banderas
 * \return no hay retorno
 */
 
@@ -44,7 +43,7 @@ void ANDS(uint32_t *Rd, uint32_t Rm,uint32_t Rn, uint32_t *banderas);
 * \param Rn Registro de entrada
 * \param Rm Registro de entrada
 * \param *Rd lugar donde se almacenara el resultado.
-* \param *banderas direccion de memoria de la bandera cero "N"
+* \param *banderas direccion de memoria de las banderas
 * \return no hay retorno
 */
 void BICS(uint32_t *Rd,uint32_t Rm,uint32_t Rn, uint32_t *banderas);
@@ -53,7 +52,7 @@ void BICS(uint32_t *Rd,uint32_t Rm,uint32_t Rn, uint32_t *banderas);
 * \brief funcion sumar pero no guarda el resultado
 * \param Rn Registro de entrada
 * \param Rm registro de entrada
-* \param *banderas direccion de memoria de la bandera cero "N"
+* \param *banderas direccion de memoria de las banderas
 * \return no hay retorno
 */
 void CMN(uint32_t Rm,uint32_t Rn,uint32_t *banderas);
@@ -62,7 +61,7 @@ void CMN(uint32_t Rm,uint32_t Rn,uint32_t *banderas);
 * \brief funcion restar pero no guarda el valor solo actualiza banderas
 * \param Rn Registro de entrada
 * \param Rm registro de entrada
-* \param *banderas
+* \param *banderas direccion en memoria de las banderas
 * \return no hay retorno
 */
 void CMP(uint32_t Rm,uint32_t Rn,uint32_t *banderas);
@@ -72,25 +71,24 @@ void CMP(uint32_t Rm,uint32_t Rn,uint32_t *banderas);
 * \param Rn Registro de entrada
 * \param Rm Registro de entrada
 * \param *Rd lugar donde se almacenara el resultado.
-* \param *banderas direccion de memoria de la bandera cero "N"
+* \param *banderas direccion de memoria de las banderas
 * \return no hay retorno
 */
 void EORS(uint32_t *Rd,uint32_t Rm,uint32_t Rn, uint32_t *banderas);
 
 /**
-* \brief funcion que mueve datos de un registro a otro pero solo lo hace para actulizar banderas, no guarda este resultado
+* \brief funcion que mueve datos de un registro a otro pero no actualiza banderas
 * \param Rn Registro que se va a mover
 * \param *Rm lugar donde se almacenaria el resultado.
-* \param *banderas
 * \return no hay retorno
 */
 void MOV(uint32_t *Rm, uint32_t Rn);
 
 /**
 * \brief funcion que mueve datos de un registro a otro
-* \param Rn Registro de entrada
+* \param Rn Registro que se mueve
 * \param *Rm lugar donde se almacenara el resultado.
-* \param *banderas direccion de memoria de la bandera cero "N"
+* \param *banderas direccion de memoria de las banderas
 * \return no hay retorno
 */
 void MOVS(uint32_t *Rm, uint32_t Rn, uint32_t *banderas);
@@ -109,6 +107,7 @@ void MULS(uint32_t *Rd,uint32_t Rm,uint32_t Rn,uint32_t *banderas);
 * \brief funcion para ejecutar la operacion logica NOT a Rm
 * \param Rm Registro de entrada
 * \param *Rd lugar donde se almacenara el resultado
+* \param *banderas direccion de memoria de las bandera
 * \return no hay retorno
 */
 void MVNS(uint32_t *Rd,uint32_t Rm, uint32_t *banderas);
@@ -154,7 +153,7 @@ void SBCS(uint32_t *Rd,uint32_t Rm,uint32_t Rn,uint32_t *banderas);
 * \param Rn Registro de entrada
 * \param Rm registro de entrada
 * \param *Rd lugar donde se almacenara el resultado
-* \param *banderas
+* \param *banderas direccion de memora de las banderas
 * \return no hay retorno
 */
 void SUBS(uint32_t *Rd, uint32_t Rm,uint32_t Rn,uint32_t *banderas);
@@ -181,7 +180,7 @@ void TST(uint32_t Rm,uint32_t Rn,uint32_t *banderas);
 /**
 * \brief funcion que actualiza las banderas N y Z
 * \param *Rd resultado
-* \param *banderas direccion de memoria de la bandera cero "N"
+* \param *banderas direccion de memoria de las banderas
 * \return no hay retorno
 */
 void ACTNZ(uint32_t *Rd,uint32_t *banderas);

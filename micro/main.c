@@ -34,26 +34,22 @@ int main(void)
 		instructions = read.array; /* Arreglo con las instrucciones */
 	//---------------------------//
 
-
-
-	/* Ejemplo de uso
-		Llama la función que separa el mnemonico y los operandos
-		Llama la instrucción que decodifica y ejecuta la instrucción
-	*/
-	// Esto debe ser ciclico para la lectura de todas las instrucciones, de acuerdo
-	// al valor del PC (Program Counter)
 	while(1)
     {
 
-	instruction = getInstruction(instructions[Reg[13]]); // Instrucción en la posición 0
-	decodeInstruction(instruction,Reg,banderas); // Debe ser modificada de acuerdo a cada código
+	instruction = getInstruction(instructions[Reg[13]]);
+	decodeInstruction(instruction,Reg,banderas);
     mostrar_registros(Reg);
     mostrar_banderas(banderas);
     mostrar_operacion(instructions[Reg[13]]);
 	getch();
-	Reg[13]++;
+    Reg[13]++;
+
+
     }
     endwin();
+
+
 	//------- No modificar ------//
 	/* Libera la memoria reservada para las instrucciones */
 	for(i=0; i<num_instructions; i++){
@@ -61,9 +57,6 @@ int main(void)
 	}
 	free(read.array);
 	//---------------------------//
-
-
-
 
 	return 0;
 }

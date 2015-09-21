@@ -134,13 +134,13 @@ void BAL(uint32_t *R,uint32_t b,uint32_t *banderas)
 void BL(uint32_t *LR,uint32_t *PC,uint32_t salto)
 {
 	*LR=*PC+1;
-        *PC+=salto;
+    *PC+=salto;
 }
 
 void BLX(uint32_t *LR,uint32_t *PC,uint32_t direccion)
 {
 	*LR=*PC+1;
-        *PC=direccion;
+    *PC=direccion;
 }
 
 
