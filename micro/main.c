@@ -43,7 +43,6 @@ int main(void)
     mostrar_banderas(banderas);
     mostrar_operacion(instructions[Reg[13]]);
 	getch();
-    Reg[13]++;
 
 
     }

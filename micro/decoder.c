@@ -17,8 +17,10 @@ op1_value = 0
 op2_type = #
 op2_value = 5
 */
+uint32_t PC;
 void decodeInstruction(instruction_t instruction,uint32_t *Reg,uint32_t *banderas)
 {
+    PC=Reg[13];
 	if( strcmp(instruction.mnemonic,"MOVS") == 0 ){
 
         if(instruction.op1_type=='R' && instruction.op2_type=='#'){
@@ -224,11 +226,9 @@ void decodeInstruction(instruction_t instruction,uint32_t *Reg,uint32_t *bandera
 
 
 
-
 	if( strcmp(instruction.mnemonic,"B") == 0){
         B(&Reg[13],instruction.op1_value);
 	}
-
 
 	if( strcmp(instruction.mnemonic,"BEQ") == 0 ){
         BEQ(&Reg[13],instruction.op1_value,banderas);
@@ -291,16 +291,22 @@ void decodeInstruction(instruction_t instruction,uint32_t *Reg,uint32_t *bandera
 	}
 
 	if( strcmp(instruction.mnemonic,"BL") == 0 ){
-        BL(&Reg[14],&Reg[13],Reg[instruction.op1_value]);
-	}
+        BL(&Reg[14],&Reg[13],instruction.op1_value);
+        }
 
 	if( strcmp(instruction.mnemonic,"BLX") == 0 ){
         BLX(&Reg[14],&Reg[13],Reg[instruction.op1_value]);
 	}
 
 	if( strcmp(instruction.mnemonic,"BX") == 0 ){
-        BX(&Reg[13],Reg[instruction.op1_value]);
+        //BX(&Reg[13],Reg[instruction.op1_value]);
+        BX(&Reg[13],&Reg[14]);
 	}
+
+	if(Reg[13]==PC)
+    {
+        Reg[13]++;
+    }
 
 }
 

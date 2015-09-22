@@ -91,7 +91,8 @@ void CMN(uint32_t Rm,uint32_t Rn,uint32_t *banderas)
 void CMP(uint32_t Rm,uint32_t Rn,uint32_t *banderas)
 {
     uint32_t Rd;
-    SUBS(&Rd,Rm,Rn,banderas);
+    Rn=~Rn+1;
+    ADDS(&Rd,Rm,Rn,banderas);
 }
 
 void TST(uint32_t Rm,uint32_t Rn,uint32_t *banderas)

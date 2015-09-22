@@ -144,8 +144,8 @@ void BLX(uint32_t *LR,uint32_t *PC,uint32_t direccion)
 }
 
 
-void BX(uint32_t *PC,uint32_t direccion)
+void BX(uint32_t *PC,uint32_t *direccion)
 {
-        *PC=direccion;
+        *PC=*direccion;
 }
 

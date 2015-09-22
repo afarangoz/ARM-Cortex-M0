@@ -168,5 +168,5 @@ void BLX(uint32_t *RL,uint32_t *PC,uint32_t direccion);
 * \param *PC tomara la direccion de la subrutina				*PC=Reg[13]
 * \return no hay retorno
 */
-void BX(uint32_t *PC,uint32_t direccion);
+void BX(uint32_t *PC,uint32_t *direccion);
 
