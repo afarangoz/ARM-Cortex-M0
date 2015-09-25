@@ -114,13 +114,15 @@ void ACTNZ(uint32_t *Rd,uint32_t *banderas)
 }
 void ADCS(uint32_t *Rd,uint32_t Rm,uint32_t Rn,uint32_t *banderas)
 {
-    ADDS(Rd,Rm,Rn,banderas);              //tener encuenta que Rd es una direccion de memoria
+    *Rd=Rm+Rn;
+    //ADDS(Rd,Rm,Rn,banderas);              //tener encuenta que Rd es una direccion de memoria
     ADDS(Rd,*Rd,*(banderas+2),banderas);  //se efecta la suma con carry y se actualizan banderas
 }
 
 void SBCS(uint32_t *Rd,uint32_t Rm,uint32_t Rn,uint32_t *banderas)
 {
-    SUBS(Rd,Rm,Rn,banderas);              //tener encuenta que Rd es una direccion de memoria
+    *Rd=Rm-Rn;
+    //SUBS(Rd,Rm,Rn,banderas);              //tener encuenta que Rd es una direccion de memoria
     SUBS(Rd,*Rd,*(banderas+2),banderas);  //actualiza banderas implicitamente
 }
 void RSBS(uint32_t *Rd,uint32_t Rm,uint32_t *banderas)   //complemento ados
