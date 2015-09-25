@@ -114,9 +114,18 @@ void ACTNZ(uint32_t *Rd,uint32_t *banderas)
 }
 void ADCS(uint32_t *Rd,uint32_t Rm,uint32_t Rn,uint32_t *banderas)
 {
-    *Rd=Rm+Rn;
+    *Rd=Rm+Rn+(*(banderas+2));
     //ADDS(Rd,Rm,Rn,banderas);              //tener encuenta que Rd es una direccion de memoria
-    ADDS(Rd,*Rd,*(banderas+2),banderas);  //se efecta la suma con carry y se actualizan banderas
+    //ADDS(Rd,*Rd,*(banderas+2),banderas);  //se efecta la suma con carry y se actualizan banderas
+    if(((Rn>=(1<<31))&&(Rm>=(1<<31)))||((Rm>=(1<<31))&&(Rn<(1<<31))&&(*Rd<(1<<31)))||((Rn>=(1<<31))&&(Rm<(1<<31))&&(*Rd<(1<<31))))//condicion pasa reconoser el acarreo
+        {*(banderas+2)=1;} //*(banderas+2) es la bandera de acarreo
+    else
+        {*(banderas+2)=0;}
+    if(((Rn>=(1<<31))&&(Rm>=(1<<31))&&(*Rd<(1<<31)))||((Rn<(1<<31))&&(Rm<(1<<31))&&(*Rd>=(1<<31))))  //condicion para reconocer el sobreflujo
+        {*(banderas+3)=1;}  //*(banderas+3) es la bandera u "sobreflujo" del arreglo                                         y bit mas significativo del resultado es diferente.
+    else
+        {*(banderas+3)=0;}
+    ACTNZ(Rd,banderas);  //se actualizan las banderas N y Z
 }
 
 void SBCS(uint32_t *Rd,uint32_t Rm,uint32_t Rn,uint32_t *banderas)

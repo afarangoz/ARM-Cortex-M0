@@ -37,11 +37,13 @@ int main(void)
 	while(1)
     {
 
+
 	instruction = getInstruction(instructions[Reg[13]]);
 	decodeInstruction(instruction,Reg,banderas);
     mostrar_registros(Reg);
     mostrar_banderas(banderas);
     mostrar_operacion(instructions[Reg[13]]);
+
 	getch();
 
 

@@ -1,5 +1,5 @@
 MOVS R0,#20
-MOVS R1,#6
+MOVS R1,#3
 CMP R0,R1
 BL #3
 

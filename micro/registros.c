@@ -31,7 +31,7 @@ void mostrar_registros(uint32_t* registro)
     {
         attron(COLOR_PAIR(3));
     	move(i+5, 20);
-        printw("R[%d]=%d \n",i,registro[i]);
+        printw("R[%d]=%x \n",i,registro[i]);
         refresh();
         attroff(COLOR_PAIR(3));
     }
