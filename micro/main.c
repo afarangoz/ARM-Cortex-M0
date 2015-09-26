@@ -1,3 +1,4 @@
+
 #include "decoder.h"
 #include "ALU.h"
 #include "registros.h"
@@ -7,6 +8,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdint.h>
+#include "PILA.h"
 
 int main(void)
 {
@@ -31,7 +33,7 @@ int main(void)
 		if(read.array==NULL)
 			return 0;
 
-		instructions = read.array; /* Arreglo con las instrucciones */
+		instructions = read.array; // Arreglo con las instrucciones
 	//---------------------------//
 
 	while(1)
@@ -52,7 +54,7 @@ int main(void)
 
 
 	//------- No modificar ------//
-	/* Libera la memoria reservada para las instrucciones */
+	// Libera la memoria reservada para las instrucciones
 	for(i=0; i<num_instructions; i++){
 		free(read.array[i]);
 	}
@@ -61,3 +63,5 @@ int main(void)
 
 	return 0;
 }
+
+
