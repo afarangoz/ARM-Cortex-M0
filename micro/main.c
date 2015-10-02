@@ -9,6 +9,7 @@
 #include <string.h>
 #include <stdint.h>
 #include "PILA.h"
+#include "LoadStore.h"
 
 int main(void)
 {
@@ -47,10 +48,28 @@ int main(void)
 
 		instructions = read.array; // Arreglo con las instrucciones
 	//---------------------------//
+	i=0; //LoadStore
+	for(i=0;i<4;i++) //LS
+     {
+        SRam[i+12]=186+i;
+     }
+     SRam[15]=255;  //LS
+     SRam[14]=189;
+     i=0;
 	while(1)
-    {
+    { i++;//LoadStore
 	instruction = getInstruction(instructions[Reg[15]]);
 	decodeInstruction(instruction,Reg,banderas,&SRam[0]);
+	if(i==7)                //LS
+    {
+        LDR(&Reg[0],12,0,&SRam[0],0);     //LS
+        LDRB(&Reg[1],12,0,&SRam[0]);     //LS
+        LDRH(&Reg[2],12,0,&SRam[0],0);     //LS
+        LDRSB(&Reg[3],12,0,&SRam[0]);     //LS
+        LDRSH(&Reg[4],12,0,&SRam[0]);     //LS
+        STR(Reg[0],16,0,&SRam[0],0);     //LS
+        STRB(Reg[0],20,0,&SRam[0]);     //LS
+    }
     mostrar_registros(Reg);
 	mostrar_SRam(SRam);
     mostrar_banderas(banderas);
