@@ -27,5 +27,9 @@ void mostrar_banderas( uint32_t banderas[4]);
 
 void mostrar_operacion( char *op);
 
-
-
+/**
+* \brief Funcion que muestra los valores almacenados en la SRam
+* \param SRam[65] Memoria disponible
+* \return No tiene retorno
+*/
+void mostrar_SRam(uint8_t *SRam);

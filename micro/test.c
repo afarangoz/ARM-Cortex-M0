@@ -34,7 +34,7 @@ int main()
         printf("%d \n",PILA[i]);
     }
 }
-    /*
+
     mostrar_registros(Reg);
     mostrar_banderas(banderas);
     getch();	// Espera entrada del usuario

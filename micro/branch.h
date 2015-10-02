@@ -146,7 +146,7 @@ void BAL(uint32_t *R,uint32_t b,uint32_t *banderas);
 /**
 * \brief funcion que llama una subrutina que esta en una direccion relativa al pc
 * \param salto	el numero de direcciones que avanzara desde su posicion actual
-* \param *PC tomara la direccion de la subrutina   						*PC=Reg[13]
+* \param *PC tomara la direccion de la subrutina   						*PC=Reg[15]
 * \param *LR tomara el valor de la siguiente direccion apartir de la posicion actual            *LR=Reg[14]
 * \return no hay retorno
 */
@@ -155,7 +155,7 @@ void BL(uint32_t *RL,uint32_t *PC,uint32_t salto);
 /**
 * \brief funcion que llama una subrutina que esta en la posicion direccion y RL avanza a la siguiente direccion
 * \param direccion es un registro cuyo valor es la direccion de la subrutina
-* \param *PC tomara la direccion de la subrutina						*PC=Reg[13]
+* \param *PC tomara la direccion de la subrutina						*PC=Reg[15]
 * \param *LR tomara el valor de la siguiente direccion apartir de la posicion actual		*LR=Reg[14]
 * \return no hay retorno
 */
@@ -165,7 +165,7 @@ void BLX(uint32_t *RL,uint32_t *PC,uint32_t direccion);
 /**
 * \brief funcion que salta a una direccion espesifica por un registro
 * \param direccion es un registro cuyo valor es la direccion
-* \param *PC tomara la direccion de la subrutina				*PC=Reg[13]
+* \param *PC tomara la direccion de la subrutina				*PC=Reg[15]
 * \return no hay retorno
 */
 void BX(uint32_t *PC,uint32_t *direccion);
