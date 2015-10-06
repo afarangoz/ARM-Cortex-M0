@@ -89,15 +89,15 @@ void STRB(uint32_t Rt,uint32_t Rn,uint32_t Rm,uint8_t *SRAM)
     }
     *(SRAM+Rn+Rm+3)=Rt; //escritura de 8 bits en RAM
 }
-/*void STRH(uint32_t Rt,uint32_t Rn,uint32_t Rm,uint8_t *SRAM,uint32_t imm)
+void STRH(uint32_t Rt,uint32_t Rn,uint32_t Rm,uint8_t *SRAM,uint32_t imm)
 {
     uint32_t i;
     if(imm==1)
     {
         Rm=Rm<<1;   //se identifico que el dato recbido es un inmediato
     }
-    for(i=0;i<2;i++)
+    for(i=0;i<2;i++) //este programa supone que las direcciones se suman de modo que se mueva cada 4 direcciones
     {
         *(SRAM+Rn+Rm+i+2)=Rt>>(8-8*i); //escritura de 16 bits en RAM
     }
-}*/
+}

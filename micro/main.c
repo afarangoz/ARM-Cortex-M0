@@ -69,6 +69,7 @@ int main(void)
         LDRSH(&Reg[4],12,0,&SRam[0]);     //LS
         STR(Reg[0],16,0,&SRam[0],0);     //LS
         STRB(Reg[0],20,0,&SRam[0]);     //LS
+        STRH(Reg[0],24,0,&SRam[0],0);     //LS
     }
     mostrar_registros(Reg);
 	mostrar_SRam(SRam);
