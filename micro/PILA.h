@@ -1,3 +1,6 @@
+#ifndef _PILA_H_
+#define	_PILA_H_
+
 /**
 * \brief funcion para escribir datos en la pila
 * \param registros[16]
@@ -15,3 +18,4 @@ void PUSH(uint8_t registros[16], uint32_t *Reg, uint8_t *SR);
 */
 void POP(uint8_t registros[16], uint32_t *Reg, uint8_t *SR);
 
+#endif

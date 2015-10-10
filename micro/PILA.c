@@ -23,11 +23,11 @@ void PUSH(uint8_t registros[16], uint32_t *Reg, uint8_t *SR)
         if(registros[i]==1)
         {
             aux=*(Reg+i);
-            *(SR+posicion)=(aux>>24);
-            *(SR+posicion+1)=(aux>>16);
-            *(SR+posicion+2)=(aux>>8);
-            *(SR+posicion+3)=(aux);//se guarden los datos en PILA
-            posicion=posicion+4;
+            *(SR+posicion)=(aux);
+            *(SR+posicion+1)=(aux>>8);
+            *(SR+posicion+2)=(aux>>16);
+            *(SR+posicion+3)=(aux>>24);
+             posicion=posicion+4;
         }
     }
 
@@ -51,17 +51,18 @@ void POP(uint8_t registros[16], uint32_t *Reg, uint8_t *SR)
     {
         if(registros[i]==1)
         {
-
             *(Reg+i)=0;
-            aux=*(SR+posicion);//se guarden los datos en PILA
-            *(Reg+i)=*(Reg+i)|(aux<<24);
-            aux=*(SR+posicion+1);//se guarden los datos en PILA
-            *(Reg+i)=*(Reg+i)|(aux<<16);
-            aux=*(SR+posicion+2);//se guarden los datos en PILA
-            *(Reg+i)=*(Reg+i)|(aux<<8);
-            aux=*(SR+posicion+3);//se guarden los datos en PILA
+
+             aux=*(SR+posicion);//se guarden los datos en PILA
             *(Reg+i)=*(Reg+i)|(aux<<0);
+            aux=*(SR+posicion+1);//se guarden los datos en PILA
+            *(Reg+i)=*(Reg+i)|(aux<<8);
+            aux=*(SR+posicion+2);//se guarden los datos en PILA
+            *(Reg+i)=*(Reg+i)|(aux<<16);
+            aux=*(SR+posicion+3);//se guarden los datos en PILA
+            *(Reg+i)=*(Reg+i)|(aux<<24);
             posicion=posicion+4;
+
         }
     }
 

@@ -32,7 +32,7 @@ void mostrar_registros(uint32_t* registro)
     {
         attron(COLOR_PAIR(3));
     	move(i+5, 20);
-        printw("R[%d]=%x \n",i,registro[i]);
+        printw("R[%d]=%X \n",i,registro[i]);
         refresh();
         attroff(COLOR_PAIR(3));
     }
@@ -53,9 +53,9 @@ void mostrar_SRam(uint8_t *SRam)
 
 
 int i,k,j,h,n;
-n=127;
+n=255;
 
-    for(k=0;k<128;k=k+16)
+    for(k=0;k<256;k=k+16)
     {
         h=9;
         for(j=0;j<16;j=4+j)
@@ -65,7 +65,7 @@ n=127;
                 printw("0x%X:",n);
                 refresh();
                 attroff(COLOR_PAIR(4));
-            for(i=124;i<128;i++)
+            for(i=255;i>251;i--)
             {
                 attron(COLOR_PAIR(5));
                 move((k/16)+20,h);

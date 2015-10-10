@@ -8,6 +8,8 @@
 #include <string.h>
 #include <stdint.h>
 #include "branch.h"
+#include "LoadStore.h"
+#include "PILA.h"
 
 
 //MOVS R0,#5
@@ -19,6 +21,71 @@ op2_value = 5
 */
 void decodeInstruction(instruction_t instruction,uint32_t *Reg,uint32_t *banderas, uint8_t *SR)
 {
+    uint32_t imm;
+    /*....................Load-Store...................*/
+
+ 	if( strcmp(instruction.mnemonic,"LDR") == 0 ){
+
+        if(instruction.op3_type=='#'){
+            imm=(uint32_t)instruction.op3_value;
+
+            LDR(&Reg[instruction.op1_value],Reg[instruction.op2_value],imm,SR,1);
+        }
+        if(instruction.op3_type=='R'){
+            LDR(&Reg[instruction.op1_value],Reg[instruction.op2_value],Reg[instruction.op3_value],SR,0);
+        }
+        Reg[15]++;
+ 	}
+
+ 	if( strcmp(instruction.mnemonic,"LDRB") == 0 ){
+        if(instruction.op3_type=='#'){
+            imm=(uint32_t)instruction.op3_value;
+            LDRB(&Reg[instruction.op1_value],Reg[instruction.op2_value],imm,SR);
+        }
+        if(instruction.op3_type=='R'){
+            LDRB(&Reg[instruction.op1_value],Reg[instruction.op2_value],Reg[instruction.op3_value],SR);
+        }
+        Reg[15]++;
+ 	}
+
+ 	if( strcmp(instruction.mnemonic,"LDRH") == 0 ){
+
+        if(instruction.op3_type=='#'){
+            imm=(uint32_t)instruction.op3_value;
+
+            LDRH(&Reg[instruction.op1_value],Reg[instruction.op2_value],imm,SR,1);
+        }
+        if(instruction.op3_type=='R'){
+            LDRH(&Reg[instruction.op1_value],Reg[instruction.op2_value],Reg[instruction.op3_value],SR,0);
+        }
+        Reg[15]++;
+ 	}
+
+ 	if( strcmp(instruction.mnemonic,"LDRSB") == 0 ){
+        LDRSB(&Reg[instruction.op1_value],Reg[instruction.op2_value],Reg[instruction.op3_value],SR);
+        Reg[15]++;
+ 	}
+
+ 	if( strcmp(instruction.mnemonic,"LDRSH") == 0 ){
+        LDRSH(&Reg[instruction.op1_value],Reg[instruction.op2_value],Reg[instruction.op3_value],SR);
+        Reg[15]++;
+ 	}
+
+ 	if( strcmp(instruction.mnemonic,"STR") == 0 ){
+        if(instruction.op3_type=='#'){
+            imm=(uint32_t)instruction.op3_value;
+            STR(Reg[instruction.op1_value],Reg[instruction.op2_value],imm,SR,1);
+        }
+        if(instruction.op3_type=='R'){
+            STR(Reg[instruction.op1_value],Reg[instruction.op2_value],Reg[instruction.op3_value],SR,0);
+        }
+        Reg[15]++;
+ 	}
+
+
+
+
+    /*......................................*/
 	if( strcmp(instruction.mnemonic,"MOVS") == 0 ){
 
         if(instruction.op1_type=='R' && instruction.op2_type=='#'){
@@ -374,6 +441,9 @@ instruction_t getInstruction(char* instStr)
 				break;
 
 			case 2:
+
+                if(split[0] == '[')
+				split++;
 				instruction.op2_type  = split[0];
 				instruction.op2_value = (uint32_t)strtoll(split+1, NULL, 0);
 				break;
