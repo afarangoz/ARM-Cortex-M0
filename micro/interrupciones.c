@@ -6,7 +6,7 @@
 void NVIC(uint32_t *Reg,uint32_t *banderas, uint8_t *SR, uint32_t *Rin)
 {
     static uint8_t itc =0 ;
-    int i,n=0;
+    int i,n=0,b=0;
 
     for(i=0;i<16;i++)
     {
@@ -67,7 +67,7 @@ void NVIC(uint32_t *Reg,uint32_t *banderas, uint8_t *SR, uint32_t *Rin)
     //........................................................................//
 
                 itc=0;
-                *(Rin+i)=0;
+                *(Rin+b)=0;
             }
         }
         else
@@ -111,6 +111,7 @@ void NVIC(uint32_t *Reg,uint32_t *banderas, uint8_t *SR, uint32_t *Rin)
                     {
                         *(Reg+15)=*(SR+i);
                         itc=1;
+                        b=i;
                         break;
                     }
             }

@@ -101,7 +101,7 @@ void STRH(uint32_t Rt,uint32_t Rn,uint32_t Rm,uint8_t *SRAM,uint32_t imm)
     }
     for(i=0;i<2;i++) //este programa supone que las direcciones se suman de modo que se mueva cada 4 direcciones
     {
-        *(SRAM+Rn+Rm+i)=(Rt>>(8*i); //escritura de 16 bits en RAM
+        *(SRAM+Rn+Rm+i)=(Rt>>(8*i)); //escritura de 16 bits en RAM
 
     }
 

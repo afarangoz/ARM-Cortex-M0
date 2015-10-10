@@ -14,7 +14,7 @@
 
 int main(void)
 {
-    int i;
+    int i,h=0;
     uint32_t Reg[16]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};   //Reg[13] ---> SP
                                                           //Reg[14] ---> LR
      Reg[13]=256 ;                                        //Reg[15] ---> PC
@@ -27,7 +27,9 @@ int main(void)
      {
         SRam[i]=180+i;
      }
-    uint32_t  Rin[16]={1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+     SRam[0]=1; //Guardo en la Ram la posicion donde se encuentra el salto para ejecutar la interrupccion 1
+    uint32_t  Rin[16]={1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};//Arreglo que me indica cual interrupccion esta activa
+
     uint32_t banderas[4]={0,0,0,0}; //estas son las banderas del microprocesador las posiciones indican la bandera
                                         //[0] es N es 1 si el resultado es negatico
                                         //[1] es Z es 1 si el resultado es cero
@@ -55,13 +57,14 @@ int main(void)
     {
 	instruction = getInstruction(instructions[Reg[15]]);//aqui esta el error
 	decodeInstruction(instruction,Reg,banderas,&SRam[0]);
-	//if(h>=3){
-    //NVIC(&Reg[0],&banderas[0],&SRam[0],&Rin[0]);
-    //}
+	if(h>=3){
+    NVIC(&Reg[0],&banderas[0],&SRam[0],&Rin[0]);
+    }
     mostrar_registros(Reg);
 	mostrar_SRam(SRam);
     mostrar_banderas(banderas);
     mostrar_operacion(instructions[Reg[15]]);
+    h++;
 	getch();
     }
     endwin();
