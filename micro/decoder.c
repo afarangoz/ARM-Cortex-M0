@@ -81,7 +81,20 @@ void decodeInstruction(instruction_t instruction,uint32_t *Reg,uint32_t *bandera
         }
         Reg[15]++;
  	}
-
+ 	if( strcmp(instruction.mnemonic,"STRB") == 0 ){
+            STRB(Reg[instruction.op1_value],Reg[instruction.op2_value],Reg[instruction.op3_value],SR);
+        Reg[15]++;
+ 	}
+ 	if( strcmp(instruction.mnemonic,"STRH") == 0 ){
+        if(instruction.op3_type=='#'){
+            imm=(uint32_t)instruction.op3_value;
+            STR(Reg[instruction.op1_value],Reg[instruction.op2_value],imm,SR,1);
+        }
+        if(instruction.op3_type=='R'){
+            STR(Reg[instruction.op1_value],Reg[instruction.op2_value],Reg[instruction.op3_value],SR,0);
+        }
+        Reg[15]++;
+ 	}
 
 
 

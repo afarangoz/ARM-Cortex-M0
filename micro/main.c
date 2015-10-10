@@ -14,17 +14,19 @@
 
 int main(void)
 {
-    int i,h=0;
+    int i;
     uint32_t Reg[16]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};   //Reg[13] ---> SP
                                                           //Reg[14] ---> LR
      Reg[13]=256 ;                                        //Reg[15] ---> PC
      uint8_t SRam[257];
      for(i=0;i<=256;i++)
      {
-        SRam[i]=i;
+        SRam[i]=255;
      }
-     SRam[0]=1;
-     SRam[1]=2;
+     for(i=0;i<=32;i++)
+     {
+        SRam[i]=180+i;
+     }
     uint32_t  Rin[16]={1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     uint32_t banderas[4]={0,0,0,0}; //estas son las banderas del microprocesador las posiciones indican la bandera
                                         //[0] es N es 1 si el resultado es negatico
@@ -51,17 +53,16 @@ int main(void)
 	//---------------------------//
 	while(1)
     {
-        printf("   %d", h);
 	instruction = getInstruction(instructions[Reg[15]]);//aqui esta el error
 	decodeInstruction(instruction,Reg,banderas,&SRam[0]);
-	if(h>=3){
-    NVIC(&Reg[0],&banderas[0],&SRam[0],&Rin[0]);}
+	//if(h>=3){
+    //NVIC(&Reg[0],&banderas[0],&SRam[0],&Rin[0]);
+    //}
     mostrar_registros(Reg);
 	mostrar_SRam(SRam);
     mostrar_banderas(banderas);
     mostrar_operacion(instructions[Reg[15]]);
 	getch();
-	h++;
     }
     endwin();
 
