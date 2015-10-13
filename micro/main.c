@@ -1,4 +1,4 @@
-
+/*
 #include "decoder.h"
 #include "ALU.h"
 #include "registros.h"
@@ -79,6 +79,6 @@ int main(void)
 	//---------------------------//
 
 	return 0;
-}
+}*/
 
 
