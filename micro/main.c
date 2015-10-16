@@ -1,4 +1,4 @@
-/*
+
 #include "decoder.h"
 #include "ALU.h"
 #include "registros.h"
@@ -16,7 +16,7 @@ int main(void)
 {
     int i,h=0;
     uint32_t Reg[16]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};   //Reg[13] ---> SP
-                                                          //Reg[14] ---> LR
+    uint16_t operacion=0;                                                      //Reg[14] ---> LR
      Reg[13]=256 ;                                        //Reg[15] ---> PC
      uint8_t SRam[257];
      for(i=0;i<=256;i++)
@@ -56,7 +56,7 @@ int main(void)
 	while(1)
     {
 	instruction = getInstruction(instructions[Reg[15]]);//aqui esta el error
-	decodeInstruction(instruction,Reg,banderas,&SRam[0]);
+	decodeInstruction(instruction,Reg,banderas,&SRam[0],&operacion);
 	if(h>=3){
     NVIC(&Reg[0],&banderas[0],&SRam[0],&Rin[0]);
     }
@@ -79,6 +79,6 @@ int main(void)
 	//---------------------------//
 
 	return 0;
-}*/
+}
 
 
