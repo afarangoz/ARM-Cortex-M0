@@ -51,6 +51,9 @@ int main(void)
 
 		instructions = read.array; // Arreglo con las instrucciones
 	//---------------------------//
+
+
+
     char tecla='z';
     char puerto;
 	while(1)
@@ -70,9 +73,9 @@ int main(void)
     showPorts();
     mostrar_registros(Reg);
 	mostrar_SRam(SRam);
-
     mostrar_banderas(banderas);
     mostrar_operacion(instructions[Reg[15]]);
+
 
 	tecla=getch();
     }
