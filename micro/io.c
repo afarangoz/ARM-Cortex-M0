@@ -40,15 +40,15 @@ void changePinPortB(uint8_t pin, uint8_t value)
 }
 
 void IOAccess(uint8_t address, uint8_t* data, uint8_t r_w)
-{
+{   printf("%d",address);
 	if(r_w){
 		switch(address){
 			case 0:
 				*data = PORTA.DDR;
 				break;
 			case 1:
-			    PORTA.pins=(PORTA&(~PORTA.DDR))|(PORTA.PORT&PORTA.DDR);
-				*data = PORTA.PORT;
+			    PORTA.Pins=(PORTA.Pins&(~PORTA.DDR))|(PORTA.PORT&PORTA.DDR);
+			    *data = PORTA.PORT;
 				break;
 			case 2:
 				PORTA.PIN = PORTA.Pins&(~PORTA.DDR);
@@ -61,7 +61,7 @@ void IOAccess(uint8_t address, uint8_t* data, uint8_t r_w)
 				*data = PORTB.DDR;
 				break;
 			case 11:
-			    PORTB.pins=(PORTB&(~PORTB.DDR))|(PORTB.PORT&PORTB.DDR);
+			    PORTB.Pins=(PORTB.Pins&(~PORTB.DDR))|(PORTB.PORT&PORTB.DDR);
 				*data = PORTB.PORT;
 				break;
 			case 12:

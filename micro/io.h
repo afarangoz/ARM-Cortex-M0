@@ -5,12 +5,12 @@
 #include <curses.h>
 
 #define XINIT 10
-#define YINIT 5
+#define YINIT 40
 
 /*===================================================*/
 
 #define HIGH	1
-#define LOW		0	
+#define LOW		0
 
 #define Read	1
 #define Write	0

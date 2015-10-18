@@ -108,13 +108,14 @@ void decodeInstruction(instruction_t instruction,uint32_t *Reg,uint32_t *bandera
  	if( strcmp(instruction.mnemonic,"STRB") == 0 ){
             if(instruction.op3_type=='#')
             {
+                STRB(Reg[instruction.op1_value],Reg[instruction.op2_value],instruction.op3_value,SR);
                 *operacion=28672+instruction.op1_value+(instruction.op2_value<<3)+(instruction.op3_value<<6);
             }
             else
             {
+                STRB(Reg[instruction.op1_value],Reg[instruction.op2_value],Reg[instruction.op3_value],SR);
                 *operacion=21504+instruction.op1_value+(instruction.op2_value<<3)+(instruction.op3_value<<6);
             }
-            STRB(Reg[instruction.op1_value],Reg[instruction.op2_value],Reg[instruction.op3_value],SR);
         Reg[15]++;
  	}
  	if( strcmp(instruction.mnemonic,"STRH") == 0 ){
@@ -149,9 +150,11 @@ void decodeInstruction(instruction_t instruction,uint32_t *Reg,uint32_t *bandera
 	if( strcmp(instruction.mnemonic,"MOV") == 0 ){
 
         if(instruction.op1_type=='R' && instruction.op2_type=='#'){
+            *operacion=8192+(instruction.op1_value<<8)+instruction.op2_value;
             MOV(&Reg[instruction.op1_value], instruction.op2_value);
         }
         if(instruction.op1_type=='R' && instruction.op2_type=='R'){
+            *operacion=17920+instruction.op1_value+(instruction.op1_value<<3);
             MOV(&Reg[instruction.op1_value], Reg[instruction.op2_value]);
         }
         Reg[15]++;
@@ -161,6 +164,7 @@ void decodeInstruction(instruction_t instruction,uint32_t *Reg,uint32_t *bandera
 
         if( instruction.op2_type=='R' && instruction.op3_type=='R' )
 	    {
+	        *operacion=6144+instruction.op1_value+(instruction.op2_value<<3)+(instruction.op3_value<<6);
 	        ADDS(&Reg[instruction.op1_value], Reg[instruction.op2_value],Reg[instruction.op3_value],banderas);
 	    }
         if( instruction.op2_type=='#' && instruction.op3_type=='R' )
@@ -173,6 +177,7 @@ void decodeInstruction(instruction_t instruction,uint32_t *Reg,uint32_t *bandera
 	    }
         if( instruction.op2_type=='R' && instruction.op3_type=='#' )
 	    {
+	        *operacion=7168+instruction.op1_value+(instruction.op2_value<<3)+(instruction.op3_value<<6);
 	        ADDS(&Reg[instruction.op1_value], Reg[instruction.op2_value],instruction.op3_value,banderas);
 	    }
         if(instruction.op3_type=='N' )
@@ -196,11 +201,13 @@ void decodeInstruction(instruction_t instruction,uint32_t *Reg,uint32_t *bandera
 	}
 
 	if( strcmp(instruction.mnemonic,"ADCS") == 0 ){
+        *operacion=16704+instruction.op1_value+(instruction.op2_value<<3);
         ADCS(&Reg[instruction.op1_value], Reg[instruction.op2_value],Reg[instruction.op3_value],banderas);
         Reg[15]++;
 	}
 
 	if( strcmp(instruction.mnemonic,"ANDS") == 0 ){
+        *operacion=16384+instruction.op2_value+(instruction.op3_value<<3);
         ANDS(&Reg[instruction.op1_value], Reg[instruction.op2_value],Reg[instruction.op3_value],banderas);
         Reg[15]++;
 	}
@@ -208,21 +215,25 @@ void decodeInstruction(instruction_t instruction,uint32_t *Reg,uint32_t *bandera
 	if( strcmp(instruction.mnemonic,"ASRS") == 0 ){
         if( instruction.op2_type=='R' && instruction.op3_type=='#' )
 	    {
+	        *operacion=4096+instruction.op1_value+(instruction.op2_value<<3)+(instruction.op3_value<<6);
 	        ASRS(&Reg[instruction.op1_value], Reg[instruction.op2_value],instruction.op3_value,banderas);
 	    }
         if( instruction.op1_type=='R' && instruction.op2_type=='R'&& instruction.op3_type=='R' )
 	    {
+	        *operacion=16640+instruction.op2_value+(instruction.op3_value<<3);
 	        ASRS(&Reg[instruction.op1_value],Reg[instruction.op2_value],Reg[instruction.op3_value],banderas);
 	    }
         Reg[15]++;
 	}
 
 	if( strcmp(instruction.mnemonic,"BICS") == 0 ){
+        *operacion=17280+instruction.op2_value+(instruction.op3_value<<3);
         BICS(&Reg[instruction.op1_value], Reg[instruction.op2_value],Reg[instruction.op3_value],banderas);
         Reg[15]++;
 	}
 
 	if( strcmp(instruction.mnemonic,"CMN") == 0 ){
+        *operacion=17088+instruction.op1_value+(instruction.op2_value<<3);
         CMN(Reg[instruction.op1_value], Reg[instruction.op2_value],banderas);
         Reg[15]++;
 	}
@@ -231,16 +242,19 @@ void decodeInstruction(instruction_t instruction,uint32_t *Reg,uint32_t *bandera
 
         if( instruction.op1_type=='R' && instruction.op2_type=='R' )
 	    {
+	        *operacion=17024+instruction.op1_value+(instruction.op2_value<<3);
 	        CMP(Reg[instruction.op1_value],Reg[instruction.op2_value],banderas);
 	    }
         if( instruction.op1_type=='R' && instruction.op2_type=='#' )
 	    {
+	        *operacion=10240+(instruction.op1_value<<8)+instruction.op2_value;
 	        CMP(Reg[instruction.op1_value],instruction.op2_value,banderas);
 	    }
         Reg[15]++;
 	}
 
 	if( strcmp(instruction.mnemonic,"EORS") == 0 ){
+        *operacion=16448+instruction.op1_value+(instruction.op2_value<<3);
         EORS(&Reg[instruction.op1_value], Reg[instruction.op2_value],Reg[instruction.op3_value],banderas);
         Reg[15]++;
 	}
@@ -249,10 +263,12 @@ void decodeInstruction(instruction_t instruction,uint32_t *Reg,uint32_t *bandera
 
         if( instruction.op1_type=='R' && instruction.op2_type=='R' && instruction.op3_type=='R' )
 	    {
+	        *operacion=16576+instruction.op2_value+(instruction.op3_value<<3);
 	        LSRS(&Reg[instruction.op1_value],Reg[instruction.op2_value],Reg[instruction.op3_value],banderas);
 	    }
         if( instruction.op1_type=='R' && instruction.op3_type=='#' && instruction.op2_type=='R' )
 	    {
+	        *operacion=2048+instruction.op1_value+(instruction.op2_value<<3)+(instruction.op3_value<<6);
 	        LSRS(&Reg[instruction.op1_value],Reg[instruction.op2_value],instruction.op3_value,banderas);
 	    }
         Reg[15]++;
@@ -262,10 +278,12 @@ void decodeInstruction(instruction_t instruction,uint32_t *Reg,uint32_t *bandera
 
         if( instruction.op1_type=='R' && instruction.op2_type=='R'&& instruction.op3_type=='R')
 	    {
+	        *operacion=16512+instruction.op2_value+(instruction.op3_value<<3);
 	        LSLS(&Reg[instruction.op1_value],Reg[instruction.op2_value],Reg[instruction.op3_value],banderas);
 	    }
         if( instruction.op1_type=='R' && instruction.op2_type=='R'&&instruction.op3_type=='#' )
 	    {
+	        *operacion=instruction.op1_value+(instruction.op2_value<<3)+(instruction.op3_value<<6);
 	        LSLS(&Reg[instruction.op1_value],Reg[instruction.op2_value],instruction.op3_value,banderas);
 	    }
         Reg[15]++;
@@ -274,60 +292,70 @@ void decodeInstruction(instruction_t instruction,uint32_t *Reg,uint32_t *bandera
 
 	if( strcmp(instruction.mnemonic,"MULS") == 0 ){
 
+        *operacion=17216+instruction.op1_value+(instruction.op2_value<<3);
         MULS(&Reg[instruction.op1_value],Reg[instruction.op2_value],Reg[instruction.op3_value],banderas);
         Reg[15]++;
 	}
 
 	if( strcmp(instruction.mnemonic,"MVNS") == 0 ){
 
+        *operacion=17344+instruction.op1_value+(instruction.op2_value<<3);
         MVNS(&Reg[instruction.op1_value],Reg[instruction.op2_value],banderas);
         Reg[15]++;
 	}
 
 	if( strcmp(instruction.mnemonic,"NOP") == 0 ){
 
+        *operacion=48896;
         NOP();
         Reg[15]++;
 	}
 
 	if( strcmp(instruction.mnemonic,"ORRS") == 0 ){
 
+        *operacion=17152+instruction.op2_value+(instruction.op3_value<<3);
         ORRS(&Reg[instruction.op1_value],Reg[instruction.op2_value],Reg[instruction.op3_value],banderas);
         Reg[15]++;
 	}
 
 	if( strcmp(instruction.mnemonic,"REV") == 0 ){
 
+        *operacion=47616+instruction.op1_value+(instruction.op2_value<<3);
         REV(&Reg[instruction.op1_value],Reg[instruction.op2_value]);
         Reg[15]++;
 	}
 
 	if( strcmp(instruction.mnemonic,"REV16") == 0 ){
 
+        *operacion=47680+instruction.op1_value+(instruction.op2_value<<3);
         REV16(&Reg[instruction.op1_value],Reg[instruction.op2_value]);
         Reg[15]++;
 	}
 
 	if( strcmp(instruction.mnemonic,"REVSH") == 0 ){
 
+        *operacion=47808+(instruction.op1_value)+(instruction.op2_value<<3);
         REVSH(&Reg[instruction.op1_value],Reg[instruction.op2_value]);
         Reg[15]++;
 	}
 
 	if( strcmp(instruction.mnemonic,"RORS") == 0 ){
 
+        *operacion=16832+instruction.op2_value+(instruction.op3_value<<3);
         RORS(&Reg[instruction.op1_value],Reg[instruction.op2_value],Reg[instruction.op3_value],banderas);
         Reg[15]++;
 	}
 
 	if( strcmp(instruction.mnemonic,"RSBS") == 0 ){
 
+        *operacion=16960+instruction.op1_value+(instruction.op2_value<<3);
         RSBS(&Reg[instruction.op1_value],instruction.op2_value,banderas);
         Reg[15]++;
 	}
 
 	if( strcmp(instruction.mnemonic,"SBCS") == 0 ){
 
+        *operacion=16768+instruction.op2_value+(instruction.op3_value<<3);
         SBCS(&Reg[instruction.op1_value],Reg[instruction.op2_value],Reg[instruction.op3_value],banderas);
         Reg[15]++;
 	}
@@ -336,10 +364,12 @@ void decodeInstruction(instruction_t instruction,uint32_t *Reg,uint32_t *bandera
 
         if( instruction.op1_type=='R' && instruction.op2_type=='R' )
 	    {
+	        *operacion=6656+instruction.op1_value+(instruction.op2_value<<3)+(instruction.op3_value<<6);
 	        SUBS(&Reg[instruction.op1_value],Reg[instruction.op2_value],Reg[instruction.op3_value],banderas);
 	    }
-        if( instruction.op1_type=='R' && instruction.op2_type=='#' )
+        if( instruction.op1_type=='R' && instruction.op3_type=='#' )
 	    {
+	        *operacion=14336+instruction.op3_value+(instruction.op2_value);
 	        SUBS(&Reg[instruction.op1_value],Reg[instruction.op2_value],instruction.op3_value,banderas);
 	    }
         Reg[15]++;
@@ -347,12 +377,14 @@ void decodeInstruction(instruction_t instruction,uint32_t *Reg,uint32_t *bandera
 
 	if( strcmp(instruction.mnemonic,"SUB") == 0 ){
 
+        *operacion=6656+instruction.op1_value+(instruction.op2_value<<3)+(instruction.op3_value<<6);
         SUB(&Reg[instruction.op1_value],Reg[instruction.op2_value],instruction.op3_value);
         Reg[15]++;
 	}
 
 	if( strcmp(instruction.mnemonic,"TST") == 0 ){
 
+        *operacion=16896+instruction.op1_value+(instruction.op2_value<<3);
         TST(Reg[instruction.op1_value],Reg[instruction.op2_value],banderas);
         Reg[15]++;
 	}
@@ -363,6 +395,7 @@ void decodeInstruction(instruction_t instruction,uint32_t *Reg,uint32_t *bandera
 
 
 	if( strcmp(instruction.mnemonic,"B") == 0){
+        *operacion=53248+instruction.op1_value;
         B(&Reg[15],instruction.op1_value);
 	}
 
@@ -431,10 +464,12 @@ void decodeInstruction(instruction_t instruction,uint32_t *Reg,uint32_t *bandera
         }
 
 	if( strcmp(instruction.mnemonic,"BLX") == 0 ){
+        *operacion=18304+(instruction.op1_value<<3);
         BLX(&Reg[14],&Reg[15],Reg[instruction.op1_value]);
 	}
 
 	if( strcmp(instruction.mnemonic,"BX") == 0 ){
+        *operacion=18176+(instruction.op1_value<<3);
         BX(&Reg[15],&Reg[14]);
 	}
 

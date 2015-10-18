@@ -11,10 +11,14 @@
 #include "PILA.h"
 #include "LoadStore.h"
 #include "interrupciones.h"
+#include "io.h"
 
+extern uint8_t irq[16];	// Arreglo de interrupciones
+						// Cada elemento es una interrupción por pin
 int main(void)
 {
-    int i,h=0;
+    initIO();	// Inicializa los puertos de E/S
+    int i;
     uint32_t Reg[16]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};   //Reg[13] ---> SP
     uint16_t operacion=0;                                                      //Reg[14] ---> LR
      Reg[13]=256 ;                                        //Reg[15] ---> PC
@@ -23,13 +27,7 @@ int main(void)
      {
         SRam[i]=255;
      }
-     for(i=0;i<=32;i++)
-     {
-        SRam[i]=180+i;
-     }
-     SRam[0]=1; //Guardo en la Ram la posicion donde se encuentra el salto para ejecutar la interrupccion 1
-    uint32_t  Rin[16]={1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};//Arreglo que me indica cual interrupccion esta activa
-
+     //SRam[0]=1; //Guardo en la Ram la posicion donde se encuentra el salto para ejecutar la interrupccion 1
     uint32_t banderas[4]={0,0,0,0}; //estas son las banderas del microprocesador las posiciones indican la bandera
                                         //[0] es N es 1 si el resultado es negatico
                                         //[1] es Z es 1 si el resultado es cero
@@ -53,19 +51,30 @@ int main(void)
 
 		instructions = read.array; // Arreglo con las instrucciones
 	//---------------------------//
+    char tecla='z';
+    char puerto;
 	while(1)
     {
 	instruction = getInstruction(instructions[Reg[15]]);//aqui esta el error
 	decodeInstruction(instruction,Reg,banderas,&SRam[0],&operacion);
-	if(h>=3){
-    NVIC(&Reg[0],&banderas[0],&SRam[0],&Rin[0]);
+    if(tecla=='a')
+    {
+        puerto=getch();
     }
+    if(tecla=='b')
+    {
+        puerto=getch();
+    }
+    //NVIC(&Reg[0],&banderas[0],&SRam[0],&irq[0]);
+
+    showPorts();
     mostrar_registros(Reg);
 	mostrar_SRam(SRam);
+
     mostrar_banderas(banderas);
     mostrar_operacion(instructions[Reg[15]]);
-    h++;
-	getch();
+
+	tecla=getch();
     }
     endwin();
 
@@ -77,7 +86,6 @@ int main(void)
 	}
 	free(read.array);
 	//---------------------------//
-
 	return 0;
 }
 

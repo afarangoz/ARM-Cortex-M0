@@ -8,18 +8,20 @@ int main(void)
 	uint8_t data;
 
 	initIO();	// Inicializa los puertos de E/S
-
 	data = 1;
 	IOAccess(13, &data, Write);	// Escribe en el registro de interrupciones
 								// Habilita la interrupción 0 del puerto B
+								getch();
 	data = 0xAA;
 	IOAccess(10, &data, Write);	// Escribe 0xAA al DDRB
-
+                                getch();
 	data=0xFF;
 	IOAccess(11, &data, Write);	// Escribe 0xFF al PORTB
-
+	showPorts();
+getch();
 	IOAccess(12, &data, Read);	// Lee el PINB
-
+	showPorts();
+getch();
 	IOAccess(1, &data, Write);	// Escribe el valor del PINB al PORTA
 
 	changePinPortB(0,HIGH);		// Cambia el valor del Pin a Alto

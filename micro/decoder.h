@@ -35,6 +35,7 @@ void decodeInstruction(instruction_t instruction,uint32_t *Reg,uint32_t *bandera
 /** \fn instruction_t getInstruction(char* instStr)
     \brief Obtiene la instrucción separada por partes.
     \param instrStr cadena que contiene la instrucción.
+    \param *operacion almacenara la direccion asignada en memoria para una instruccion especifica
 	\return instruction_t la instrucción separada por partes.
 */
 instruction_t getInstruction(char* instStr);
