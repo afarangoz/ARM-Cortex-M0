@@ -161,7 +161,6 @@ int main(void)
         {
             if((PORTB.Pins&1)==0)
             {
-                printf("hola");
                 changePinPortB(0,HIGH);
             }
             else
