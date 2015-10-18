@@ -161,11 +161,13 @@ int main(void)
         {
             if((PORTB.Pins&1)==0)
             {
+                printf("hola");
                 changePinPortB(0,HIGH);
             }
             else
             {
                 changePinPortB(0,LOW);
+
             }
         }
         if(puerto=='1')
@@ -263,11 +265,6 @@ int main(void)
     refresh();
     attroff(COLOR_PAIR(5));
     //********************************************//
-    for(i=0;i<=15;i++)
-    {
-        printf("-%d-",irq[i]);
-    }
-    printf("\n");
 
 	tecla=getch();
     }
