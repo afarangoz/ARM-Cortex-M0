@@ -39,7 +39,7 @@ void changePinPortB(uint8_t pin, uint8_t value)
 }
 
 void IOAccess(uint8_t address, uint8_t* data, uint8_t r_w)
-{   printf("%d",address);
+{
 	if(r_w){
 		switch(address){
 			case 0:
