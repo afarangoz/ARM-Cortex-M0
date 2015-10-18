@@ -104,7 +104,7 @@ void mostrar_operacion( char* op)
 
 
         attron(COLOR_PAIR(4));
-    	move(15, 46);
+    	move(17, 46);
         printw("    %s ",op);
 
         refresh();

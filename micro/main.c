@@ -23,9 +23,9 @@ int main(void)
     int i;
     uint32_t Reg[16]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};   //Reg[13] ---> SP
     uint16_t operacion=0;                                                      //Reg[14] ---> LR
-     Reg[13]=256 ;                                        //Reg[15] ---> PC
-     uint8_t SRam[257];
-     for(i=0;i<=256;i++)
+    Reg[13]=256 ;                                        //Reg[15] ---> PC
+    uint8_t SRam[257];
+    for(i=0;i<=256;i++)
      {
         SRam[i]=255;
      }
@@ -60,7 +60,7 @@ int main(void)
     char puerto;
 	while(1)
     {
-	instruction = getInstruction(instructions[Reg[15]]);//aqui esta el error
+	instruction = getInstruction(instructions[Reg[15]]);
 	decodeInstruction(instruction,Reg,banderas,&SRam[0],&operacion);
     if(tecla=='a')
     {
@@ -249,16 +249,25 @@ int main(void)
     }
     //NVIC(&Reg[0],&banderas[0],&SRam[0],&irq[0]);
 
+
     showPorts();
     mostrar_registros(Reg);
 	mostrar_SRam(SRam);
     mostrar_banderas(banderas);
     mostrar_operacion(instructions[Reg[15]]);
+        //********Muestro la variable operacion********//
+    init_pair(5, COLOR_WHITE, COLOR_BLACK);
+    attron(COLOR_PAIR(5));
+    move(14, 50);
+    printw("Operacion: %.X",operacion);
+    refresh();
+    attroff(COLOR_PAIR(5));
+    //********************************************//
     for(i=0;i<=15;i++)
     {
         printf("-%d-",irq[i]);
     }
-printf("\n");
+    printf("\n");
 
 	tecla=getch();
     }
