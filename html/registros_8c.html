@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.10"/>
-<title>Proyecto1: Referencia del Archivo registros.c</title>
+<title>My Project: Referencia del Archivo registros.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Proyecto1
+   <div id="projectname">My Project
    </div>
   </td>
  </tr>
@@ -81,31 +81,160 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Funciones</a>  </div>
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">Referencia del Archivo registros.c</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="registros_8h_source.html">registros.h</a>&quot;</code><br />
+<code>#include &lt;curses.h&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funciones</h2></td></tr>
-<tr class="memitem:a9b444c9eec756aac00b89e9de6f5a857"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="registros_8c.html#a9b444c9eec756aac00b89e9de6f5a857">mostrar_registros</a> (unsigned long registro[13])</td></tr>
-<tr class="separator:a9b444c9eec756aac00b89e9de6f5a857"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f35997efef9a1ccb4e0d9f9d9eeabd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="registros_8c.html#a6f35997efef9a1ccb4e0d9f9d9eeabd4">mostrar_registros</a> (uint32_t *registro)</td></tr>
+<tr class="memdesc:a6f35997efef9a1ccb4e0d9f9d9eeabd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcion que toma los valores de los registros y los imprime en pantalla.  <a href="#a6f35997efef9a1ccb4e0d9f9d9eeabd4">Más...</a><br /></td></tr>
+<tr class="separator:a6f35997efef9a1ccb4e0d9f9d9eeabd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d4e86051953730d1e2de4ac4c33ece1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="registros_8c.html#a2d4e86051953730d1e2de4ac4c33ece1">mostrar_SRam</a> (uint8_t *SRam)</td></tr>
+<tr class="memdesc:a2d4e86051953730d1e2de4ac4c33ece1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcion que muestra los valores almacenados en la SRam.  <a href="#a2d4e86051953730d1e2de4ac4c33ece1">Más...</a><br /></td></tr>
+<tr class="separator:a2d4e86051953730d1e2de4ac4c33ece1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d0b0403646c7f287eeab238198c08df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="registros_8c.html#a4d0b0403646c7f287eeab238198c08df">mostrar_banderas</a> (uint32_t banderas[4])</td></tr>
+<tr class="memdesc:a4d0b0403646c7f287eeab238198c08df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcion que toma los valores de las banderas y los imprime en pantalla.  <a href="#a4d0b0403646c7f287eeab238198c08df">Más...</a><br /></td></tr>
+<tr class="separator:a4d0b0403646c7f287eeab238198c08df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9adeda5b4c7bd459ae30968b5331fd2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="registros_8c.html#a9adeda5b4c7bd459ae30968b5331fd2e">mostrar_operacion</a> (char *op)</td></tr>
+<tr class="memdesc:a9adeda5b4c7bd459ae30968b5331fd2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcion que muestra la operacion que se realizo.  <a href="#a9adeda5b4c7bd459ae30968b5331fd2e">Más...</a><br /></td></tr>
+<tr class="separator:a9adeda5b4c7bd459ae30968b5331fd2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ac8936188af0c1d2f8b9d0cd25fde43b2"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="registros_8c.html#ac8936188af0c1d2f8b9d0cd25fde43b2">i</a></td></tr>
+<tr class="separator:ac8936188af0c1d2f8b9d0cd25fde43b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae61d3f3408f131d1ff489f2e7ef5b9f4"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="registros_8c.html#ae61d3f3408f131d1ff489f2e7ef5b9f4">j</a></td></tr>
+<tr class="separator:ae61d3f3408f131d1ff489f2e7ef5b9f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentación de las funciones</h2>
-<a class="anchor" id="a9b444c9eec756aac00b89e9de6f5a857"></a>
+<a class="anchor" id="a4d0b0403646c7f287eeab238198c08df"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mostrar_banderas </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>banderas</em>[4]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funcion que toma los valores de las banderas y los imprime en pantalla. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">banderas[4]</td><td>Arreglo que contiene cada 1 de las banderas </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>No tiene retorno </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9adeda5b4c7bd459ae30968b5331fd2e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mostrar_operacion </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>op</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funcion que muestra la operacion que se realizo. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">op[5]</td><td>variable tipo caracter donde se gusrda el nombre de la operacion realizada </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>No tiene retorno </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6f35997efef9a1ccb4e0d9f9d9eeabd4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void mostrar_registros </td>
           <td>(</td>
-          <td class="paramtype">unsigned long&#160;</td>
-          <td class="paramname"><em>registro</em>[13]</td><td>)</td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>registro</em></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funcion que toma los valores de los registros y los imprime en pantalla. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">registro[13]</td><td>Arreglo que contiene cada 1 de los registros </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>No tiene retorno </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2d4e86051953730d1e2de4ac4c33ece1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mostrar_SRam </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>SRam</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funcion que muestra los valores almacenados en la SRam. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">SRam[65]</td><td>Memoria disponible </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>No tiene retorno </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las variables</h2>
+<a class="anchor" id="ac8936188af0c1d2f8b9d0cd25fde43b2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int i</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae61d3f3408f131d1ff489f2e7ef5b9f4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int j</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "interrupciones.h"
 
-void NVIC(uint32_t *Reg,uint32_t *banderas, uint8_t *SR, uint32_t *Rin)
+void NVIC(uint32_t *Reg,uint32_t *banderas, uint8_t *SR, uint8_t *Rin)
 {
     static uint8_t itc =0 ;
     int i,n=0,b=0;
@@ -11,7 +11,9 @@ void NVIC(uint32_t *Reg,uint32_t *banderas, uint8_t *SR, uint32_t *Rin)
     for(i=0;i<16;i++)
     {
         if(*(Rin+i)==1){
-        n++;}
+        n++;
+        b=i;
+        break;}
     }
 
     if(n!=0)
@@ -109,7 +111,7 @@ void NVIC(uint32_t *Reg,uint32_t *banderas, uint8_t *SR, uint32_t *Rin)
             {
                 if(*(Rin+i)==1)
                     {
-                        *(Reg+15)=*(SR+i);
+                        *(Reg+15)=i+1;
                         itc=1;
                         b=i;
                         break;

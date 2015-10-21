@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.10"/>
-<title>Proyecto1: Referencia del Archivo ALU.c</title>
+<title>My Project: Referencia del Archivo ALU.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Proyecto1
+   <div id="projectname">My Project
    </div>
   </td>
  </tr>
@@ -88,42 +88,230 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="_a_l_u_8h_source.html">ALU.h</a>&quot;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funciones</h2></td></tr>
-<tr class="memitem:a747f81693014c24b6036007b7048a65d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_l_u_8c.html#a747f81693014c24b6036007b7048a65d">ADD</a> (unsigned long int Rn, unsigned long int Rm)</td></tr>
-<tr class="memdesc:a747f81693014c24b6036007b7048a65d"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion que suma  <a href="#a747f81693014c24b6036007b7048a65d">Más...</a><br /></td></tr>
-<tr class="separator:a747f81693014c24b6036007b7048a65d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4eebf4ccebb1210cd620aa45152879d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_l_u_8c.html#ae4eebf4ccebb1210cd620aa45152879d">SUB</a> (unsigned long int Rn, unsigned long int Rm)</td></tr>
-<tr class="memdesc:ae4eebf4ccebb1210cd620aa45152879d"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion que resta  <a href="#ae4eebf4ccebb1210cd620aa45152879d">Más...</a><br /></td></tr>
-<tr class="separator:ae4eebf4ccebb1210cd620aa45152879d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad69b338bf29392ce2f8994f045afbfbd"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_l_u_8c.html#ad69b338bf29392ce2f8994f045afbfbd">BIC</a> (unsigned long int Rn, unsigned long int Rm)</td></tr>
-<tr class="memdesc:ad69b338bf29392ce2f8994f045afbfbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion AND  <a href="#ad69b338bf29392ce2f8994f045afbfbd">Más...</a><br /></td></tr>
-<tr class="separator:ad69b338bf29392ce2f8994f045afbfbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14a50cf292452f430568545a4b446a27"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_l_u_8c.html#a14a50cf292452f430568545a4b446a27">EOR</a> (unsigned long int Rn, unsigned long int Rm)</td></tr>
-<tr class="memdesc:a14a50cf292452f430568545a4b446a27"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion OR  <a href="#a14a50cf292452f430568545a4b446a27">Más...</a><br /></td></tr>
-<tr class="separator:a14a50cf292452f430568545a4b446a27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9492f292ed5517ffa05fe6fc2548ed3d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_l_u_8c.html#a9492f292ed5517ffa05fe6fc2548ed3d">MVN</a> (unsigned long int Rn)</td></tr>
-<tr class="memdesc:a9492f292ed5517ffa05fe6fc2548ed3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion NOT  <a href="#a9492f292ed5517ffa05fe6fc2548ed3d">Más...</a><br /></td></tr>
-<tr class="separator:a9492f292ed5517ffa05fe6fc2548ed3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac7ddde4c370b3f3406a883735083a2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_l_u_8c.html#aac7ddde4c370b3f3406a883735083a2f">ADDS</a> (uint32_t *Rd, uint32_t Rm, uint32_t Rn, uint32_t *banderas)</td></tr>
+<tr class="memdesc:aac7ddde4c370b3f3406a883735083a2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion que suma  <a href="#aac7ddde4c370b3f3406a883735083a2f">Más...</a><br /></td></tr>
+<tr class="separator:aac7ddde4c370b3f3406a883735083a2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a66f829a91b5cc16be0b095d0cda46e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_l_u_8c.html#a3a66f829a91b5cc16be0b095d0cda46e">ADD</a> (uint32_t *Rd, uint32_t Rm, uint32_t Rn)</td></tr>
+<tr class="memdesc:a3a66f829a91b5cc16be0b095d0cda46e"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion que suma pero no actualiza banderas  <a href="#a3a66f829a91b5cc16be0b095d0cda46e">Más...</a><br /></td></tr>
+<tr class="separator:a3a66f829a91b5cc16be0b095d0cda46e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50e6b64f011f341416bacdadea1f396d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_l_u_8c.html#a50e6b64f011f341416bacdadea1f396d">SUBS</a> (uint32_t *Rd, uint32_t Rm, uint32_t Rn, uint32_t *banderas)</td></tr>
+<tr class="memdesc:a50e6b64f011f341416bacdadea1f396d"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion que resta y actualiza las banderas  <a href="#a50e6b64f011f341416bacdadea1f396d">Más...</a><br /></td></tr>
+<tr class="separator:a50e6b64f011f341416bacdadea1f396d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73b6fffc894730277379fe44ca2cf819"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_l_u_8c.html#a73b6fffc894730277379fe44ca2cf819">SUB</a> (uint32_t *Rd, uint32_t Rm, uint32_t Rn)</td></tr>
+<tr class="memdesc:a73b6fffc894730277379fe44ca2cf819"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion que resta  <a href="#a73b6fffc894730277379fe44ca2cf819">Más...</a><br /></td></tr>
+<tr class="separator:a73b6fffc894730277379fe44ca2cf819"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a481692c4f9388dd21ec28bc89176b9a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_l_u_8c.html#a481692c4f9388dd21ec28bc89176b9a3">ANDS</a> (uint32_t *Rd, uint32_t Rm, uint32_t Rn, uint32_t *banderas)</td></tr>
+<tr class="memdesc:a481692c4f9388dd21ec28bc89176b9a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion que producto logico a nivel de bit  <a href="#a481692c4f9388dd21ec28bc89176b9a3">Más...</a><br /></td></tr>
+<tr class="separator:a481692c4f9388dd21ec28bc89176b9a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad30bb822177ed48519f87086c5bbdd63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_l_u_8c.html#ad30bb822177ed48519f87086c5bbdd63">ORRS</a> (uint32_t *Rd, uint32_t Rm, uint32_t Rn, uint32_t *banderas)</td></tr>
+<tr class="memdesc:ad30bb822177ed48519f87086c5bbdd63"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion OR  <a href="#ad30bb822177ed48519f87086c5bbdd63">Más...</a><br /></td></tr>
+<tr class="separator:ad30bb822177ed48519f87086c5bbdd63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6cf44febe16f558af742bff3ae9f408"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_l_u_8c.html#ad6cf44febe16f558af742bff3ae9f408">MOVS</a> (uint32_t *Rm, uint32_t Rn, uint32_t *banderas)</td></tr>
+<tr class="memdesc:ad6cf44febe16f558af742bff3ae9f408"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion que mueve datos de un registro a otro  <a href="#ad6cf44febe16f558af742bff3ae9f408">Más...</a><br /></td></tr>
+<tr class="separator:ad6cf44febe16f558af742bff3ae9f408"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae72c8e3584181ca6204e433126149966"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_l_u_8c.html#ae72c8e3584181ca6204e433126149966">MOV</a> (uint32_t *Rm, uint32_t Rn)</td></tr>
+<tr class="memdesc:ae72c8e3584181ca6204e433126149966"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion que mueve datos de un registro a otro pero no actualiza banderas  <a href="#ae72c8e3584181ca6204e433126149966">Más...</a><br /></td></tr>
+<tr class="separator:ae72c8e3584181ca6204e433126149966"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75f4eb82927df4f2e103ca9148b87c9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_l_u_8c.html#a75f4eb82927df4f2e103ca9148b87c9c">BICS</a> (uint32_t *Rd, uint32_t Rm, uint32_t Rn, uint32_t *banderas)</td></tr>
+<tr class="memdesc:a75f4eb82927df4f2e103ca9148b87c9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion para ejecutar una AND entre un registro y el negado del otro  <a href="#a75f4eb82927df4f2e103ca9148b87c9c">Más...</a><br /></td></tr>
+<tr class="separator:a75f4eb82927df4f2e103ca9148b87c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79ece4ff0fa07616fd099dd636cef6a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_l_u_8c.html#a79ece4ff0fa07616fd099dd636cef6a2">EORS</a> (uint32_t *Rd, uint32_t Rm, uint32_t Rn, uint32_t *banderas)</td></tr>
+<tr class="memdesc:a79ece4ff0fa07616fd099dd636cef6a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion para ejecutar una exclusive OR bit a bit con los dos registros de entrada  <a href="#a79ece4ff0fa07616fd099dd636cef6a2">Más...</a><br /></td></tr>
+<tr class="separator:a79ece4ff0fa07616fd099dd636cef6a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a510682353bf3f33e1bfe3bbdb6352b8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_l_u_8c.html#a510682353bf3f33e1bfe3bbdb6352b8b">MVNS</a> (uint32_t *Rd, uint32_t Rm, uint32_t *banderas)</td></tr>
+<tr class="memdesc:a510682353bf3f33e1bfe3bbdb6352b8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion para ejecutar la operacion logica NOT a Rm  <a href="#a510682353bf3f33e1bfe3bbdb6352b8b">Más...</a><br /></td></tr>
+<tr class="separator:a510682353bf3f33e1bfe3bbdb6352b8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace91e03521716b81ebb4d4589a225d8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_l_u_8c.html#ace91e03521716b81ebb4d4589a225d8b">NOP</a> ()</td></tr>
+<tr class="memdesc:ace91e03521716b81ebb4d4589a225d8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion para no hacer nada  <a href="#ace91e03521716b81ebb4d4589a225d8b">Más...</a><br /></td></tr>
+<tr class="separator:ace91e03521716b81ebb4d4589a225d8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8f86b38eb44d3a24fc3727fc4dc127b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_l_u_8c.html#af8f86b38eb44d3a24fc3727fc4dc127b">CMN</a> (uint32_t Rm, uint32_t Rn, uint32_t *banderas)</td></tr>
+<tr class="memdesc:af8f86b38eb44d3a24fc3727fc4dc127b"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion sumar pero no guarda el resultado  <a href="#af8f86b38eb44d3a24fc3727fc4dc127b">Más...</a><br /></td></tr>
+<tr class="separator:af8f86b38eb44d3a24fc3727fc4dc127b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13ef47f924ce7c914e4262df75c6277d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_l_u_8c.html#a13ef47f924ce7c914e4262df75c6277d">CMP</a> (uint32_t Rm, uint32_t Rn, uint32_t *banderas)</td></tr>
+<tr class="memdesc:a13ef47f924ce7c914e4262df75c6277d"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion restar pero no guarda el valor solo actualiza banderas  <a href="#a13ef47f924ce7c914e4262df75c6277d">Más...</a><br /></td></tr>
+<tr class="separator:a13ef47f924ce7c914e4262df75c6277d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c55ded7980dc10ab5b34304677aabc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_l_u_8c.html#a1c55ded7980dc10ab5b34304677aabc1">TST</a> (uint32_t Rm, uint32_t Rn, uint32_t *banderas)</td></tr>
+<tr class="memdesc:a1c55ded7980dc10ab5b34304677aabc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion realiza la operacion AND pero no guarda el valor solo actualiza banderas  <a href="#a1c55ded7980dc10ab5b34304677aabc1">Más...</a><br /></td></tr>
+<tr class="separator:a1c55ded7980dc10ab5b34304677aabc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66101581fc79e8b26de298db4be4117d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_l_u_8c.html#a66101581fc79e8b26de298db4be4117d">ACTNZ</a> (uint32_t *Rd, uint32_t *banderas)</td></tr>
+<tr class="memdesc:a66101581fc79e8b26de298db4be4117d"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion que actualiza las banderas N y Z  <a href="#a66101581fc79e8b26de298db4be4117d">Más...</a><br /></td></tr>
+<tr class="separator:a66101581fc79e8b26de298db4be4117d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a188d16f8248db78c6a454de70bda2b57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_l_u_8c.html#a188d16f8248db78c6a454de70bda2b57">ADCS</a> (uint32_t *Rd, uint32_t Rm, uint32_t Rn, uint32_t *banderas)</td></tr>
+<tr class="memdesc:a188d16f8248db78c6a454de70bda2b57"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion que efectua la suma normal y suma el carry  <a href="#a188d16f8248db78c6a454de70bda2b57">Más...</a><br /></td></tr>
+<tr class="separator:a188d16f8248db78c6a454de70bda2b57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5710d41eb4904c000a0dcae25ed03f26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_l_u_8c.html#a5710d41eb4904c000a0dcae25ed03f26">SBCS</a> (uint32_t *Rd, uint32_t Rm, uint32_t Rn, uint32_t *banderas)</td></tr>
+<tr class="memdesc:a5710d41eb4904c000a0dcae25ed03f26"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion que efectua la resta normal y resta el carry  <a href="#a5710d41eb4904c000a0dcae25ed03f26">Más...</a><br /></td></tr>
+<tr class="separator:a5710d41eb4904c000a0dcae25ed03f26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6368d239026ecaf7c967552666f14d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_l_u_8c.html#af6368d239026ecaf7c967552666f14d1">RSBS</a> (uint32_t *Rd, uint32_t Rm, uint32_t *banderas)</td></tr>
+<tr class="memdesc:af6368d239026ecaf7c967552666f14d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion que efectua el complemento a dos de un registro  <a href="#af6368d239026ecaf7c967552666f14d1">Más...</a><br /></td></tr>
+<tr class="separator:af6368d239026ecaf7c967552666f14d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a718a6f1bd724bdd6b18a1d23f69cb999"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_l_u_8c.html#a718a6f1bd724bdd6b18a1d23f69cb999">MULS</a> (uint32_t *Rd, uint32_t Rm, uint32_t Rn, uint32_t *banderas)</td></tr>
+<tr class="memdesc:a718a6f1bd724bdd6b18a1d23f69cb999"><td class="mdescLeft">&#160;</td><td class="mdescRight">funcion que efectue el producto de dos registros sin signo  <a href="#a718a6f1bd724bdd6b18a1d23f69cb999">Más...</a><br /></td></tr>
+<tr class="separator:a718a6f1bd724bdd6b18a1d23f69cb999"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentación de las funciones</h2>
-<a class="anchor" id="a747f81693014c24b6036007b7048a65d"></a>
+<a class="anchor" id="a66101581fc79e8b26de298db4be4117d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float ADD </td>
+          <td class="memname">void ACTNZ </td>
           <td>(</td>
-          <td class="paramtype">unsigned long int&#160;</td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>Rd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>banderas</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>funcion que actualiza las banderas N y Z </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*Rd</td><td>resultado </td></tr>
+    <tr><td class="paramname">*banderas</td><td>direccion de memoria de las banderas </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>no hay retorno </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a188d16f8248db78c6a454de70bda2b57"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ADCS </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>Rd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Rm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>Rn</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned long int&#160;</td>
-          <td class="paramname"><em>Rm</em>&#160;</td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>banderas</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>funcion que efectua la suma normal y suma el carry </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*Rd</td><td>registro donde se guarda el resultado </td></tr>
+    <tr><td class="paramname">Rm</td><td>registro a sumar </td></tr>
+    <tr><td class="paramname">Rn</td><td>registro a sumar </td></tr>
+    <tr><td class="paramname">*banderas</td><td>direccion de memoria de la bandera cero "N" </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>no hay retorno </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3a66f829a91b5cc16be0b095d0cda46e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ADD </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>Rd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Rm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Rn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>funcion que suma pero no actualiza banderas </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Rn</td><td>Registro de entrada </td></tr>
+    <tr><td class="paramname">Rm</td><td>registro de entrada </td></tr>
+    <tr><td class="paramname">*Rd</td><td>lugar donde se almacenara el resultado </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>no hay retorno </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aac7ddde4c370b3f3406a883735083a2f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ADDS </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>Rd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Rm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Rn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>banderas</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -136,30 +324,44 @@ Funciones</h2></td></tr>
 <p>funcion que suma </p>
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Rn</td><td>Registro1 </td></tr>
-    <tr><td class="paramname">Rm</td><td>Registro2 </td></tr>
+    <tr><td class="paramname">Rn</td><td>Registro de entrada </td></tr>
+    <tr><td class="paramname">Rm</td><td>registro de entrada </td></tr>
+    <tr><td class="paramname">*Rd</td><td>lugar donde se almacenara el resultado </td></tr>
+    <tr><td class="paramname">*banderas</td><td>direccion de memoria de las banderas </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Devuelve</dt><dd>El resultado de la suma entre los dos Registros de entrada </dd></dl>
+<dl class="section return"><dt>Devuelve</dt><dd>no hay retorno </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ad69b338bf29392ce2f8994f045afbfbd"></a>
+<a class="anchor" id="a481692c4f9388dd21ec28bc89176b9a3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float BIC </td>
+          <td class="memname">void ANDS </td>
           <td>(</td>
-          <td class="paramtype">unsigned long int&#160;</td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>Rd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Rm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>Rn</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned long int&#160;</td>
-          <td class="paramname"><em>Rm</em>&#160;</td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>banderas</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -169,33 +371,429 @@ Funciones</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>funcion AND </p>
+<p>funcion que producto logico a nivel de bit </p>
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Rn</td><td>Registro1 </td></tr>
-    <tr><td class="paramname">Rm</td><td>Registro2 </td></tr>
+    <tr><td class="paramname">Rn</td><td>Registro de entrada </td></tr>
+    <tr><td class="paramname">Rm</td><td>registro de entrada </td></tr>
+    <tr><td class="paramname">*Rd</td><td>lugar donde se almacenara el resultado </td></tr>
+    <tr><td class="paramname">*banderas</td><td>direccion de memoria de las banderas </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Devuelve</dt><dd>El resultado es la eperacion AND a nivel de bits </dd></dl>
+<dl class="section return"><dt>Devuelve</dt><dd>no hay retorno </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a14a50cf292452f430568545a4b446a27"></a>
+<a class="anchor" id="a75f4eb82927df4f2e103ca9148b87c9c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float EOR </td>
+          <td class="memname">void BICS </td>
           <td>(</td>
-          <td class="paramtype">unsigned long int&#160;</td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>Rd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Rm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>Rn</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned long int&#160;</td>
-          <td class="paramname"><em>Rm</em>&#160;</td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>banderas</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>funcion para ejecutar una AND entre un registro y el negado del otro </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Rn</td><td>Registro de entrada </td></tr>
+    <tr><td class="paramname">Rm</td><td>Registro de entrada </td></tr>
+    <tr><td class="paramname">*Rd</td><td>lugar donde se almacenara el resultado. </td></tr>
+    <tr><td class="paramname">*banderas</td><td>direccion de memoria de las banderas </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>no hay retorno </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af8f86b38eb44d3a24fc3727fc4dc127b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMN </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Rm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Rn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>banderas</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>funcion sumar pero no guarda el resultado </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Rn</td><td>Registro de entrada </td></tr>
+    <tr><td class="paramname">Rm</td><td>registro de entrada </td></tr>
+    <tr><td class="paramname">*banderas</td><td>direccion de memoria de las banderas </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>no hay retorno </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a13ef47f924ce7c914e4262df75c6277d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMP </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Rm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Rn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>banderas</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>funcion restar pero no guarda el valor solo actualiza banderas </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Rn</td><td>Registro de entrada </td></tr>
+    <tr><td class="paramname">Rm</td><td>registro de entrada </td></tr>
+    <tr><td class="paramname">*banderas</td><td>direccion en memoria de las banderas </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>no hay retorno </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a79ece4ff0fa07616fd099dd636cef6a2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EORS </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>Rd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Rm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Rn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>banderas</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>funcion para ejecutar una exclusive OR bit a bit con los dos registros de entrada </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Rn</td><td>Registro de entrada </td></tr>
+    <tr><td class="paramname">Rm</td><td>Registro de entrada </td></tr>
+    <tr><td class="paramname">*Rd</td><td>lugar donde se almacenara el resultado. </td></tr>
+    <tr><td class="paramname">*banderas</td><td>direccion de memoria de las banderas </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>no hay retorno </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae72c8e3584181ca6204e433126149966"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MOV </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>Rm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Rn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>funcion que mueve datos de un registro a otro pero no actualiza banderas </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Rn</td><td>Registro que se va a mover </td></tr>
+    <tr><td class="paramname">*Rm</td><td>lugar donde se almacenaria el resultado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>no hay retorno </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad6cf44febe16f558af742bff3ae9f408"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MOVS </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>Rm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Rn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>banderas</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>funcion que mueve datos de un registro a otro </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Rn</td><td>Registro que se mueve </td></tr>
+    <tr><td class="paramname">*Rm</td><td>lugar donde se almacenara el resultado. </td></tr>
+    <tr><td class="paramname">*banderas</td><td>direccion de memoria de las banderas </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>no hay retorno </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a718a6f1bd724bdd6b18a1d23f69cb999"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MULS </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>Rd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Rm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Rn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>banderas</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>funcion que efectue el producto de dos registros sin signo </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*Rd</td><td>registro donde se guarda el resultado </td></tr>
+    <tr><td class="paramname">Rm</td><td>registro a multiplicar </td></tr>
+    <tr><td class="paramname">Rn</td><td>registro a multiplicar </td></tr>
+    <tr><td class="paramname">*banderas</td><td>direccion de memoria de las bandera </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>no hay retorno </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a510682353bf3f33e1bfe3bbdb6352b8b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MVNS </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>Rd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Rm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>banderas</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>funcion para ejecutar la operacion logica NOT a Rm </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Rm</td><td>Registro de entrada </td></tr>
+    <tr><td class="paramname">*Rd</td><td>lugar donde se almacenara el resultado </td></tr>
+    <tr><td class="paramname">*banderas</td><td>direccion de memoria de las bandera </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>no hay retorno </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ace91e03521716b81ebb4d4589a225d8b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NOP </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>funcion para no hacer nada </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">no</td><td>tiene parametros de entrada </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>no hay retorno </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad30bb822177ed48519f87086c5bbdd63"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ORRS </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>Rd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Rm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Rn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>banderas</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -208,55 +806,131 @@ Funciones</h2></td></tr>
 <p>funcion OR </p>
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Rn</td><td>Registro1 </td></tr>
-    <tr><td class="paramname">Rm</td><td>Registro2 </td></tr>
+    <tr><td class="paramname">Rn</td><td>Registro de entrada </td></tr>
+    <tr><td class="paramname">Rm</td><td>Registro de entrada </td></tr>
+    <tr><td class="paramname">*Rd</td><td>lugar donde se almacenara el resultado </td></tr>
+    <tr><td class="paramname">*banderas</td><td>direccion de memoria de la bandera cero "N" </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Devuelve</dt><dd>El resultado es la eperacion OR a nivel de bits </dd></dl>
+<dl class="section return"><dt>Devuelve</dt><dd>no hay retorno </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a9492f292ed5517ffa05fe6fc2548ed3d"></a>
+<a class="anchor" id="af6368d239026ecaf7c967552666f14d1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float MVN </td>
+          <td class="memname">void RSBS </td>
           <td>(</td>
-          <td class="paramtype">unsigned long int&#160;</td>
-          <td class="paramname"><em>Rn</em></td><td>)</td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>Rd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Rm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>banderas</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>funcion NOT </p>
+<p>funcion que efectua el complemento a dos de un registro </p>
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Rn</td><td>Registro1 </td></tr>
+    <tr><td class="paramname">*Rd</td><td>registro donde se guarda el resultado </td></tr>
+    <tr><td class="paramname">Rm</td><td>registro al que se le aplicara el complemento </td></tr>
+    <tr><td class="paramname">*banderas</td><td>direccion de memoria de las banderas </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Devuelve</dt><dd>El resultado es la eperacion NOT bit a bit </dd></dl>
+<dl class="section return"><dt>Devuelve</dt><dd>no hay retorno </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ae4eebf4ccebb1210cd620aa45152879d"></a>
+<a class="anchor" id="a5710d41eb4904c000a0dcae25ed03f26"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float SUB </td>
+          <td class="memname">void SBCS </td>
           <td>(</td>
-          <td class="paramtype">unsigned long int&#160;</td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>Rd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Rm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>Rn</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned long int&#160;</td>
-          <td class="paramname"><em>Rm</em>&#160;</td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>banderas</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>funcion que efectua la resta normal y resta el carry </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*Rd</td><td>registro donde se guarda el resultado </td></tr>
+    <tr><td class="paramname">Rm</td><td>registro a de entrada </td></tr>
+    <tr><td class="paramname">Rn</td><td>registro a restar con el de entrada </td></tr>
+    <tr><td class="paramname">*banderas</td><td>direccion de memoria de las banderas </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>no hay retorno </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a73b6fffc894730277379fe44ca2cf819"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SUB </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>Rd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Rm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Rn</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -269,12 +943,106 @@ Funciones</h2></td></tr>
 <p>funcion que resta </p>
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Rn</td><td>Registro1 </td></tr>
-    <tr><td class="paramname">Rm</td><td>Registro2 </td></tr>
+    <tr><td class="paramname">Rn</td><td>Registro de entrada </td></tr>
+    <tr><td class="paramname">Rm</td><td>registro de entrada </td></tr>
+    <tr><td class="paramname">*Rd</td><td>lugar donde se almacenara el resultado </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Devuelve</dt><dd>El resultado del a resta entre los dos Registros de entrada </dd></dl>
+<dl class="section return"><dt>Devuelve</dt><dd>no hay retorno </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a50e6b64f011f341416bacdadea1f396d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SUBS </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>Rd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Rm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Rn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>banderas</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>funcion que resta y actualiza las banderas </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Rn</td><td>Registro de entrada </td></tr>
+    <tr><td class="paramname">Rm</td><td>registro de entrada </td></tr>
+    <tr><td class="paramname">*Rd</td><td>lugar donde se almacenara el resultado </td></tr>
+    <tr><td class="paramname">*banderas</td><td>direccion de memora de las banderas </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>no hay retorno </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1c55ded7980dc10ab5b34304677aabc1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TST </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Rm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>Rn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>banderas</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>funcion realiza la operacion AND pero no guarda el valor solo actualiza banderas </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Rn</td><td>Registro de entrada </td></tr>
+    <tr><td class="paramname">Rm</td><td>registro de entrada </td></tr>
+    <tr><td class="paramname">*banderas</td><td>direccion de memoria de las banderas </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>no hay retorno </dd></dl>
 
 </div>
 </div>

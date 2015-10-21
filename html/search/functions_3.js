@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['main',['main',['../main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.c']]],
-  ['mostrar_5fregistros',['mostrar_registros',['../registros_8c.html#a9b444c9eec756aac00b89e9de6f5a857',1,'registros.c']]],
-  ['mvn',['MVN',['../_a_l_u_8c.html#a9492f292ed5517ffa05fe6fc2548ed3d',1,'MVN(unsigned long int Rn):&#160;ALU.c'],['../_a_l_u_8h.html#a9492f292ed5517ffa05fe6fc2548ed3d',1,'MVN(unsigned long int Rn):&#160;ALU.c']]]
+  ['decodeinstruction',['decodeInstruction',['../decoder_8c.html#a1146273473716e0b3a881ebc1c94b0a9',1,'decodeInstruction(instruction_t instruction, uint32_t *Reg, uint32_t *banderas, uint8_t *SR, uint16_t *operacion):&#160;decoder.c'],['../decoder_8h.html#acc2c92ffb93f3a7e980a0bea1fe45ac5',1,'decodeInstruction(instruction_t instruction, uint32_t *Reg, uint32_t *banderas, uint8_t *pila, uint16_t *operacion):&#160;decoder.c']]]
 ];

@@ -2,19 +2,112 @@
 \label{registros_8c}\index{registros.\+c@{registros.\+c}}
 {\ttfamily \#include $<$stdio.\+h$>$}\\*
 {\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
 {\ttfamily \#include \char`\"{}registros.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$curses.\+h$>$}\\*
 \subsection*{Funciones}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{registros_8c_a9b444c9eec756aac00b89e9de6f5a857}{mostrar\+\_\+registros} (unsigned long registro\mbox{[}13\mbox{]})
+void \hyperlink{registros_8c_a6f35997efef9a1ccb4e0d9f9d9eeabd4}{mostrar\+\_\+registros} (uint32\+\_\+t $\ast$registro)
+\begin{DoxyCompactList}\small\item\em Funcion que toma los valores de los registros y los imprime en pantalla. \end{DoxyCompactList}\item 
+void \hyperlink{registros_8c_a2d4e86051953730d1e2de4ac4c33ece1}{mostrar\+\_\+\+S\+Ram} (uint8\+\_\+t $\ast$S\+Ram)
+\begin{DoxyCompactList}\small\item\em Funcion que muestra los valores almacenados en la S\+Ram. \end{DoxyCompactList}\item 
+void \hyperlink{registros_8c_a4d0b0403646c7f287eeab238198c08df}{mostrar\+\_\+banderas} (uint32\+\_\+t banderas\mbox{[}4\mbox{]})
+\begin{DoxyCompactList}\small\item\em Funcion que toma los valores de las banderas y los imprime en pantalla. \end{DoxyCompactList}\item 
+void \hyperlink{registros_8c_a9adeda5b4c7bd459ae30968b5331fd2e}{mostrar\+\_\+operacion} (char $\ast$op)
+\begin{DoxyCompactList}\small\item\em Funcion que muestra la operacion que se realizo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{registros_8c_ac8936188af0c1d2f8b9d0cd25fde43b2}{i}
+\item 
+unsigned int \hyperlink{registros_8c_ae61d3f3408f131d1ff489f2e7ef5b9f4}{j}
 \end{DoxyCompactItemize}
 
 
 \subsection{Documentación de las funciones}
-\hypertarget{registros_8c_a9b444c9eec756aac00b89e9de6f5a857}{}\index{registros.\+c@{registros.\+c}!mostrar\+\_\+registros@{mostrar\+\_\+registros}}
-\index{mostrar\+\_\+registros@{mostrar\+\_\+registros}!registros.\+c@{registros.\+c}}
-\subsubsection[{mostrar\+\_\+registros(unsigned long registro[13])}]{\setlength{\rightskip}{0pt plus 5cm}void mostrar\+\_\+registros (
+\hypertarget{registros_8c_a4d0b0403646c7f287eeab238198c08df}{}\index{registros.\+c@{registros.\+c}!mostrar\+\_\+banderas@{mostrar\+\_\+banderas}}
+\index{mostrar\+\_\+banderas@{mostrar\+\_\+banderas}!registros.\+c@{registros.\+c}}
+\subsubsection[{mostrar\+\_\+banderas(uint32\+\_\+t banderas[4])}]{\setlength{\rightskip}{0pt plus 5cm}void mostrar\+\_\+banderas (
 \begin{DoxyParamCaption}
-\item[{unsigned long}]{registro\mbox{[}13\mbox{]}}
+\item[{uint32\+\_\+t}]{banderas\mbox{[}4\mbox{]}}
 \end{DoxyParamCaption}
-)}\label{registros_8c_a9b444c9eec756aac00b89e9de6f5a857}
+)}\label{registros_8c_a4d0b0403646c7f287eeab238198c08df}
+
+
+Funcion que toma los valores de las banderas y los imprime en pantalla. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em banderas\mbox{[}4\mbox{]}} & Arreglo que contiene cada 1 de las banderas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+No tiene retorno 
+\end{DoxyReturn}
+\hypertarget{registros_8c_a9adeda5b4c7bd459ae30968b5331fd2e}{}\index{registros.\+c@{registros.\+c}!mostrar\+\_\+operacion@{mostrar\+\_\+operacion}}
+\index{mostrar\+\_\+operacion@{mostrar\+\_\+operacion}!registros.\+c@{registros.\+c}}
+\subsubsection[{mostrar\+\_\+operacion(char $\ast$op)}]{\setlength{\rightskip}{0pt plus 5cm}void mostrar\+\_\+operacion (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{op}
+\end{DoxyParamCaption}
+)}\label{registros_8c_a9adeda5b4c7bd459ae30968b5331fd2e}
+
+
+Funcion que muestra la operacion que se realizo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em op\mbox{[}5\mbox{]}} & variable tipo caracter donde se gusrda el nombre de la operacion realizada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+No tiene retorno 
+\end{DoxyReturn}
+\hypertarget{registros_8c_a6f35997efef9a1ccb4e0d9f9d9eeabd4}{}\index{registros.\+c@{registros.\+c}!mostrar\+\_\+registros@{mostrar\+\_\+registros}}
+\index{mostrar\+\_\+registros@{mostrar\+\_\+registros}!registros.\+c@{registros.\+c}}
+\subsubsection[{mostrar\+\_\+registros(uint32\+\_\+t $\ast$registro)}]{\setlength{\rightskip}{0pt plus 5cm}void mostrar\+\_\+registros (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{registro}
+\end{DoxyParamCaption}
+)}\label{registros_8c_a6f35997efef9a1ccb4e0d9f9d9eeabd4}
+
+
+Funcion que toma los valores de los registros y los imprime en pantalla. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em registro\mbox{[}13\mbox{]}} & Arreglo que contiene cada 1 de los registros \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+No tiene retorno 
+\end{DoxyReturn}
+\hypertarget{registros_8c_a2d4e86051953730d1e2de4ac4c33ece1}{}\index{registros.\+c@{registros.\+c}!mostrar\+\_\+\+S\+Ram@{mostrar\+\_\+\+S\+Ram}}
+\index{mostrar\+\_\+\+S\+Ram@{mostrar\+\_\+\+S\+Ram}!registros.\+c@{registros.\+c}}
+\subsubsection[{mostrar\+\_\+\+S\+Ram(uint8\+\_\+t $\ast$\+S\+Ram)}]{\setlength{\rightskip}{0pt plus 5cm}void mostrar\+\_\+\+S\+Ram (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{S\+Ram}
+\end{DoxyParamCaption}
+)}\label{registros_8c_a2d4e86051953730d1e2de4ac4c33ece1}
+
+
+Funcion que muestra los valores almacenados en la S\+Ram. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em S\+Ram\mbox{[}65\mbox{]}} & Memoria disponible \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+No tiene retorno 
+\end{DoxyReturn}
+
+
+\subsection{Documentación de las variables}
+\hypertarget{registros_8c_ac8936188af0c1d2f8b9d0cd25fde43b2}{}\index{registros.\+c@{registros.\+c}!i@{i}}
+\index{i@{i}!registros.\+c@{registros.\+c}}
+\subsubsection[{i}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int i}\label{registros_8c_ac8936188af0c1d2f8b9d0cd25fde43b2}
+\hypertarget{registros_8c_ae61d3f3408f131d1ff489f2e7ef5b9f4}{}\index{registros.\+c@{registros.\+c}!j@{j}}
+\index{j@{j}!registros.\+c@{registros.\+c}}
+\subsubsection[{j}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int j}\label{registros_8c_ae61d3f3408f131d1ff489f2e7ef5b9f4}

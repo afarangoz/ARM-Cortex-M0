@@ -8,4 +8,4 @@
 * \param *Rin direccion en memoria del arreglo donde se encuentra la interrupccion que se va a ejecutar
 * \return no hay retorno
 */
-void NVIC( uint32_t *Reg,uint32_t *banderas, uint8_t *SR, uint32_t *Rin);
+void NVIC( uint32_t *Reg,uint32_t *banderas, uint8_t *SR, uint8_t *Rin);

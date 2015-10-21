@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['v',['V',['../structbandera.html#ad4a5f70723d0035c82b07a12b8ec5780',1,'bandera']]]
+  ['j',['j',['../registros_8c.html#ae61d3f3408f131d1ff489f2e7ef5b9f4',1,'registros.c']]]
 ];

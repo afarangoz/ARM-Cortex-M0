@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sub',['SUB',['../_a_l_u_8c.html#ae4eebf4ccebb1210cd620aa45152879d',1,'SUB(unsigned long int Rn, unsigned long int Rm):&#160;ALU.c'],['../_a_l_u_8h.html#ae4eebf4ccebb1210cd620aa45152879d',1,'SUB(unsigned long int Rn, unsigned long int Rm):&#160;ALU.c']]]
+  ['eors',['EORS',['../_a_l_u_8c.html#a79ece4ff0fa07616fd099dd636cef6a2',1,'EORS(uint32_t *Rd, uint32_t Rm, uint32_t Rn, uint32_t *banderas):&#160;ALU.c'],['../_a_l_u_8h.html#a79ece4ff0fa07616fd099dd636cef6a2',1,'EORS(uint32_t *Rd, uint32_t Rm, uint32_t Rn, uint32_t *banderas):&#160;ALU.c']]]
 ];

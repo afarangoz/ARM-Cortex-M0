@@ -32,11 +32,11 @@ void changePinPortA(uint8_t pin, uint8_t value)
 void changePinPortB(uint8_t pin, uint8_t value)
 {
 
-	if( ( (PORTB.Pins & (1<<pin)) != (value<<pin) ) &&
-		( PORTB.Interrupts & (1<<pin) ) )
-		irq[pin+8] = 1;
+	if( ( (PORTB.Pins & (1<<pin)) != (value<<pin) ) &&( PORTB.Interrupts & (1<<pin) ) )
+{
+        irq[pin+8] = 1;
 
-
+}
 
 	PORTB.Pins = (PORTB.Pins & ~(1<<pin)) | value<<pin;
 }

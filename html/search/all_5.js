@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['n',['N',['../structbandera.html#ae8b170dcb376fe60270f4675f84e4477',1,'bandera']]]
+  ['getinstruction',['getInstruction',['../decoder_8c.html#afb95cf953b777a76e479e8b465c45277',1,'getInstruction(char *instStr):&#160;decoder.c'],['../decoder_8h.html#afb95cf953b777a76e479e8b465c45277',1,'getInstruction(char *instStr):&#160;decoder.c']]]
 ];

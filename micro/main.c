@@ -29,7 +29,7 @@ int main(void)
      {
         SRam[i]=255;
      }
-     //SRam[0]=1; //Guardo en la Ram la posicion donde se encuentra el salto para ejecutar la interrupccion 1
+
     uint32_t banderas[4]={0,0,0,0}; //estas son las banderas del microprocesador las posiciones indican la bandera
                                         //[0] es N es 1 si el resultado es negatico
                                         //[1] es Z es 1 si el resultado es cero
@@ -60,6 +60,7 @@ int main(void)
     char puerto;
 	while(1)
     {
+
 	instruction = getInstruction(instructions[Reg[15]]);
 	decodeInstruction(instruction,Reg,banderas,&SRam[0],&operacion);
     if(tecla=='a')
@@ -248,15 +249,14 @@ int main(void)
         }
 
     }
-    //NVIC(&Reg[0],&banderas[0],&SRam[0],&irq[0]);
 
-
+    NVIC(&Reg[0],&banderas[0],&SRam[0],&irq[0]);
     showPorts();
     mostrar_registros(Reg);
 	mostrar_SRam(SRam);
     mostrar_banderas(banderas);
     mostrar_operacion(instructions[Reg[15]]);
-        //********Muestro la variable operacion********//
+    //********Muestro la variable operacion********//
     init_pair(5, COLOR_WHITE, COLOR_BLACK);
     attron(COLOR_PAIR(5));
     move(14, 50);

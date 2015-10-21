@@ -2,127 +2,567 @@
 \label{_a_l_u_8c}\index{A\+L\+U.\+c@{A\+L\+U.\+c}}
 {\ttfamily \#include $<$stdio.\+h$>$}\\*
 {\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
 {\ttfamily \#include \char`\"{}A\+L\+U.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
 \subsection*{Funciones}
 \begin{DoxyCompactItemize}
 \item 
-float \hyperlink{_a_l_u_8c_a747f81693014c24b6036007b7048a65d}{A\+D\+D} (unsigned long int Rn, unsigned long int Rm)
+void \hyperlink{_a_l_u_8c_aac7ddde4c370b3f3406a883735083a2f}{A\+D\+D\+S} (uint32\+\_\+t $\ast$Rd, uint32\+\_\+t Rm, uint32\+\_\+t Rn, uint32\+\_\+t $\ast$banderas)
 \begin{DoxyCompactList}\small\item\em funcion que suma \end{DoxyCompactList}\item 
-float \hyperlink{_a_l_u_8c_ae4eebf4ccebb1210cd620aa45152879d}{S\+U\+B} (unsigned long int Rn, unsigned long int Rm)
+void \hyperlink{_a_l_u_8c_a3a66f829a91b5cc16be0b095d0cda46e}{A\+D\+D} (uint32\+\_\+t $\ast$Rd, uint32\+\_\+t Rm, uint32\+\_\+t Rn)
+\begin{DoxyCompactList}\small\item\em funcion que suma pero no actualiza banderas \end{DoxyCompactList}\item 
+void \hyperlink{_a_l_u_8c_a50e6b64f011f341416bacdadea1f396d}{S\+U\+B\+S} (uint32\+\_\+t $\ast$Rd, uint32\+\_\+t Rm, uint32\+\_\+t Rn, uint32\+\_\+t $\ast$banderas)
+\begin{DoxyCompactList}\small\item\em funcion que resta y actualiza las banderas \end{DoxyCompactList}\item 
+void \hyperlink{_a_l_u_8c_a73b6fffc894730277379fe44ca2cf819}{S\+U\+B} (uint32\+\_\+t $\ast$Rd, uint32\+\_\+t Rm, uint32\+\_\+t Rn)
 \begin{DoxyCompactList}\small\item\em funcion que resta \end{DoxyCompactList}\item 
-float \hyperlink{_a_l_u_8c_ad69b338bf29392ce2f8994f045afbfbd}{B\+I\+C} (unsigned long int Rn, unsigned long int Rm)
-\begin{DoxyCompactList}\small\item\em funcion A\+N\+D \end{DoxyCompactList}\item 
-float \hyperlink{_a_l_u_8c_a14a50cf292452f430568545a4b446a27}{E\+O\+R} (unsigned long int Rn, unsigned long int Rm)
+void \hyperlink{_a_l_u_8c_a481692c4f9388dd21ec28bc89176b9a3}{A\+N\+D\+S} (uint32\+\_\+t $\ast$Rd, uint32\+\_\+t Rm, uint32\+\_\+t Rn, uint32\+\_\+t $\ast$banderas)
+\begin{DoxyCompactList}\small\item\em funcion que producto logico a nivel de bit \end{DoxyCompactList}\item 
+void \hyperlink{_a_l_u_8c_ad30bb822177ed48519f87086c5bbdd63}{O\+R\+R\+S} (uint32\+\_\+t $\ast$Rd, uint32\+\_\+t Rm, uint32\+\_\+t Rn, uint32\+\_\+t $\ast$banderas)
 \begin{DoxyCompactList}\small\item\em funcion O\+R \end{DoxyCompactList}\item 
-float \hyperlink{_a_l_u_8c_a9492f292ed5517ffa05fe6fc2548ed3d}{M\+V\+N} (unsigned long int Rn)
-\begin{DoxyCompactList}\small\item\em funcion N\+O\+T \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{_a_l_u_8c_ad6cf44febe16f558af742bff3ae9f408}{M\+O\+V\+S} (uint32\+\_\+t $\ast$Rm, uint32\+\_\+t Rn, uint32\+\_\+t $\ast$banderas)
+\begin{DoxyCompactList}\small\item\em funcion que mueve datos de un registro a otro \end{DoxyCompactList}\item 
+void \hyperlink{_a_l_u_8c_ae72c8e3584181ca6204e433126149966}{M\+O\+V} (uint32\+\_\+t $\ast$Rm, uint32\+\_\+t Rn)
+\begin{DoxyCompactList}\small\item\em funcion que mueve datos de un registro a otro pero no actualiza banderas \end{DoxyCompactList}\item 
+void \hyperlink{_a_l_u_8c_a75f4eb82927df4f2e103ca9148b87c9c}{B\+I\+C\+S} (uint32\+\_\+t $\ast$Rd, uint32\+\_\+t Rm, uint32\+\_\+t Rn, uint32\+\_\+t $\ast$banderas)
+\begin{DoxyCompactList}\small\item\em funcion para ejecutar una A\+N\+D entre un registro y el negado del otro \end{DoxyCompactList}\item 
+void \hyperlink{_a_l_u_8c_a79ece4ff0fa07616fd099dd636cef6a2}{E\+O\+R\+S} (uint32\+\_\+t $\ast$Rd, uint32\+\_\+t Rm, uint32\+\_\+t Rn, uint32\+\_\+t $\ast$banderas)
+\begin{DoxyCompactList}\small\item\em funcion para ejecutar una exclusive O\+R bit a bit con los dos registros de entrada \end{DoxyCompactList}\item 
+void \hyperlink{_a_l_u_8c_a510682353bf3f33e1bfe3bbdb6352b8b}{M\+V\+N\+S} (uint32\+\_\+t $\ast$Rd, uint32\+\_\+t Rm, uint32\+\_\+t $\ast$banderas)
+\begin{DoxyCompactList}\small\item\em funcion para ejecutar la operacion logica N\+O\+T a Rm \end{DoxyCompactList}\item 
+void \hyperlink{_a_l_u_8c_ace91e03521716b81ebb4d4589a225d8b}{N\+O\+P} ()
+\begin{DoxyCompactList}\small\item\em funcion para no hacer nada \end{DoxyCompactList}\item 
+void \hyperlink{_a_l_u_8c_af8f86b38eb44d3a24fc3727fc4dc127b}{C\+M\+N} (uint32\+\_\+t Rm, uint32\+\_\+t Rn, uint32\+\_\+t $\ast$banderas)
+\begin{DoxyCompactList}\small\item\em funcion sumar pero no guarda el resultado \end{DoxyCompactList}\item 
+void \hyperlink{_a_l_u_8c_a13ef47f924ce7c914e4262df75c6277d}{C\+M\+P} (uint32\+\_\+t Rm, uint32\+\_\+t Rn, uint32\+\_\+t $\ast$banderas)
+\begin{DoxyCompactList}\small\item\em funcion restar pero no guarda el valor solo actualiza banderas \end{DoxyCompactList}\item 
+void \hyperlink{_a_l_u_8c_a1c55ded7980dc10ab5b34304677aabc1}{T\+S\+T} (uint32\+\_\+t Rm, uint32\+\_\+t Rn, uint32\+\_\+t $\ast$banderas)
+\begin{DoxyCompactList}\small\item\em funcion realiza la operacion A\+N\+D pero no guarda el valor solo actualiza banderas \end{DoxyCompactList}\item 
+void \hyperlink{_a_l_u_8c_a66101581fc79e8b26de298db4be4117d}{A\+C\+T\+N\+Z} (uint32\+\_\+t $\ast$Rd, uint32\+\_\+t $\ast$banderas)
+\begin{DoxyCompactList}\small\item\em funcion que actualiza las banderas N y Z \end{DoxyCompactList}\item 
+void \hyperlink{_a_l_u_8c_a188d16f8248db78c6a454de70bda2b57}{A\+D\+C\+S} (uint32\+\_\+t $\ast$Rd, uint32\+\_\+t Rm, uint32\+\_\+t Rn, uint32\+\_\+t $\ast$banderas)
+\begin{DoxyCompactList}\small\item\em funcion que efectua la suma normal y suma el carry \end{DoxyCompactList}\item 
+void \hyperlink{_a_l_u_8c_a5710d41eb4904c000a0dcae25ed03f26}{S\+B\+C\+S} (uint32\+\_\+t $\ast$Rd, uint32\+\_\+t Rm, uint32\+\_\+t Rn, uint32\+\_\+t $\ast$banderas)
+\begin{DoxyCompactList}\small\item\em funcion que efectua la resta normal y resta el carry \end{DoxyCompactList}\item 
+void \hyperlink{_a_l_u_8c_af6368d239026ecaf7c967552666f14d1}{R\+S\+B\+S} (uint32\+\_\+t $\ast$Rd, uint32\+\_\+t Rm, uint32\+\_\+t $\ast$banderas)
+\begin{DoxyCompactList}\small\item\em funcion que efectua el complemento a dos de un registro \end{DoxyCompactList}\item 
+void \hyperlink{_a_l_u_8c_a718a6f1bd724bdd6b18a1d23f69cb999}{M\+U\+L\+S} (uint32\+\_\+t $\ast$Rd, uint32\+\_\+t Rm, uint32\+\_\+t Rn, uint32\+\_\+t $\ast$banderas)
+\begin{DoxyCompactList}\small\item\em funcion que efectue el producto de dos registros sin signo \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Documentación de las funciones}
-\hypertarget{_a_l_u_8c_a747f81693014c24b6036007b7048a65d}{}\index{A\+L\+U.\+c@{A\+L\+U.\+c}!A\+D\+D@{A\+D\+D}}
-\index{A\+D\+D@{A\+D\+D}!A\+L\+U.\+c@{A\+L\+U.\+c}}
-\subsubsection[{A\+D\+D(unsigned long int Rn, unsigned long int Rm)}]{\setlength{\rightskip}{0pt plus 5cm}float A\+D\+D (
+\hypertarget{_a_l_u_8c_a66101581fc79e8b26de298db4be4117d}{}\index{A\+L\+U.\+c@{A\+L\+U.\+c}!A\+C\+T\+N\+Z@{A\+C\+T\+N\+Z}}
+\index{A\+C\+T\+N\+Z@{A\+C\+T\+N\+Z}!A\+L\+U.\+c@{A\+L\+U.\+c}}
+\subsubsection[{A\+C\+T\+N\+Z(uint32\+\_\+t $\ast$\+Rd, uint32\+\_\+t $\ast$banderas)}]{\setlength{\rightskip}{0pt plus 5cm}void A\+C\+T\+N\+Z (
 \begin{DoxyParamCaption}
-\item[{unsigned long int}]{Rn, }
-\item[{unsigned long int}]{Rm}
+\item[{uint32\+\_\+t $\ast$}]{Rd, }
+\item[{uint32\+\_\+t $\ast$}]{banderas}
 \end{DoxyParamCaption}
-)}\label{_a_l_u_8c_a747f81693014c24b6036007b7048a65d}
+)}\label{_a_l_u_8c_a66101581fc79e8b26de298db4be4117d}
+
+
+funcion que actualiza las banderas N y Z 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em $\ast$\+Rd} & resultado \\
+\hline
+{\em $\ast$banderas} & direccion de memoria de las banderas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+no hay retorno 
+\end{DoxyReturn}
+\hypertarget{_a_l_u_8c_a188d16f8248db78c6a454de70bda2b57}{}\index{A\+L\+U.\+c@{A\+L\+U.\+c}!A\+D\+C\+S@{A\+D\+C\+S}}
+\index{A\+D\+C\+S@{A\+D\+C\+S}!A\+L\+U.\+c@{A\+L\+U.\+c}}
+\subsubsection[{A\+D\+C\+S(uint32\+\_\+t $\ast$\+Rd, uint32\+\_\+t Rm, uint32\+\_\+t Rn, uint32\+\_\+t $\ast$banderas)}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+C\+S (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{Rd, }
+\item[{uint32\+\_\+t}]{Rm, }
+\item[{uint32\+\_\+t}]{Rn, }
+\item[{uint32\+\_\+t $\ast$}]{banderas}
+\end{DoxyParamCaption}
+)}\label{_a_l_u_8c_a188d16f8248db78c6a454de70bda2b57}
+
+
+funcion que efectua la suma normal y suma el carry 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em $\ast$\+Rd} & registro donde se guarda el resultado \\
+\hline
+{\em Rm} & registro a sumar \\
+\hline
+{\em Rn} & registro a sumar \\
+\hline
+{\em $\ast$banderas} & direccion de memoria de la bandera cero \char`\"{}\+N\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+no hay retorno 
+\end{DoxyReturn}
+\hypertarget{_a_l_u_8c_a3a66f829a91b5cc16be0b095d0cda46e}{}\index{A\+L\+U.\+c@{A\+L\+U.\+c}!A\+D\+D@{A\+D\+D}}
+\index{A\+D\+D@{A\+D\+D}!A\+L\+U.\+c@{A\+L\+U.\+c}}
+\subsubsection[{A\+D\+D(uint32\+\_\+t $\ast$\+Rd, uint32\+\_\+t Rm, uint32\+\_\+t Rn)}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+D (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{Rd, }
+\item[{uint32\+\_\+t}]{Rm, }
+\item[{uint32\+\_\+t}]{Rn}
+\end{DoxyParamCaption}
+)}\label{_a_l_u_8c_a3a66f829a91b5cc16be0b095d0cda46e}
+
+
+funcion que suma pero no actualiza banderas 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em Rn} & Registro de entrada \\
+\hline
+{\em Rm} & registro de entrada \\
+\hline
+{\em $\ast$\+Rd} & lugar donde se almacenara el resultado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+no hay retorno 
+\end{DoxyReturn}
+\hypertarget{_a_l_u_8c_aac7ddde4c370b3f3406a883735083a2f}{}\index{A\+L\+U.\+c@{A\+L\+U.\+c}!A\+D\+D\+S@{A\+D\+D\+S}}
+\index{A\+D\+D\+S@{A\+D\+D\+S}!A\+L\+U.\+c@{A\+L\+U.\+c}}
+\subsubsection[{A\+D\+D\+S(uint32\+\_\+t $\ast$\+Rd, uint32\+\_\+t Rm, uint32\+\_\+t Rn, uint32\+\_\+t $\ast$banderas)}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+D\+S (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{Rd, }
+\item[{uint32\+\_\+t}]{Rm, }
+\item[{uint32\+\_\+t}]{Rn, }
+\item[{uint32\+\_\+t $\ast$}]{banderas}
+\end{DoxyParamCaption}
+)}\label{_a_l_u_8c_aac7ddde4c370b3f3406a883735083a2f}
 
 
 funcion que suma 
 
 
 \begin{DoxyParams}{Parámetros}
-{\em Rn} & Registro1 \\
+{\em Rn} & Registro de entrada \\
 \hline
-{\em Rm} & Registro2 \\
+{\em Rm} & registro de entrada \\
+\hline
+{\em $\ast$\+Rd} & lugar donde se almacenara el resultado \\
+\hline
+{\em $\ast$banderas} & direccion de memoria de las banderas \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Devuelve}
-El resultado de la suma entre los dos Registros de entrada 
+no hay retorno 
 \end{DoxyReturn}
-\hypertarget{_a_l_u_8c_ad69b338bf29392ce2f8994f045afbfbd}{}\index{A\+L\+U.\+c@{A\+L\+U.\+c}!B\+I\+C@{B\+I\+C}}
-\index{B\+I\+C@{B\+I\+C}!A\+L\+U.\+c@{A\+L\+U.\+c}}
-\subsubsection[{B\+I\+C(unsigned long int Rn, unsigned long int Rm)}]{\setlength{\rightskip}{0pt plus 5cm}float B\+I\+C (
+\hypertarget{_a_l_u_8c_a481692c4f9388dd21ec28bc89176b9a3}{}\index{A\+L\+U.\+c@{A\+L\+U.\+c}!A\+N\+D\+S@{A\+N\+D\+S}}
+\index{A\+N\+D\+S@{A\+N\+D\+S}!A\+L\+U.\+c@{A\+L\+U.\+c}}
+\subsubsection[{A\+N\+D\+S(uint32\+\_\+t $\ast$\+Rd, uint32\+\_\+t Rm, uint32\+\_\+t Rn, uint32\+\_\+t $\ast$banderas)}]{\setlength{\rightskip}{0pt plus 5cm}void A\+N\+D\+S (
 \begin{DoxyParamCaption}
-\item[{unsigned long int}]{Rn, }
-\item[{unsigned long int}]{Rm}
+\item[{uint32\+\_\+t $\ast$}]{Rd, }
+\item[{uint32\+\_\+t}]{Rm, }
+\item[{uint32\+\_\+t}]{Rn, }
+\item[{uint32\+\_\+t $\ast$}]{banderas}
 \end{DoxyParamCaption}
-)}\label{_a_l_u_8c_ad69b338bf29392ce2f8994f045afbfbd}
+)}\label{_a_l_u_8c_a481692c4f9388dd21ec28bc89176b9a3}
 
 
-funcion A\+N\+D 
+funcion que producto logico a nivel de bit 
 
 
 \begin{DoxyParams}{Parámetros}
-{\em Rn} & Registro1 \\
+{\em Rn} & Registro de entrada \\
 \hline
-{\em Rm} & Registro2 \\
+{\em Rm} & registro de entrada \\
+\hline
+{\em $\ast$\+Rd} & lugar donde se almacenara el resultado \\
+\hline
+{\em $\ast$banderas} & direccion de memoria de las banderas \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Devuelve}
-El resultado es la eperacion A\+N\+D a nivel de bits 
+no hay retorno 
 \end{DoxyReturn}
-\hypertarget{_a_l_u_8c_a14a50cf292452f430568545a4b446a27}{}\index{A\+L\+U.\+c@{A\+L\+U.\+c}!E\+O\+R@{E\+O\+R}}
-\index{E\+O\+R@{E\+O\+R}!A\+L\+U.\+c@{A\+L\+U.\+c}}
-\subsubsection[{E\+O\+R(unsigned long int Rn, unsigned long int Rm)}]{\setlength{\rightskip}{0pt plus 5cm}float E\+O\+R (
+\hypertarget{_a_l_u_8c_a75f4eb82927df4f2e103ca9148b87c9c}{}\index{A\+L\+U.\+c@{A\+L\+U.\+c}!B\+I\+C\+S@{B\+I\+C\+S}}
+\index{B\+I\+C\+S@{B\+I\+C\+S}!A\+L\+U.\+c@{A\+L\+U.\+c}}
+\subsubsection[{B\+I\+C\+S(uint32\+\_\+t $\ast$\+Rd, uint32\+\_\+t Rm, uint32\+\_\+t Rn, uint32\+\_\+t $\ast$banderas)}]{\setlength{\rightskip}{0pt plus 5cm}void B\+I\+C\+S (
 \begin{DoxyParamCaption}
-\item[{unsigned long int}]{Rn, }
-\item[{unsigned long int}]{Rm}
+\item[{uint32\+\_\+t $\ast$}]{Rd, }
+\item[{uint32\+\_\+t}]{Rm, }
+\item[{uint32\+\_\+t}]{Rn, }
+\item[{uint32\+\_\+t $\ast$}]{banderas}
 \end{DoxyParamCaption}
-)}\label{_a_l_u_8c_a14a50cf292452f430568545a4b446a27}
+)}\label{_a_l_u_8c_a75f4eb82927df4f2e103ca9148b87c9c}
+
+
+funcion para ejecutar una A\+N\+D entre un registro y el negado del otro 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em Rn} & Registro de entrada \\
+\hline
+{\em Rm} & Registro de entrada \\
+\hline
+{\em $\ast$\+Rd} & lugar donde se almacenara el resultado. \\
+\hline
+{\em $\ast$banderas} & direccion de memoria de las banderas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+no hay retorno 
+\end{DoxyReturn}
+\hypertarget{_a_l_u_8c_af8f86b38eb44d3a24fc3727fc4dc127b}{}\index{A\+L\+U.\+c@{A\+L\+U.\+c}!C\+M\+N@{C\+M\+N}}
+\index{C\+M\+N@{C\+M\+N}!A\+L\+U.\+c@{A\+L\+U.\+c}}
+\subsubsection[{C\+M\+N(uint32\+\_\+t Rm, uint32\+\_\+t Rn, uint32\+\_\+t $\ast$banderas)}]{\setlength{\rightskip}{0pt plus 5cm}void C\+M\+N (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{Rm, }
+\item[{uint32\+\_\+t}]{Rn, }
+\item[{uint32\+\_\+t $\ast$}]{banderas}
+\end{DoxyParamCaption}
+)}\label{_a_l_u_8c_af8f86b38eb44d3a24fc3727fc4dc127b}
+
+
+funcion sumar pero no guarda el resultado 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em Rn} & Registro de entrada \\
+\hline
+{\em Rm} & registro de entrada \\
+\hline
+{\em $\ast$banderas} & direccion de memoria de las banderas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+no hay retorno 
+\end{DoxyReturn}
+\hypertarget{_a_l_u_8c_a13ef47f924ce7c914e4262df75c6277d}{}\index{A\+L\+U.\+c@{A\+L\+U.\+c}!C\+M\+P@{C\+M\+P}}
+\index{C\+M\+P@{C\+M\+P}!A\+L\+U.\+c@{A\+L\+U.\+c}}
+\subsubsection[{C\+M\+P(uint32\+\_\+t Rm, uint32\+\_\+t Rn, uint32\+\_\+t $\ast$banderas)}]{\setlength{\rightskip}{0pt plus 5cm}void C\+M\+P (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{Rm, }
+\item[{uint32\+\_\+t}]{Rn, }
+\item[{uint32\+\_\+t $\ast$}]{banderas}
+\end{DoxyParamCaption}
+)}\label{_a_l_u_8c_a13ef47f924ce7c914e4262df75c6277d}
+
+
+funcion restar pero no guarda el valor solo actualiza banderas 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em Rn} & Registro de entrada \\
+\hline
+{\em Rm} & registro de entrada \\
+\hline
+{\em $\ast$banderas} & direccion en memoria de las banderas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+no hay retorno 
+\end{DoxyReturn}
+\hypertarget{_a_l_u_8c_a79ece4ff0fa07616fd099dd636cef6a2}{}\index{A\+L\+U.\+c@{A\+L\+U.\+c}!E\+O\+R\+S@{E\+O\+R\+S}}
+\index{E\+O\+R\+S@{E\+O\+R\+S}!A\+L\+U.\+c@{A\+L\+U.\+c}}
+\subsubsection[{E\+O\+R\+S(uint32\+\_\+t $\ast$\+Rd, uint32\+\_\+t Rm, uint32\+\_\+t Rn, uint32\+\_\+t $\ast$banderas)}]{\setlength{\rightskip}{0pt plus 5cm}void E\+O\+R\+S (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{Rd, }
+\item[{uint32\+\_\+t}]{Rm, }
+\item[{uint32\+\_\+t}]{Rn, }
+\item[{uint32\+\_\+t $\ast$}]{banderas}
+\end{DoxyParamCaption}
+)}\label{_a_l_u_8c_a79ece4ff0fa07616fd099dd636cef6a2}
+
+
+funcion para ejecutar una exclusive O\+R bit a bit con los dos registros de entrada 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em Rn} & Registro de entrada \\
+\hline
+{\em Rm} & Registro de entrada \\
+\hline
+{\em $\ast$\+Rd} & lugar donde se almacenara el resultado. \\
+\hline
+{\em $\ast$banderas} & direccion de memoria de las banderas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+no hay retorno 
+\end{DoxyReturn}
+\hypertarget{_a_l_u_8c_ae72c8e3584181ca6204e433126149966}{}\index{A\+L\+U.\+c@{A\+L\+U.\+c}!M\+O\+V@{M\+O\+V}}
+\index{M\+O\+V@{M\+O\+V}!A\+L\+U.\+c@{A\+L\+U.\+c}}
+\subsubsection[{M\+O\+V(uint32\+\_\+t $\ast$\+Rm, uint32\+\_\+t Rn)}]{\setlength{\rightskip}{0pt plus 5cm}void M\+O\+V (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{Rm, }
+\item[{uint32\+\_\+t}]{Rn}
+\end{DoxyParamCaption}
+)}\label{_a_l_u_8c_ae72c8e3584181ca6204e433126149966}
+
+
+funcion que mueve datos de un registro a otro pero no actualiza banderas 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em Rn} & Registro que se va a mover \\
+\hline
+{\em $\ast$\+Rm} & lugar donde se almacenaria el resultado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+no hay retorno 
+\end{DoxyReturn}
+\hypertarget{_a_l_u_8c_ad6cf44febe16f558af742bff3ae9f408}{}\index{A\+L\+U.\+c@{A\+L\+U.\+c}!M\+O\+V\+S@{M\+O\+V\+S}}
+\index{M\+O\+V\+S@{M\+O\+V\+S}!A\+L\+U.\+c@{A\+L\+U.\+c}}
+\subsubsection[{M\+O\+V\+S(uint32\+\_\+t $\ast$\+Rm, uint32\+\_\+t Rn, uint32\+\_\+t $\ast$banderas)}]{\setlength{\rightskip}{0pt plus 5cm}void M\+O\+V\+S (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{Rm, }
+\item[{uint32\+\_\+t}]{Rn, }
+\item[{uint32\+\_\+t $\ast$}]{banderas}
+\end{DoxyParamCaption}
+)}\label{_a_l_u_8c_ad6cf44febe16f558af742bff3ae9f408}
+
+
+funcion que mueve datos de un registro a otro 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em Rn} & Registro que se mueve \\
+\hline
+{\em $\ast$\+Rm} & lugar donde se almacenara el resultado. \\
+\hline
+{\em $\ast$banderas} & direccion de memoria de las banderas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+no hay retorno 
+\end{DoxyReturn}
+\hypertarget{_a_l_u_8c_a718a6f1bd724bdd6b18a1d23f69cb999}{}\index{A\+L\+U.\+c@{A\+L\+U.\+c}!M\+U\+L\+S@{M\+U\+L\+S}}
+\index{M\+U\+L\+S@{M\+U\+L\+S}!A\+L\+U.\+c@{A\+L\+U.\+c}}
+\subsubsection[{M\+U\+L\+S(uint32\+\_\+t $\ast$\+Rd, uint32\+\_\+t Rm, uint32\+\_\+t Rn, uint32\+\_\+t $\ast$banderas)}]{\setlength{\rightskip}{0pt plus 5cm}void M\+U\+L\+S (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{Rd, }
+\item[{uint32\+\_\+t}]{Rm, }
+\item[{uint32\+\_\+t}]{Rn, }
+\item[{uint32\+\_\+t $\ast$}]{banderas}
+\end{DoxyParamCaption}
+)}\label{_a_l_u_8c_a718a6f1bd724bdd6b18a1d23f69cb999}
+
+
+funcion que efectue el producto de dos registros sin signo 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em $\ast$\+Rd} & registro donde se guarda el resultado \\
+\hline
+{\em Rm} & registro a multiplicar \\
+\hline
+{\em Rn} & registro a multiplicar \\
+\hline
+{\em $\ast$banderas} & direccion de memoria de las bandera \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+no hay retorno 
+\end{DoxyReturn}
+\hypertarget{_a_l_u_8c_a510682353bf3f33e1bfe3bbdb6352b8b}{}\index{A\+L\+U.\+c@{A\+L\+U.\+c}!M\+V\+N\+S@{M\+V\+N\+S}}
+\index{M\+V\+N\+S@{M\+V\+N\+S}!A\+L\+U.\+c@{A\+L\+U.\+c}}
+\subsubsection[{M\+V\+N\+S(uint32\+\_\+t $\ast$\+Rd, uint32\+\_\+t Rm, uint32\+\_\+t $\ast$banderas)}]{\setlength{\rightskip}{0pt plus 5cm}void M\+V\+N\+S (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{Rd, }
+\item[{uint32\+\_\+t}]{Rm, }
+\item[{uint32\+\_\+t $\ast$}]{banderas}
+\end{DoxyParamCaption}
+)}\label{_a_l_u_8c_a510682353bf3f33e1bfe3bbdb6352b8b}
+
+
+funcion para ejecutar la operacion logica N\+O\+T a Rm 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em Rm} & Registro de entrada \\
+\hline
+{\em $\ast$\+Rd} & lugar donde se almacenara el resultado \\
+\hline
+{\em $\ast$banderas} & direccion de memoria de las bandera \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+no hay retorno 
+\end{DoxyReturn}
+\hypertarget{_a_l_u_8c_ace91e03521716b81ebb4d4589a225d8b}{}\index{A\+L\+U.\+c@{A\+L\+U.\+c}!N\+O\+P@{N\+O\+P}}
+\index{N\+O\+P@{N\+O\+P}!A\+L\+U.\+c@{A\+L\+U.\+c}}
+\subsubsection[{N\+O\+P()}]{\setlength{\rightskip}{0pt plus 5cm}void N\+O\+P (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{_a_l_u_8c_ace91e03521716b81ebb4d4589a225d8b}
+
+
+funcion para no hacer nada 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em no} & tiene parametros de entrada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+no hay retorno 
+\end{DoxyReturn}
+\hypertarget{_a_l_u_8c_ad30bb822177ed48519f87086c5bbdd63}{}\index{A\+L\+U.\+c@{A\+L\+U.\+c}!O\+R\+R\+S@{O\+R\+R\+S}}
+\index{O\+R\+R\+S@{O\+R\+R\+S}!A\+L\+U.\+c@{A\+L\+U.\+c}}
+\subsubsection[{O\+R\+R\+S(uint32\+\_\+t $\ast$\+Rd, uint32\+\_\+t Rm, uint32\+\_\+t Rn, uint32\+\_\+t $\ast$banderas)}]{\setlength{\rightskip}{0pt plus 5cm}void O\+R\+R\+S (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{Rd, }
+\item[{uint32\+\_\+t}]{Rm, }
+\item[{uint32\+\_\+t}]{Rn, }
+\item[{uint32\+\_\+t $\ast$}]{banderas}
+\end{DoxyParamCaption}
+)}\label{_a_l_u_8c_ad30bb822177ed48519f87086c5bbdd63}
 
 
 funcion O\+R 
 
 
 \begin{DoxyParams}{Parámetros}
-{\em Rn} & Registro1 \\
+{\em Rn} & Registro de entrada \\
 \hline
-{\em Rm} & Registro2 \\
+{\em Rm} & Registro de entrada \\
+\hline
+{\em $\ast$\+Rd} & lugar donde se almacenara el resultado \\
+\hline
+{\em $\ast$banderas} & direccion de memoria de la bandera cero \char`\"{}\+N\char`\"{} \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Devuelve}
-El resultado es la eperacion O\+R a nivel de bits 
+no hay retorno 
 \end{DoxyReturn}
-\hypertarget{_a_l_u_8c_a9492f292ed5517ffa05fe6fc2548ed3d}{}\index{A\+L\+U.\+c@{A\+L\+U.\+c}!M\+V\+N@{M\+V\+N}}
-\index{M\+V\+N@{M\+V\+N}!A\+L\+U.\+c@{A\+L\+U.\+c}}
-\subsubsection[{M\+V\+N(unsigned long int Rn)}]{\setlength{\rightskip}{0pt plus 5cm}float M\+V\+N (
+\hypertarget{_a_l_u_8c_af6368d239026ecaf7c967552666f14d1}{}\index{A\+L\+U.\+c@{A\+L\+U.\+c}!R\+S\+B\+S@{R\+S\+B\+S}}
+\index{R\+S\+B\+S@{R\+S\+B\+S}!A\+L\+U.\+c@{A\+L\+U.\+c}}
+\subsubsection[{R\+S\+B\+S(uint32\+\_\+t $\ast$\+Rd, uint32\+\_\+t Rm, uint32\+\_\+t $\ast$banderas)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+S\+B\+S (
 \begin{DoxyParamCaption}
-\item[{unsigned long int}]{Rn}
+\item[{uint32\+\_\+t $\ast$}]{Rd, }
+\item[{uint32\+\_\+t}]{Rm, }
+\item[{uint32\+\_\+t $\ast$}]{banderas}
 \end{DoxyParamCaption}
-)}\label{_a_l_u_8c_a9492f292ed5517ffa05fe6fc2548ed3d}
+)}\label{_a_l_u_8c_af6368d239026ecaf7c967552666f14d1}
 
 
-funcion N\+O\+T 
+funcion que efectua el complemento a dos de un registro 
 
 
 \begin{DoxyParams}{Parámetros}
-{\em Rn} & Registro1 \\
+{\em $\ast$\+Rd} & registro donde se guarda el resultado \\
+\hline
+{\em Rm} & registro al que se le aplicara el complemento \\
+\hline
+{\em $\ast$banderas} & direccion de memoria de las banderas \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Devuelve}
-El resultado es la eperacion N\+O\+T bit a bit 
+no hay retorno 
 \end{DoxyReturn}
-\hypertarget{_a_l_u_8c_ae4eebf4ccebb1210cd620aa45152879d}{}\index{A\+L\+U.\+c@{A\+L\+U.\+c}!S\+U\+B@{S\+U\+B}}
-\index{S\+U\+B@{S\+U\+B}!A\+L\+U.\+c@{A\+L\+U.\+c}}
-\subsubsection[{S\+U\+B(unsigned long int Rn, unsigned long int Rm)}]{\setlength{\rightskip}{0pt plus 5cm}float S\+U\+B (
+\hypertarget{_a_l_u_8c_a5710d41eb4904c000a0dcae25ed03f26}{}\index{A\+L\+U.\+c@{A\+L\+U.\+c}!S\+B\+C\+S@{S\+B\+C\+S}}
+\index{S\+B\+C\+S@{S\+B\+C\+S}!A\+L\+U.\+c@{A\+L\+U.\+c}}
+\subsubsection[{S\+B\+C\+S(uint32\+\_\+t $\ast$\+Rd, uint32\+\_\+t Rm, uint32\+\_\+t Rn, uint32\+\_\+t $\ast$banderas)}]{\setlength{\rightskip}{0pt plus 5cm}void S\+B\+C\+S (
 \begin{DoxyParamCaption}
-\item[{unsigned long int}]{Rn, }
-\item[{unsigned long int}]{Rm}
+\item[{uint32\+\_\+t $\ast$}]{Rd, }
+\item[{uint32\+\_\+t}]{Rm, }
+\item[{uint32\+\_\+t}]{Rn, }
+\item[{uint32\+\_\+t $\ast$}]{banderas}
 \end{DoxyParamCaption}
-)}\label{_a_l_u_8c_ae4eebf4ccebb1210cd620aa45152879d}
+)}\label{_a_l_u_8c_a5710d41eb4904c000a0dcae25ed03f26}
+
+
+funcion que efectua la resta normal y resta el carry 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em $\ast$\+Rd} & registro donde se guarda el resultado \\
+\hline
+{\em Rm} & registro a de entrada \\
+\hline
+{\em Rn} & registro a restar con el de entrada \\
+\hline
+{\em $\ast$banderas} & direccion de memoria de las banderas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+no hay retorno 
+\end{DoxyReturn}
+\hypertarget{_a_l_u_8c_a73b6fffc894730277379fe44ca2cf819}{}\index{A\+L\+U.\+c@{A\+L\+U.\+c}!S\+U\+B@{S\+U\+B}}
+\index{S\+U\+B@{S\+U\+B}!A\+L\+U.\+c@{A\+L\+U.\+c}}
+\subsubsection[{S\+U\+B(uint32\+\_\+t $\ast$\+Rd, uint32\+\_\+t Rm, uint32\+\_\+t Rn)}]{\setlength{\rightskip}{0pt plus 5cm}void S\+U\+B (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{Rd, }
+\item[{uint32\+\_\+t}]{Rm, }
+\item[{uint32\+\_\+t}]{Rn}
+\end{DoxyParamCaption}
+)}\label{_a_l_u_8c_a73b6fffc894730277379fe44ca2cf819}
 
 
 funcion que resta 
 
 
 \begin{DoxyParams}{Parámetros}
-{\em Rn} & Registro1 \\
+{\em Rn} & Registro de entrada \\
 \hline
-{\em Rm} & Registro2 \\
+{\em Rm} & registro de entrada \\
+\hline
+{\em $\ast$\+Rd} & lugar donde se almacenara el resultado \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Devuelve}
-El resultado del a resta entre los dos Registros de entrada 
+no hay retorno 
+\end{DoxyReturn}
+\hypertarget{_a_l_u_8c_a50e6b64f011f341416bacdadea1f396d}{}\index{A\+L\+U.\+c@{A\+L\+U.\+c}!S\+U\+B\+S@{S\+U\+B\+S}}
+\index{S\+U\+B\+S@{S\+U\+B\+S}!A\+L\+U.\+c@{A\+L\+U.\+c}}
+\subsubsection[{S\+U\+B\+S(uint32\+\_\+t $\ast$\+Rd, uint32\+\_\+t Rm, uint32\+\_\+t Rn, uint32\+\_\+t $\ast$banderas)}]{\setlength{\rightskip}{0pt plus 5cm}void S\+U\+B\+S (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{Rd, }
+\item[{uint32\+\_\+t}]{Rm, }
+\item[{uint32\+\_\+t}]{Rn, }
+\item[{uint32\+\_\+t $\ast$}]{banderas}
+\end{DoxyParamCaption}
+)}\label{_a_l_u_8c_a50e6b64f011f341416bacdadea1f396d}
+
+
+funcion que resta y actualiza las banderas 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em Rn} & Registro de entrada \\
+\hline
+{\em Rm} & registro de entrada \\
+\hline
+{\em $\ast$\+Rd} & lugar donde se almacenara el resultado \\
+\hline
+{\em $\ast$banderas} & direccion de memora de las banderas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+no hay retorno 
+\end{DoxyReturn}
+\hypertarget{_a_l_u_8c_a1c55ded7980dc10ab5b34304677aabc1}{}\index{A\+L\+U.\+c@{A\+L\+U.\+c}!T\+S\+T@{T\+S\+T}}
+\index{T\+S\+T@{T\+S\+T}!A\+L\+U.\+c@{A\+L\+U.\+c}}
+\subsubsection[{T\+S\+T(uint32\+\_\+t Rm, uint32\+\_\+t Rn, uint32\+\_\+t $\ast$banderas)}]{\setlength{\rightskip}{0pt plus 5cm}void T\+S\+T (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{Rm, }
+\item[{uint32\+\_\+t}]{Rn, }
+\item[{uint32\+\_\+t $\ast$}]{banderas}
+\end{DoxyParamCaption}
+)}\label{_a_l_u_8c_a1c55ded7980dc10ab5b34304677aabc1}
+
+
+funcion realiza la operacion A\+N\+D pero no guarda el valor solo actualiza banderas 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em Rn} & Registro de entrada \\
+\hline
+{\em Rm} & registro de entrada \\
+\hline
+{\em $\ast$banderas} & direccion de memoria de las banderas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+no hay retorno 
 \end{DoxyReturn}
